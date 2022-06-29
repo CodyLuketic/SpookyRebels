@@ -14,5 +14,6 @@ public class spinny : MonoBehaviour
     void Update()
     {
         transform.position = transform.position + new Vector3(0, 1, 0);
+        Debug.Log("It's ALIVE!!!");
     }
 }
