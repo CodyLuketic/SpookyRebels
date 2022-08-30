@@ -446,6 +446,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rotationSpeed: 90
+--- !u!1 &1072941669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 982409764696968335, guid: e3bf0c425b2011a48b29080ee7c223cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 982409764422905307}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1072941676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072941669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607ca2e8eb2127c46a530f030ea1a4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1217307852
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +790,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 799994714}
+    - target: {fileID: 982409764696968321, guid: e3bf0c425b2011a48b29080ee7c223cf,
+        type: 3}
+      propertyPath: monsterParts
+      value: 
+      objectReference: {fileID: 11400000, guid: 0461927d6ebcf414c85ce13967fddcc9,
+        type: 2}
+    - target: {fileID: 982409764696968322, guid: e3bf0c425b2011a48b29080ee7c223cf,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 982409764696968322, guid: e3bf0c425b2011a48b29080ee7c223cf,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 982409764696968323, guid: e3bf0c425b2011a48b29080ee7c223cf,
         type: 3}
       propertyPath: m_RootOrder
@@ -780,7 +814,7 @@ PrefabInstance:
     - target: {fileID: 982409764696968323, guid: e3bf0c425b2011a48b29080ee7c223cf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9022832
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 982409764696968323, guid: e3bf0c425b2011a48b29080ee7c223cf,
         type: 3}
@@ -790,7 +824,7 @@ PrefabInstance:
     - target: {fileID: 982409764696968323, guid: e3bf0c425b2011a48b29080ee7c223cf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 982409764696968323, guid: e3bf0c425b2011a48b29080ee7c223cf,
         type: 3}
