@@ -24,6 +24,15 @@ public class EnemyFollow : MonoBehaviour
         Follow();
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Collision");
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Follow()
     {
         enemy.SetDestination(player.position);

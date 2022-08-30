@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd13d1f582a8349af63ce495405701, type: 3}
   m_Name: Monster1
   m_EditorClassIdentifier: 
-  _monsterMesh: {fileID: 0}
-  _monsterMaterial: {fileID: 0}
+  _monsterMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  _monsterMaterial: {fileID: 2100000, guid: 2070854a68af91c4fbe515b2358a6c4d, type: 2}
   _health: 10
   _speed: 3
   _damage: 2
