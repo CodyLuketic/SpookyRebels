@@ -17,6 +17,7 @@ public class Magamon : MonoBehaviour
     public int conditionHealth;
     public int range;
     public int bulletCount;
+    public int skillAvailable;
 
     //these change
     public int attack;
