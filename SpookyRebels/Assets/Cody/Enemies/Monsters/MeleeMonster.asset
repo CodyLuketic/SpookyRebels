@@ -10,11 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18bd13d1f582a8349af63ce495405701, type: 3}
-  m_Name: Monster2
+  m_Name: MeleeMonster
   m_EditorClassIdentifier: 
-  _monsterMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  _monsterMaterial: {fileID: 2100000, guid: 415fd32f480df2d4bb44c9ac04c49821, type: 2}
+  _enemyMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  _enemyMaterial: {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
   _health: 10
   _speed: 20
   _damage: 2
+  _defense: 0
   _spawnChance: 10
+  _attackAnim: 10
+  _bounceBack: 34
+  _projectileMesh: {fileID: 0}
+  _projectileMaterial: {fileID: 0}
+  _attackSpeed: 0

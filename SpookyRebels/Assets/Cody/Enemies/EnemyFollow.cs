@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class EnemyFollow : MonoBehaviour
 {
     [SerializeField]
-    private MonsterScriptableObject monsterParts = null;
+    private EnemyScriptableObject enemyParts = null;
 
     [SerializeField]
     private NavMeshAgent enemy = null;
@@ -15,7 +15,7 @@ public class EnemyFollow : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        enemy.speed = monsterParts.speed;
+        enemy.speed = enemyParts.speed;
     }
 
     // Update is called once per frame
@@ -36,5 +36,14 @@ public class EnemyFollow : MonoBehaviour
     private void Follow()
     {
         enemy.SetDestination(player.position);
+    }
+
+    public void SetEnemyParts(EnemyScriptableObject enemyScriptableObject)
+    {
+        SetEnemyPartsHelper(enemyScriptableObject);
+    }
+    private void SetEnemyPartsHelper(EnemyScriptableObject enemyScriptableObject)
+    {
+        enemyParts = enemyScriptableObject;
     }
 }
