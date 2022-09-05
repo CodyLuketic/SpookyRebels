@@ -3,62 +3,61 @@ using UnityEngine.AI;
 
 public class BlueprintScript : MonoBehaviour
 {
-    RaycastHit hit;
-    Vector3 movePoint;
+    private Vector3 mousePos;
     private float mouseWheelRotation;
     private bool valid = true;
 
-    Camera myCam;
-    NavMeshAgent myAgent;
-
-    public GameObject prefab;
-    public LayerMask ground;
+    [SerializeField]
+    private GameObject me;
+    [SerializeField]
+    private GameObject prefab;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        myCam = Camera.main;
-        myAgent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player");
 
-        Ray ray = myCam.ScreenPointToRay(Input.mousePosition);
+        // Get Mouse Position
+        PlayerMovements playerScript = player.GetComponent<PlayerMovements>();
+        mousePos = playerScript.returnMousePos();
 
-        if (Physics.Raycast(ray, out hit, 50000.0f, ground))
-        {
-            myAgent.SetDestination(hit.point);
-            //transform.position = hit.point;
-        }
+        me.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 100);
+        me.transform.position = mousePos;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         valid = false;
+        me.GetComponent<Renderer>().material.color = new Color32(255, 0, 0, 100);
     }
 
     private void OnTriggerExit(Collider other)
     {
         valid = true;
+        me.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 100);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Move to Mouse
+        me.transform.position = mousePos;
+
+        // Get Mouse Position
+        PlayerMovements playerScript = player.GetComponent<PlayerMovements>();
+        mousePos = playerScript.returnMousePos();
+
         // Scroll-wheel based Rotation
         mouseWheelRotation = Input.mouseScrollDelta.y;
         transform.Rotate(Vector3.up, mouseWheelRotation * 10.0f);
-
-        // Is on placeable terrain?
-        Ray ray = myCam.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit, 50000.0f, ground))
-        {
-            myAgent.SetDestination(hit.point);
-            //transform.position = hit.point;
-        }
 
         // Place
         if (Input.GetMouseButton(0) && valid)
         {
             Instantiate(prefab, transform.position, transform.rotation);
+            
+            // Destroy Self and Resources
             Destroy(gameObject);
         }
     }

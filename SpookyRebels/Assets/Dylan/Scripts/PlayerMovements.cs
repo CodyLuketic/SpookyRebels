@@ -37,22 +37,8 @@ public class PlayerMovements : MonoBehaviour
         //SetCursor(crosshair, cursorOffset, CursorMode.Auto);
     }
 
-    void Update()
+    private void generateMousePos()
     {
-        // We are grounded, so recalculate move direction based on axes
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
-
-        // Press Left Shift to run
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-
-        // Move the controller
-        characterController.Move(moveDirection * Time.deltaTime);
-
         // Fetch Cursor position
         Plane plane = new Plane(Vector3.up, 0);
 
@@ -62,13 +48,39 @@ public class PlayerMovements : MonoBehaviour
         {
             mouseWorldPosition = ray.GetPoint(distance);
         }
+    }
 
-        mouseWorldPosition.y = player.transform.position.y;
+    public Vector3 returnMousePos()
+    {
+        return mouseWorldPosition;
+    } 
+
+    void Update()
+    {
+        // Check that we can Move
+
+        // We are grounded, so recalculate move direction based on axes
+        Vector3 forward = transform.TransformDirection(Vector3.forward);
+        Vector3 right = transform.TransformDirection(Vector3.right);
+
+        // Press Left Shift to run
+        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
+        float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+        //float movementDirectionY = moveDirection.y;
+        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+
+        // Move the controller
+        characterController.Move(moveDirection * Time.deltaTime);
+
+        generateMousePos();
 
         // Player rotation to Cursor
         if (canMove)
         {
-            player.transform.LookAt(mouseWorldPosition, Vector3.up);
+            Vector3 lookPoint = mouseWorldPosition;
+            lookPoint.y = player.transform.position.y;
+            player.transform.LookAt(lookPoint, Vector3.up);
         }
 
 
