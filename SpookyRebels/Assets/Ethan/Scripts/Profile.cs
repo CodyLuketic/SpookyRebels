@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Profile : MonoBehaviour
+[System.Serializable]
+public class Profile
 {
     public string name;
     public int Money;
@@ -32,4 +34,8 @@ public class Profile : MonoBehaviour
     public int mediumSpectralGem;
     public int largeSpectralGem;
     public Magamon[] magamon = new Magamon[50];
+
+    //equipted
+    public int equipt1 = 0;
+    public int equipt2 = -1;
 }

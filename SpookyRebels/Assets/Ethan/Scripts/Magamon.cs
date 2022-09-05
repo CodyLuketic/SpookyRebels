@@ -11,7 +11,7 @@ public class Magamon : MonoBehaviour
     
     //these are perminent
     public string species;
-
+    public string element;
 
     // these kinda change
     public int conditionHealth;
@@ -25,6 +25,7 @@ public class Magamon : MonoBehaviour
     public int health;
     public int speed;
 
+    public int defensetimer;
 
     ////////////here for animations
 }
