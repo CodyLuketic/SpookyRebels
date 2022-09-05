@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 982409764696968322}
   - component: {fileID: 982409764696968321}
   - component: {fileID: 1072941676}
+  - component: {fileID: 7809204574717579064}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d98ab4f8d1c3b440956dc0a84934841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterParts: {fileID: 11400000, guid: 0461927d6ebcf414c85ce13967fddcc9, type: 2}
+  enemyParts: {fileID: 0}
   enemy: {fileID: 982409764696968322}
   player: {fileID: 0}
 --- !u!114 &1072941676
@@ -150,4 +151,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607ca2e8eb2127c46a530f030ea1a4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterParts: {fileID: 0}
+  enemyParts: {fileID: 0}
+  _mesh: {fileID: 0}
+  _material: {fileID: 0}
+  _health: 0
+  _speed: 0
+  _damage: 0
+  _defense: 0
+  _bounceBack: 0
+  _attackSpeed: 0
+--- !u!114 &7809204574717579064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982409764696968335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd1503d57c32ff43999b7db3c5775b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
