@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7432057383437670610, guid: 2c1ad3780e4ed0f41acbb3ce0eaff455, type: 3}
+  player: {fileID: 0}
 --- !u!54 &799994717
 Rigidbody:
   m_ObjectHideFlags: 0
