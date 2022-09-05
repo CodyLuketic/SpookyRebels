@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: MeleeMonster
   m_EditorClassIdentifier: 
   _enemyMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  _enemyMaterial: {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+  _enemyMaterial: {fileID: 2100000, guid: af496c0ead38c3b458c0f4bad440f871, type: 2}
   _health: 10
-  _speed: 20
+  _speed: 6
   _damage: 2
   _defense: 0
   _spawnChance: 10
-  _attackAnim: 10
+  _attackAnim: {fileID: 0}
   _bounceBack: 34
   _projectileMesh: {fileID: 0}
   _projectileMaterial: {fileID: 0}

@@ -7,13 +7,20 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField]
     private GameObject bullet = null;
 
-    // Update is called once per frame
+    [SerializeField]
+    private GameObject player = null;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z) + Vector3.forward;
-            Instantiate(bullet, position, Quaternion.identity);
+            Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z) + player.transform.forward;
+            Instantiate(bullet, position, player.transform.rotation);
         }
     }
 }

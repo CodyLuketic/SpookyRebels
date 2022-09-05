@@ -12,12 +12,6 @@ public class EnemyFollow : MonoBehaviour
     [SerializeField]
     private Transform player = null;
 
-    // Start is called before the first frame update
-    private void Start()
-    {
-        enemy.speed = enemyParts.speed;
-    }
-
     // Update is called once per frame
     private void Update()
     {
@@ -31,6 +25,8 @@ public class EnemyFollow : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Player Damage Call
     }
 
     private void Follow()
