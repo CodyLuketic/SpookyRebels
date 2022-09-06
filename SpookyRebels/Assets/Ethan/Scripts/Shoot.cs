@@ -6,9 +6,11 @@ public class Shoot : MonoBehaviour
 {
     // bullet prefabs
     public Transform firePoint;
-    public GameObject baseShotPrefab;
+    public GameObject lucyShotPrefab;
 
 
+    public int currentBullets;
+    public bool hasBullets = true;
 
     public Magamon heldAttacking;
     public Magamon heldDefending;
@@ -31,6 +33,10 @@ public class Shoot : MonoBehaviour
         p = MainProfile.Instance.mainP;
         heldAttacking = p.magamon[p.equipt1];
         if(p.equipt2 != -1) heldDefending = p.magamon[p.equipt2];
+
+        currentBullets = heldAttacking.bulletCount;
+
+
         //////add the skills that are only at the begining
     }
 
@@ -38,7 +44,7 @@ public class Shoot : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            if (canAttack)
+            if (canAttack && hasBullets)
             {
                 Attack();
             }
@@ -63,8 +69,44 @@ public class Shoot : MonoBehaviour
     ////shooting method
     void Attack()
     {
-        
+        canAttack = false;
+        //getting base gun out of way before mods
+        if (heldAttacking.species == "Lucyfur")
+        {
+            Instantiate(lucyShotPrefab, firePoint.position, firePoint.rotation);
+        }
+        else
+        {
+
+
+            currentBullets--;
+        }
+        if (currentBullets == 0)
+        {
+            hasBullets = false;
+            StartCoroutine(eReloadCooldown());
+        }
+        else
+        {
+            StartCoroutine(eAttackCooldown());
+        }
     }
+
+    IEnumerator eAttackCooldown()
+    {
+        // will need to change this for swap speed if i make it
+        yield return new WaitForSeconds(heldAttacking.attackSpeed);
+        canAttack = true;
+    }
+
+    IEnumerator eReloadCooldown()
+    {
+        // will need to change this for swap speed if i make it
+        yield return new WaitForSeconds(heldAttacking.reloadSpeed);
+        currentBullets = heldAttacking.bulletCount;
+        hasBullets= true;
+    }
+
 
 
     ////defending method
@@ -72,6 +114,10 @@ public class Shoot : MonoBehaviour
     { 
     
     }
+
+
+
+
 
 
     // switch monsters
@@ -96,6 +142,13 @@ public class Shoot : MonoBehaviour
                 heldDefending = p.magamon[p.equipt1];
                 swapped = true;
             }
+            // stop cooldowns
+            currentBullets = heldAttacking.bulletCount;
+            if(canAttack == false) StopCoroutine(eAttackCooldown());
+            if (hasBullets == false) StopCoroutine(eReloadCooldown());
+            hasBullets = true;
+            canAttack = true;
+
             //swap sound
             //update ui
             StartCoroutine(eSwitchCooldown());
