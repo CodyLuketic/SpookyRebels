@@ -20,6 +20,7 @@ MonoBehaviour:
   _defense: 0
   _spawnChance: 10
   _attackAnim: {fileID: 0}
+  _melee: 1
   _bounceBack: 34
   _projectileMesh: {fileID: 0}
   _projectileMaterial: {fileID: 0}

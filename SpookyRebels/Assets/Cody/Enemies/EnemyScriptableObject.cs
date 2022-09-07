@@ -68,6 +68,15 @@ public class EnemyScriptableObject : ScriptableObject
         set {_attackAnim = value;}
     }
 
+    [Header("Type")]
+    [SerializeField]
+    private bool _melee = false;
+    public bool melee
+    {
+        get {return _melee;}
+        set {_melee = value;}
+    }
+
     [Header("Melee Values")]
     [SerializeField]
     private float _bounceBack = 0;

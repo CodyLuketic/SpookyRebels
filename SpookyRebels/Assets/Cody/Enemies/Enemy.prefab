@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 982409764696968332}
   - component: {fileID: 982409764696968333}
   - component: {fileID: 982409764696968334}
+  - component: {fileID: 3203255619814308031}
   - component: {fileID: 982409764696968322}
   - component: {fileID: 982409764696968321}
   - component: {fileID: 1072941676}
@@ -102,6 +103,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3203255619814308031
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982409764696968335}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!195 &982409764696968322
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -172,3 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd1503d57c32ff43999b7db3c5775b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyParts: {fileID: 0}
+  bullet: {fileID: 7432057383437670610, guid: 2c1ad3780e4ed0f41acbb3ce0eaff455, type: 3}
+  waitTimeMelee: 1
+  waitTimeRanged: 2
