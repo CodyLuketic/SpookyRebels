@@ -15,13 +15,10 @@ public class EnemyCombat : MonoBehaviour
     //private Rigidbody rb = null;
 
     [SerializeField]
-    private float waitTimeMelee = 0;
+    private float waitTime = 0;
 
     [SerializeField]
     private float waitTimeEnd = 0;
-
-    [SerializeField]
-    private float waitTimeRanged = 0;
 
     private bool canMelee = false;
     // Start is called before the first frame update
@@ -58,7 +55,7 @@ public class EnemyCombat : MonoBehaviour
     {
         //animator.SetTrigger("Attack");
 
-        yield return new WaitForSeconds(waitTimeMelee);
+        yield return new WaitForSeconds(waitTime);
 
         // Player Damage Call Goes Here
 
@@ -73,7 +70,7 @@ public class EnemyCombat : MonoBehaviour
             Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward;
             Instantiate(bullet, position, transform.rotation);
 
-            yield return new WaitForSeconds(waitTimeRanged);
+            yield return new WaitForSeconds(enemyParts.attackSpeed);
         }
     }
 }
