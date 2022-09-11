@@ -4,8 +4,7 @@ using UnityEngine.Animations;
 
 public class EnemyCombat : MonoBehaviour
 {
-    [SerializeField]
-    private EnemyScriptableObject enemyParts = null;
+    private EnemyValues enemyValues = null;
 
     private Animator animator = null;
 
@@ -25,8 +24,9 @@ public class EnemyCombat : MonoBehaviour
     private void Start()
     {
         //rb = gameObject.GetComponent<Rigidbody>();
+        enemyValues = gameObject.GetComponent<EnemyValues>();
 
-        AttackStart(enemyParts.melee);
+        AttackStart(enemyValues.GetMelee());
     }
 
     private void AttackStart(bool melee)
@@ -70,7 +70,7 @@ public class EnemyCombat : MonoBehaviour
             Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward;
             Instantiate(bullet, position, transform.rotation);
 
-            yield return new WaitForSeconds(enemyParts.attackSpeed);
+            yield return new WaitForSeconds(enemyValues.GetAttackSpeed());
         }
     }
 }

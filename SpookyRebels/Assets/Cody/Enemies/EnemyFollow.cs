@@ -4,15 +4,19 @@ using UnityEngine.AI;
 public class EnemyFollow : MonoBehaviour
 {
     [SerializeField]
-    private EnemyScriptableObject enemyParts = null;
+    private NavMeshAgent enemyNav = null;
 
-    [SerializeField]
-    private NavMeshAgent enemy = null;
+    private GameObject player = null;
 
-    [SerializeField]
-    private Transform player = null;
+    private Vector3 position;
+    
+    private void Start()
+    {
+        enemyNav = gameObject.GetComponent<NavMeshAgent>();
 
-    // Update is called once per frame
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     private void Update()
     {
         Follow();
@@ -20,15 +24,13 @@ public class EnemyFollow : MonoBehaviour
 
     private void Follow()
     {
-        enemy.SetDestination(player.position);
-    }
-
-    public void SetEnemyParts(EnemyScriptableObject enemyScriptableObject)
-    {
-        SetEnemyPartsHelper(enemyScriptableObject);
-    }
-    private void SetEnemyPartsHelper(EnemyScriptableObject enemyScriptableObject)
-    {
-        enemyParts = enemyScriptableObject;
+        if(enemyNav.isOnNavMesh)
+        {
+            enemyNav.SetDestination(player.transform.position);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

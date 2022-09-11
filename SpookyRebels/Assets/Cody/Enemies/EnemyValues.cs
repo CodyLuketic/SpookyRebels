@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class EnemyValues : MonoBehaviour
 {
     [SerializeField]
-    private EnemyScriptableObject enemyParts = null;
+    private EnemyScriptableObject _enemyParts = null;
 
     [Header("Basic Values")]
     [SerializeField]
@@ -24,6 +24,9 @@ public class EnemyValues : MonoBehaviour
 
     [SerializeField]
     private float _defense = 0;
+
+    [SerializeField]
+    private bool _melee = false;
     
     [Header("Melee Values")]
     [SerializeField]
@@ -42,16 +45,17 @@ public class EnemyValues : MonoBehaviour
 
     private void SetValues()
     {
-        _mesh = enemyParts.enemyMesh;
-        _material = enemyParts.enemyMaterial;
+        _mesh = _enemyParts.enemyMesh;
+        _material = _enemyParts.enemyMaterial;
 
-        _speed = enemyParts.speed;
-        _health = enemyParts.health;
-        _damage = enemyParts.damage;
-        _defense = enemyParts.defense;
+        _speed = _enemyParts.speed;
+        _health = _enemyParts.health;
+        _damage = _enemyParts.damage;
+        _defense = _enemyParts.defense;
 
-        _bounceBack = enemyParts.bounceBack;
-        _attackSpeed = enemyParts.attackSpeed;
+        _melee = _enemyParts.melee;
+        _bounceBack = _enemyParts.bounceBack;
+        _attackSpeed = _enemyParts.attackSpeed;
     }
 
     private void ApplyValues()
@@ -62,13 +66,16 @@ public class EnemyValues : MonoBehaviour
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
-    public void SetEnemyParts(EnemyScriptableObject enemyScriptableObject)
+    // Setters
+    public void SetEnemyParts(EnemyScriptableObject enemyParts)
     {
-        SetEnemyPartsHelper(enemyScriptableObject);
+        SetEnemyPartsHelper(enemyParts);
     }
-    private void SetEnemyPartsHelper(EnemyScriptableObject enemyScriptableObject)
+    private void SetEnemyPartsHelper(EnemyScriptableObject enemyParts)
     {
-        enemyParts = enemyScriptableObject;
+        _enemyParts = enemyParts;
+        SetValues();
+        ApplyValues();
     }
 
     public void SetMesh(Mesh mesh)
@@ -141,5 +148,87 @@ public class EnemyValues : MonoBehaviour
     private void SetAttackSpeedHelper(float attackSpeed)
     {
         _attackSpeed = attackSpeed;
+    }
+
+    // Getters
+    public Mesh GetMesh()
+    {
+        return GetMeshHelper();
+    }
+    private Mesh GetMeshHelper()
+    {
+        return _mesh;
+    }
+
+    public Material GetMaterial()
+    {
+        return GetMaterialHelper();
+    }
+    private Material GetMaterialHelper()
+    {
+        return _material;
+    }
+
+    public float GetSpeed()
+    {
+        return GetSpeedHelper();
+    }
+    private float GetSpeedHelper()
+    {
+        return _speed;
+    }
+
+    public float GetHealth()
+    {
+        return GetHealthHelper();
+    }
+    private float GetHealthHelper()
+    {
+        return _health;
+    }
+
+    public float GetDamage()
+    {
+        return GetDamageHelper();
+    }
+    private float GetDamageHelper()
+    {
+        return _damage;
+    }
+
+    public float GetDefense()
+    {
+        return GetDefenseHelper();
+    }
+    private float GetDefenseHelper()
+    {
+        return _defense;
+    }
+
+    public bool GetMelee()
+    {
+        return GetMeleeHelper();
+    }
+    private bool GetMeleeHelper()
+    {
+        return _melee;
+    }
+
+    public float GetBounceBack()
+    {
+        return GetBounceBackHelper();
+    }
+    private float GetBounceBackHelper()
+    {
+        return _bounceBack;
+    }
+
+    public float GetAttackSpeed()
+    {
+        return GetAttackSpeedHelper();
+    }
+    private float GetAttackSpeedHelper()
+    {
+        return _attackSpeed;
     }
 }
