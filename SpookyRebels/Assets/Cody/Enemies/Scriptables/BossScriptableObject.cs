@@ -1,22 +1,22 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EnemyScriptableObject", menuName = "ScriptableObjects/Enemy")]
-public class EnemyScriptableObject : ScriptableObject
+[CreateAssetMenu(fileName = "BossScriptableObject", menuName = "ScriptableObjects/Boss")]
+public class BossScriptableObject : ScriptableObject
 {
     [SerializeField]
-    private Mesh _enemyMesh = null;
-    public Mesh enemyMesh
+    private Mesh _mesh = null;
+    public Mesh mesh
     {
-        get {return _enemyMesh;}
-        set {_enemyMesh = value;}
+        get {return _mesh;}
+        set {_mesh = value;}
     }
 
     [SerializeField]
-    private Material _enemyMaterial = null;
-    public Material enemyMaterial
+    private Material _material = null;
+    public Material material
     {
-        get {return _enemyMaterial;}
-        set {_enemyMaterial = value;}
+        get {return _material;}
+        set {_material = value;}
     }
 
     [SerializeField]
@@ -111,3 +111,4 @@ public class EnemyScriptableObject : ScriptableObject
         set {_attackSpeed = value;}
     }
 }
+

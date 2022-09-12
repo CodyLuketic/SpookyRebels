@@ -38,8 +38,8 @@ public class EnemyValues : MonoBehaviour
 
     private void SetValues()
     {
-        _mesh = _enemyParts.enemyMesh;
-        _material = _enemyParts.enemyMaterial;
+        _mesh = _enemyParts.mesh;
+        _material = _enemyParts.material;
 
         _speed = _enemyParts.speed;
         _health = _enemyParts.health;

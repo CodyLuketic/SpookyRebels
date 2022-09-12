@@ -238,8 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff33c65674820b34e900f6385587f777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnController: {fileID: 0}
   timeText: {fileID: 628746624}
-  timer: 0
 --- !u!1 &260639403
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,10 +284,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66989edae764274d935f21d9df8927b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 982409764696968335, guid: e3bf0c425b2011a48b29080ee7c223cf, type: 3}
+  enemyBase: {fileID: 982409764696968335, guid: e3bf0c425b2011a48b29080ee7c223cf,
+    type: 3}
   enemies:
   - {fileID: 11400000, guid: 0461927d6ebcf414c85ce13967fddcc9, type: 2}
   - {fileID: 11400000, guid: 25601a580c88001498acec3c446c17de, type: 2}
+  bossBase: {fileID: 982409764696968335, guid: e3f65a6b63970984bbdc41ba823eb658, type: 3}
+  bossParts: {fileID: 11400000, guid: 57bba3b1dbcde2e4f94f2e7d4c51ac66, type: 2}
   spawnRadius: 10
   time: 3
   level: 1

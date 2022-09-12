@@ -34,9 +34,9 @@ public class TimerController : MonoBehaviour
                 spawnController.IncreaseLevel();
             }
 
-            if(timer == 300)
+            if(timer == 10)
             {
-                //spawnController.Spawn
+                spawnController.SpawnBoss();
             }
 
             UpdateTimeText();
