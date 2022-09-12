@@ -9,4 +9,5 @@ public class BurnBook : MonoBehaviour
 
     // Entry 1: Hannah is kinda a meanie frfr
     // Entry 2: Hannah left me on read like that ain't cool frfr
+    // Entry 3: Hannah kinda helped me out frfr but like she still goin in the book frfr
 }

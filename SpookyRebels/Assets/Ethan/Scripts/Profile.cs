@@ -35,7 +35,11 @@ public class Profile
     public int largeSpectralGem;
     public Magamon[] magamon = new Magamon[50];
 
+    //skills
+    public SkillTree skillTree;
+
     //equipted
+    public int skillMonEquipted;
     public int equipt1 = 0;
     public int equipt2 = -1;
 }
