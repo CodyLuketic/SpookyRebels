@@ -5,13 +5,18 @@ using TMPro;
 public class TimerController : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text timeText = null;
+    private SpawnController spawnController = null;
 
     [SerializeField]
+    private TMP_Text timeText = null;
+
     private int timer = 0;
+    private int tempTimer = 0;
 
     private void Start()
     {
+        spawnController = GameObject.FindGameObjectWithTag("SpawnController").GetComponent<SpawnController>();
+
         StartCoroutine(TimerCount());
     }
 
@@ -21,6 +26,18 @@ public class TimerController : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             timer++;
+
+            if(timer == tempTimer + 30)
+            {
+                tempTimer = timer;
+
+                spawnController.IncreaseLevel();
+            }
+
+            if(timer == 300)
+            {
+                //spawnController.Spawn
+            }
 
             UpdateTimeText();
         }

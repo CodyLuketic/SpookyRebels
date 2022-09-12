@@ -13,6 +13,9 @@ public class SpawnController : MonoBehaviour
     [SerializeField]
     private float spawnRadius = 0, time = 0;
 
+    [SerializeField]
+    private int level = 1;
+
     private void Start()
     {
         StartCoroutine(SpawnEnemy());
@@ -27,9 +30,18 @@ public class SpawnController : MonoBehaviour
             spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
 
             GameObject enemyInstance = Instantiate(enemy, spawnPos, Quaternion.identity);
-            enemyInstance.GetComponent<EnemyValues>().SetEnemyParts(enemies[Random.Range(0, enemies.Length)]);
-
-            yield return new WaitForSeconds(time);
+            enemyInstance.GetComponent<EnemyValues>().SetEnemyParts(enemies[Random.Range(0, enemies.Length)], level);
+            
+            yield return new WaitForSeconds(time / level);
         }
+    }
+
+    public void IncreaseLevel()
+    {
+        IncreaseLevelHelper();
+    }
+    private void IncreaseLevelHelper()
+    {
+        level++;
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - Fuel
   - Stone
   - Steel
+  - SpawnController
   layers:
   - Default
   - TransparentFX

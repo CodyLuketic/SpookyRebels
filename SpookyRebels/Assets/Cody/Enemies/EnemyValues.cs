@@ -36,13 +36,6 @@ public class EnemyValues : MonoBehaviour
     [SerializeField]
     private float _attackSpeed = 0;
 
-
-    private void Start()
-    {
-        SetValues();
-        ApplyValues();
-    }
-
     private void SetValues()
     {
         _mesh = _enemyParts.enemyMesh;
@@ -66,15 +59,27 @@ public class EnemyValues : MonoBehaviour
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
-    // Setters
-    public void SetEnemyParts(EnemyScriptableObject enemyParts)
+    private void IncreaseValues(int level)
     {
-        SetEnemyPartsHelper(enemyParts);
+        _speed += level;
+        _health += level;
+        _damage += level;
+        _defense += level;
+
+        _bounceBack += level;
+        _attackSpeed += level;
     }
-    private void SetEnemyPartsHelper(EnemyScriptableObject enemyParts)
+
+    // Setters
+    public void SetEnemyParts(EnemyScriptableObject enemyParts, int level)
+    {
+        SetEnemyPartsHelper(enemyParts, level);
+    }
+    private void SetEnemyPartsHelper(EnemyScriptableObject enemyParts, int level)
     {
         _enemyParts = enemyParts;
         SetValues();
+        IncreaseValues(level);
         ApplyValues();
     }
 
