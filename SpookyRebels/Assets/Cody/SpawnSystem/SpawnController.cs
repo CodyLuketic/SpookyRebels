@@ -35,10 +35,10 @@ public class SpawnController : MonoBehaviour
             if(NavMesh.SamplePosition(spawnPos, out closestHit, 500, 1 ))
             {
                 enemyInstance.transform.position = closestHit.position;
-                enemyInstance.AddComponent<NavMeshAgent>();  
+                enemyInstance.AddComponent<NavMeshAgent>(); 
             }
 
-            enemyInstance.GetComponent<EnemyValues>().SetValues(level);
+            enemyInstance.GetComponent<EnemyValues>().IncreaseValues(level);
             
             yield return new WaitForSeconds(time / level);
         }
@@ -63,7 +63,7 @@ public class SpawnController : MonoBehaviour
             bossInstance.AddComponent<NavMeshAgent>();  
         }
 
-        bossInstance.GetComponent<EnemyValues>().SetValues(level);
+        bossInstance.GetComponent<EnemyValues>().IncreaseValues(level);
     }
 
     public void IncreaseLevel()
