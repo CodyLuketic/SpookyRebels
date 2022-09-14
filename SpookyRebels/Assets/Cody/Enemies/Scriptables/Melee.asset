@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd13d1f582a8349af63ce495405701, type: 3}
   m_Name: Melee
   m_EditorClassIdentifier: 
-  _mesh: {fileID: -497688465526345628, guid: 1eb2dc326d26dde458785721eb19aefb, type: 3}
-  _material: {fileID: 2100000, guid: 662f4a25d0fa852418163eb3c3f81272, type: 2}
+  _mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  _material: {fileID: 2100000, guid: 799c1710e9a373c4eb99108bc1370958, type: 2}
   _health: 10
   _speed: 6
   _damage: 2
   _defense: 0
   _spawnChance: 10
-  _attackAnim: {fileID: -203655887218126122, guid: 1eb2dc326d26dde458785721eb19aefb,
-    type: 3}
+  _attackAnim: {fileID: 0}
   _melee: 1
   _bounceBack: 34
   _projectileMesh: {fileID: 0}

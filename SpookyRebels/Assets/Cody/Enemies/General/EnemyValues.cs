@@ -40,7 +40,11 @@ public class EnemyValues : MonoBehaviour
     [SerializeField]
     private float _attackSpeed = 0;
 
-    private void SetValues()
+    public void SetValues(int level)
+    {
+        SetValuesHelper(level);
+    }
+    private void SetValuesHelper(int level)
     {
         _mesh = _enemyParts.mesh;
         _material = _enemyParts.material;
@@ -55,6 +59,9 @@ public class EnemyValues : MonoBehaviour
         _melee = _enemyParts.melee;
         _bounceBack = _enemyParts.bounceBack;
         _attackSpeed = _enemyParts.attackSpeed;
+
+        IncreaseValues(level);
+        ApplyValues();
     }
 
     private void ApplyValues()
@@ -78,17 +85,6 @@ public class EnemyValues : MonoBehaviour
     }
 
     // Setters
-    public void SetEnemyParts(int level)
-    {
-        SetEnemyPartsHelper(level);
-    }
-    private void SetEnemyPartsHelper(int level)
-    {
-        SetValues();
-        IncreaseValues(level);
-        ApplyValues();
-    }
-
     public void SetMesh(Mesh mesh)
     {
         SetMeshHelper(mesh);

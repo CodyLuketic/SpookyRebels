@@ -9,10 +9,7 @@ public class SpawnController : MonoBehaviour
     private GameObject[] enemies = null;
 
     [SerializeField]
-    private GameObject bossBase = null;
-
-    [SerializeField]
-    private BossScriptableObject bossParts = null;
+    private GameObject boss = null;
 
     [SerializeField]
     private float spawnRadius = 0, time = 0;
@@ -41,7 +38,7 @@ public class SpawnController : MonoBehaviour
                 enemyInstance.AddComponent<NavMeshAgent>();  
             }
 
-            enemyInstance.GetComponent<EnemyValues>().SetEnemyParts(level);
+            enemyInstance.GetComponent<EnemyValues>().SetValues(level);
             
             yield return new WaitForSeconds(time / level);
         }
@@ -54,17 +51,19 @@ public class SpawnController : MonoBehaviour
 
     private void SpawnBossHelper()
     {
-        GameObject bossInstance = Instantiate(bossBase, Vector3.zero, Quaternion.identity);
+        GameObject bossInstance = Instantiate(boss, Vector3.zero, Quaternion.identity);
 
         Vector2 spawnPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
-        //NavMeshHit closestHit;
-        //if(NavMesh.SamplePosition(spawnPos, out closestHit, 500, 1 ))
-        //{
-            //bossInstance.transform.position = closestHit.position;
-            //bossInstance.AddComponent<NavMeshAgent>();  
-        //}
-        bossInstance.GetComponent<BossValues>().SetBossParts(bossParts, level);
+
+        NavMeshHit closestHit;
+        if(NavMesh.SamplePosition(spawnPos, out closestHit, 500, 1 ))
+        {
+            bossInstance.transform.position = closestHit.position;
+            bossInstance.AddComponent<NavMeshAgent>();  
+        }
+
+        bossInstance.GetComponent<EnemyValues>().SetValues(level);
     }
 
     public void IncreaseLevel()
