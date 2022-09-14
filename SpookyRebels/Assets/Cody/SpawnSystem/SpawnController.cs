@@ -6,10 +6,7 @@ using UnityEngine.AI;
 public class SpawnController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject enemyBase = null;
-
-    [SerializeField]
-    private EnemyScriptableObject[] enemies = null;
+    private GameObject[] enemies = null;
 
     [SerializeField]
     private GameObject bossBase = null;
@@ -32,7 +29,7 @@ public class SpawnController : MonoBehaviour
     {
         while(true)
         {
-            GameObject enemyInstance = Instantiate(enemyBase, Vector3.zero, Quaternion.identity);
+            GameObject enemyInstance = Instantiate(enemies[Random.Range(0, enemies.Length)], Vector3.zero, Quaternion.identity);
 
             Vector2 spawnPos = GameObject.FindGameObjectWithTag("Player").transform.position;
             spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
@@ -44,7 +41,7 @@ public class SpawnController : MonoBehaviour
                 enemyInstance.AddComponent<NavMeshAgent>();  
             }
 
-            enemyInstance.GetComponent<EnemyValues>().SetEnemyParts(enemies[Random.Range(0, enemies.Length)], level);
+            enemyInstance.GetComponent<EnemyValues>().SetEnemyParts(level);
             
             yield return new WaitForSeconds(time / level);
         }

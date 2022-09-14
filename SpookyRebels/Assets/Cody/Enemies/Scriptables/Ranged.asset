@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd13d1f582a8349af63ce495405701, type: 3}
   m_Name: Ranged
   m_EditorClassIdentifier: 
-  _enemyMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  _enemyMaterial: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  _mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  _material: {fileID: 2100000, guid: 97c6cd24b8d6a0e4fb8bdbc3463da843, type: 2}
   _health: 10
   _speed: 2
   _damage: 2

@@ -56,6 +56,7 @@ public class BossValues : MonoBehaviour
         gameObject.GetComponent<MeshFilter>().mesh = _mesh;
         gameObject.GetComponent<MeshRenderer>().material = _material;
 
+        gameObject.GetComponent<EnemyFollow>().SetNavAgent();
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
