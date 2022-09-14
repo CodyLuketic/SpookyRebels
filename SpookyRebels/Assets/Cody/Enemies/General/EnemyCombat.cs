@@ -24,6 +24,7 @@ public class EnemyCombat : MonoBehaviour
     private void Start()
     {
         //rb = gameObject.GetComponent<Rigidbody>();
+        animator = gameObject.GetComponent<Animator>();
         enemyValues = gameObject.GetComponent<EnemyValues>();
 
         AttackStart(enemyValues.GetMelee());
@@ -54,7 +55,6 @@ public class EnemyCombat : MonoBehaviour
     private IEnumerator MeleeAttack()
     {
         //animator.SetTrigger("Attack");
-
         yield return new WaitForSeconds(waitTime);
 
         // Player Damage Call Goes Here

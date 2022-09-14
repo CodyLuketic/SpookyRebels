@@ -59,10 +59,9 @@ public class EnemyScriptableObject : ScriptableObject
         set {_spawnChance = value;}
     }
 
-    
     [SerializeField]
-    private Animation _attackAnim = null;
-    public Animation attackAnim
+    private AnimationClip _attackAnim = null;
+    public AnimationClip attackAnim
     {
         get {return _attackAnim;}
         set {_attackAnim = value;}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 public class EnemyValues : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class EnemyValues : MonoBehaviour
     private float _defense = 0;
 
     [SerializeField]
+    private AnimationClip _attackAnim = null;
+
+    [SerializeField]
     private bool _melee = false;
     
     [Header("Melee Values")]
@@ -46,6 +50,8 @@ public class EnemyValues : MonoBehaviour
         _damage = _enemyParts.damage;
         _defense = _enemyParts.defense;
 
+        _attackAnim = _enemyParts.attackAnim;
+
         _melee = _enemyParts.melee;
         _bounceBack = _enemyParts.bounceBack;
         _attackSpeed = _enemyParts.attackSpeed;
@@ -56,6 +62,7 @@ public class EnemyValues : MonoBehaviour
         gameObject.GetComponent<MeshFilter>().mesh = _mesh;
         gameObject.GetComponent<MeshRenderer>().material = _material;
 
+        gameObject.GetComponent<EnemyFollow>().SetNavAgent();
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
@@ -71,13 +78,12 @@ public class EnemyValues : MonoBehaviour
     }
 
     // Setters
-    public void SetEnemyParts(EnemyScriptableObject enemyParts, int level)
+    public void SetEnemyParts(int level)
     {
-        SetEnemyPartsHelper(enemyParts, level);
+        SetEnemyPartsHelper(level);
     }
-    private void SetEnemyPartsHelper(EnemyScriptableObject enemyParts, int level)
+    private void SetEnemyPartsHelper(int level)
     {
-        _enemyParts = enemyParts;
         SetValues();
         IncreaseValues(level);
         ApplyValues();

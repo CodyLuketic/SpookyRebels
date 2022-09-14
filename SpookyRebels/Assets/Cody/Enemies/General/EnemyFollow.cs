@@ -3,7 +3,6 @@ using UnityEngine.AI;
 
 public class EnemyFollow : MonoBehaviour
 {
-    [SerializeField]
     private NavMeshAgent enemyNav = null;
 
     private GameObject player = null;
@@ -12,8 +11,6 @@ public class EnemyFollow : MonoBehaviour
     
     private void Start()
     {
-        enemyNav = gameObject.GetComponent<NavMeshAgent>();
-
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -24,13 +21,23 @@ public class EnemyFollow : MonoBehaviour
 
     private void Follow()
     {
-        if(enemyNav.isOnNavMesh)
+        if(enemyNav != null && enemyNav.isOnNavMesh)
         {
             enemyNav.SetDestination(player.transform.position);
         }
-        else
+        else if(enemyNav != null)
         {
             Destroy(gameObject);
         }
+    }
+
+    public void SetNavAgent()
+    {
+        SetNavAgentHelper();
+    }
+
+    private void SetNavAgentHelper()
+    {
+        enemyNav = gameObject.GetComponent<NavMeshAgent>();
     }
 }
