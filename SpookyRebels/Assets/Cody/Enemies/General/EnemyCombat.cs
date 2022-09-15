@@ -14,7 +14,7 @@ public class EnemyCombat : MonoBehaviour
     //private Rigidbody rb = null;
 
     [SerializeField]
-    private float waitTime = 0;
+    private float waitTimeStart = 0;
 
     [SerializeField]
     private float waitTimeEnd = 0;
@@ -47,6 +47,7 @@ public class EnemyCombat : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player") && canMelee)
         {
+            Debug.Log("Collided");
             StartCoroutine(MeleeAttack());
             canMelee = false;
         }
@@ -54,12 +55,13 @@ public class EnemyCombat : MonoBehaviour
 
     private IEnumerator MeleeAttack()
     {
-        //animator.SetTrigger("Attack");
-        yield return new WaitForSeconds(waitTime);
+        animator.SetBool("attacking", true);
+        yield return new WaitForSeconds(waitTimeStart);
 
         // Player Damage Call Goes Here
 
         yield return new WaitForSeconds(waitTimeEnd);
+        animator.SetBool("attacking", false);
         canMelee = true;
     }
 
