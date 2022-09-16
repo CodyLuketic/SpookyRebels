@@ -1,18 +1,10 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 public class EnemyValues : MonoBehaviour
 {
-    [SerializeField]
-    private EnemyScriptableObject _enemyParts = null;
-
     [Header("Basic Values")]
-    [SerializeField]
-    private Mesh _mesh = null;
-    
-    [SerializeField]
-    private Material _material = null;
-
     [SerializeField]
     private int _health = 0;
 
@@ -26,6 +18,9 @@ public class EnemyValues : MonoBehaviour
     private float _defense = 0;
 
     [SerializeField]
+    private AnimationClip _attackAnim = null;
+
+    [SerializeField]
     private bool _melee = false;
     
     [Header("Melee Values")]
@@ -36,30 +31,18 @@ public class EnemyValues : MonoBehaviour
     [SerializeField]
     private float _attackSpeed = 0;
 
-    private void SetValues()
-    {
-        _mesh = _enemyParts.mesh;
-        _material = _enemyParts.material;
-
-        _speed = _enemyParts.speed;
-        _health = _enemyParts.health;
-        _damage = _enemyParts.damage;
-        _defense = _enemyParts.defense;
-
-        _melee = _enemyParts.melee;
-        _bounceBack = _enemyParts.bounceBack;
-        _attackSpeed = _enemyParts.attackSpeed;
-    }
-
     private void ApplyValues()
     {
-        gameObject.GetComponent<MeshFilter>().mesh = _mesh;
-        gameObject.GetComponent<MeshRenderer>().material = _material;
-
+        gameObject.GetComponent<EnemyFollow>().SetNavAgent();
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
-    private void IncreaseValues(int level)
+    public void IncreaseValues(int level)
+    {
+        IncreaseValuesHelper(level);
+    }
+
+    private void IncreaseValuesHelper(int level)
     {
         _speed += level;
         _health += level;
@@ -68,39 +51,11 @@ public class EnemyValues : MonoBehaviour
 
         _bounceBack += level;
         _attackSpeed += level;
-    }
 
-    // Setters
-    public void SetEnemyParts(EnemyScriptableObject enemyParts, int level)
-    {
-        SetEnemyPartsHelper(enemyParts, level);
-    }
-    private void SetEnemyPartsHelper(EnemyScriptableObject enemyParts, int level)
-    {
-        _enemyParts = enemyParts;
-        SetValues();
-        IncreaseValues(level);
         ApplyValues();
     }
 
-    public void SetMesh(Mesh mesh)
-    {
-        SetMeshHelper(mesh);
-    }
-    private void SetMeshHelper(Mesh mesh)
-    {
-        _mesh = mesh;
-    }
-
-    public void SetMaterial(Material material)
-    {
-        SetMaterialHelper(material);
-    }
-    private void SetMaterialHelper(Material material)
-    {
-        _material = material;
-    }
-
+    // Setters
     public void SetSpeed(float speed)
     {
         SetSpeedHelper(speed);
@@ -156,24 +111,6 @@ public class EnemyValues : MonoBehaviour
     }
 
     // Getters
-    public Mesh GetMesh()
-    {
-        return GetMeshHelper();
-    }
-    private Mesh GetMeshHelper()
-    {
-        return _mesh;
-    }
-
-    public Material GetMaterial()
-    {
-        return GetMaterialHelper();
-    }
-    private Material GetMaterialHelper()
-    {
-        return _material;
-    }
-
     public float GetSpeed()
     {
         return GetSpeedHelper();

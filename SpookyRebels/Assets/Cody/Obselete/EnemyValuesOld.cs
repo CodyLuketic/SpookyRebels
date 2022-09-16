@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
-public class BossValues : MonoBehaviour
+public class EnemyValuesOld : MonoBehaviour
 {
     [SerializeField]
-    private BossScriptableObject _bossParts = null;
+    private EnemyScriptableObject _enemyParts = null;
 
     [Header("Basic Values")]
     [SerializeField]
@@ -26,6 +27,9 @@ public class BossValues : MonoBehaviour
     private float _defense = 0;
 
     [SerializeField]
+    private AnimationClip _attackAnim = null;
+
+    [SerializeField]
     private bool _melee = false;
     
     [Header("Melee Values")]
@@ -36,19 +40,28 @@ public class BossValues : MonoBehaviour
     [SerializeField]
     private float _attackSpeed = 0;
 
-    private void SetValues()
+    public void SetValues(int level)
     {
-        _mesh = _bossParts.mesh;
-        _material = _bossParts.material;
+        SetValuesHelper(level);
+    }
+    private void SetValuesHelper(int level)
+    {
+        _mesh = _enemyParts.mesh;
+        _material = _enemyParts.material;
 
-        _speed = _bossParts.speed;
-        _health = _bossParts.health;
-        _damage = _bossParts.damage;
-        _defense = _bossParts.defense;
+        _speed = _enemyParts.speed;
+        _health = _enemyParts.health;
+        _damage = _enemyParts.damage;
+        _defense = _enemyParts.defense;
 
-        _melee = _bossParts.melee;
-        _bounceBack = _bossParts.bounceBack;
-        _attackSpeed = _bossParts.attackSpeed;
+        _attackAnim = _enemyParts.attackAnim;
+
+        _melee = _enemyParts.melee;
+        _bounceBack = _enemyParts.bounceBack;
+        _attackSpeed = _enemyParts.attackSpeed;
+
+        IncreaseValues(level);
+        ApplyValues();
     }
 
     private void ApplyValues()
@@ -56,6 +69,7 @@ public class BossValues : MonoBehaviour
         gameObject.GetComponent<MeshFilter>().mesh = _mesh;
         gameObject.GetComponent<MeshRenderer>().material = _material;
 
+        gameObject.GetComponent<EnemyFollow>().SetNavAgent();
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
@@ -71,18 +85,6 @@ public class BossValues : MonoBehaviour
     }
 
     // Setters
-    public void SetBossParts(BossScriptableObject bossParts, int level)
-    {
-        SetBossPartsHelper(bossParts, level);
-    }
-    private void SetBossPartsHelper(BossScriptableObject bossParts, int level)
-    {
-        _bossParts = bossParts;
-        SetValues();
-        IncreaseValues(level);
-        ApplyValues();
-    }
-
     public void SetMesh(Mesh mesh)
     {
         SetMeshHelper(mesh);
@@ -237,4 +239,3 @@ public class BossValues : MonoBehaviour
         return _attackSpeed;
     }
 }
-

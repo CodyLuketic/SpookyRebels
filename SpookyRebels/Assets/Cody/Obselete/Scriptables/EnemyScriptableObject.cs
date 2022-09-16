@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BossScriptableObject", menuName = "ScriptableObjects/Boss")]
-public class BossScriptableObject : ScriptableObject
+[CreateAssetMenu(fileName = "EnemyScriptableObject", menuName = "ScriptableObjects/Enemy")]
+public class EnemyScriptableObject : ScriptableObject
 {
     [SerializeField]
     private Mesh _mesh = null;
@@ -59,10 +59,9 @@ public class BossScriptableObject : ScriptableObject
         set {_spawnChance = value;}
     }
 
-    
     [SerializeField]
-    private Animation _attackAnim = null;
-    public Animation attackAnim
+    private AnimationClip _attackAnim = null;
+    public AnimationClip attackAnim
     {
         get {return _attackAnim;}
         set {_attackAnim = value;}
@@ -111,4 +110,3 @@ public class BossScriptableObject : ScriptableObject
         set {_attackSpeed = value;}
     }
 }
-
