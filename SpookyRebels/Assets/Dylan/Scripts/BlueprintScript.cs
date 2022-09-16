@@ -13,6 +13,8 @@ public class BlueprintScript : MonoBehaviour
     private GameObject prefab;
     private GameObject player;
 
+    private 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +40,16 @@ public class BlueprintScript : MonoBehaviour
         me.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 100);
     }
 
+    private float FindMyHeight()
+    {
+        return GetComponent<MeshFilter>().mesh.bounds.extents.y * 2;
+    }
+
     // Update is called once per frame
     void Update()
     {
         // Move to Mouse
-        me.transform.position = mousePos;
+        me.transform.position = new Vector3(mousePos.x, mousePos.y + FindMyHeight(), mousePos.z);
 
         // Get Mouse Position
         PlayerMovements playerScript = player.GetComponent<PlayerMovements>();

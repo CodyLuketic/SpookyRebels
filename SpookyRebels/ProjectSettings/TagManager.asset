@@ -13,6 +13,7 @@ TagManager:
   - Stone
   - Steel
   - SpawnController
+  - BuildManager
   layers:
   - Default
   - TransparentFX

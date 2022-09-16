@@ -15,7 +15,7 @@ public class PlayerMovements : MonoBehaviour
     CharacterController characterController;
 
     [SerializeField]
-    GameObject player;
+    GameObject playerFull;
     [SerializeField]
     Camera cam;
 
@@ -53,36 +53,34 @@ public class PlayerMovements : MonoBehaviour
     public Vector3 returnMousePos()
     {
         return mouseWorldPosition;
-    } 
+    }
 
     void Update()
     {
         // Check that we can Move
-
-        // We are grounded, so recalculate move direction based on axes
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
-
-        // Press Left Shift to run
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
-        //float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-
-        // Move the controller
-        characterController.Move(moveDirection * Time.deltaTime);
-
-        generateMousePos();
-
-        // Player rotation to Cursor
         if (canMove)
         {
-            Vector3 lookPoint = mouseWorldPosition;
-            lookPoint.y = player.transform.position.y;
-            player.transform.LookAt(lookPoint, Vector3.up);
-        }
+            // We are grounded, so recalculate move direction based on axes
+            Vector3 forward = playerFull.transform.TransformDirection(Vector3.forward);
+            Vector3 right = playerFull.transform.TransformDirection(Vector3.right);
 
+            // Press Left Shift to run
+            bool isRunning = Input.GetKey(KeyCode.LeftShift);
+            float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
+            float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+            //float movementDirectionY = moveDirection.y;
+            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+
+            // Move the controller
+            characterController.Move(moveDirection * Time.deltaTime);
+
+            generateMousePos();
+
+            // Player rotation to Cursor
+            Vector3 lookPoint = mouseWorldPosition;
+            lookPoint.y = transform.position.y;
+            transform.LookAt(lookPoint, Vector3.up);
+        }
 
 
 
