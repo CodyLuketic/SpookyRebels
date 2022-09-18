@@ -46,3 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testHousePrefab: {fileID: 1676728350540238033, guid: 6c78c849c5e199b4f96006a9ea0bea4c,
     type: 3}
+  galleryPrefab: {fileID: 3885439371236817618, guid: ccac4fba7e209a54a8af905cfc74facd,
+    type: 3}
+  currentCost: 0
