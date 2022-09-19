@@ -841,10 +841,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.35563552
-  m_Height: 1.7684262
+  m_Radius: 0.7047779
+  m_Height: 1.7684263
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8131386, z: 0.14436448}
+  m_Center: {x: 0, y: 0.81313866, z: 0.14436448}
 --- !u!54 &765517454540569619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -907,8 +907,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7432057383437670610, guid: 2c1ad3780e4ed0f41acbb3ce0eaff455, type: 3}
-  waitTimeStart: 0.5
-  waitTimeEnd: 0.3
+  waitTimeAttacking: 0.75
+  waitTimeStill: 0.8
 --- !u!1 &2476827414503623828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,7 +1378,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8474651742996372913, guid: 15859f998dc22634dbbc245421783845, type: 3}
+  - {fileID: 2100000, guid: 4e3bc6c9c6987c54fbd843f1ab3829d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2324,7 +2324,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7557540490364101082, guid: 15859f998dc22634dbbc245421783845, type: 3}
+  - {fileID: 2100000, guid: c35e094f279d7384eae806e3b78b7a74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

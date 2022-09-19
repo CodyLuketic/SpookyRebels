@@ -14,10 +14,9 @@ public class EnemyCombat : MonoBehaviour
     //private Rigidbody rb = null;
 
     [SerializeField]
-    private float waitTimeStart = 0;
-
+    private float waitTimeAttacking = 0;
     [SerializeField]
-    private float waitTimeEnd = 0;
+    private float waitTimeStill = 0;
 
     private bool canMelee = false;
     // Start is called before the first frame update
@@ -51,17 +50,30 @@ public class EnemyCombat : MonoBehaviour
             StartCoroutine(MeleeAttack());
             canMelee = false;
         }
+
+        if(other.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log(gameObject.name + "hit");
+            enemyValues.SetHealth(enemyValues.GetHealth() - 1);
+
+            Destroy(other.gameObject);
+        }
     }
 
     private IEnumerator MeleeAttack()
     {
+        float tempSpeed = enemyValues.GetSpeed();
+
         animator.SetBool("attacking", true);
-        yield return new WaitForSeconds(waitTimeStart);
+        enemyValues.SetSpeed(0);
 
         // Player Damage Call Goes Here
 
-        yield return new WaitForSeconds(waitTimeEnd);
+        yield return new WaitForSeconds(waitTimeAttacking);
         animator.SetBool("attacking", false);
+        
+        yield return new WaitForSeconds(waitTimeStill);
+        enemyValues.SetSpeed(tempSpeed);
         canMelee = true;
     }
 
