@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &195795149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4527872260846675481, guid: 04932225a7c24194f874f5092fa3739f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4527872261041422036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &210812764
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +230,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1755453533, guid: 7967546a39972404f87543692ea5634c, type: 3}
+      propertyPath: lucyShotPrefab
+      value: 
+      objectReference: {fileID: 195795149}
     - target: {fileID: 7123170689632051105, guid: 7967546a39972404f87543692ea5634c,
         type: 3}
       propertyPath: m_Name
@@ -286,9 +296,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7967546a39972404f87543692ea5634c, type: 3}
---- !u!4 &1616590949 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7123170690156522224, guid: 7967546a39972404f87543692ea5634c,
+--- !u!1 &535374367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7123170690156522236, guid: 7967546a39972404f87543692ea5634c,
     type: 3}
   m_PrefabInstance: {fileID: 535374366}
   m_PrefabAsset: {fileID: 0}
@@ -406,139 +416,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &1755453529 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7123170689632051105, guid: 7967546a39972404f87543692ea5634c,
-    type: 3}
-  m_PrefabInstance: {fileID: 535374366}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1755453533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755453529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51d94c2d470d93a409d0f0b75d3e4be4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 2108422267}
-  baseShotPrefab: {fileID: 0}
-  heldAttacking: {fileID: 0}
-  heldDefending: {fileID: 0}
-  canSwitch: 1
-  canDefend: 1
-  canAttack: 1
-  tempbulletDamage: 0
-  swapped: 0
-  p:
-    name: 
-    Money: 0
-    monCount: 0
-    smallFloraGem: 0
-    mediumFloraGem: 0
-    largeFloraGem: 0
-    smallCrystalGem: 0
-    mediumCrystalGem: 0
-    largeCrystalGem: 0
-    smallCausticGem: 0
-    mediumCausticGem: 0
-    largeCausticGem: 0
-    smallTechGem: 0
-    mediumTechGem: 0
-    largeTechGem: 0
-    smallVoidGem: 0
-    mediumVoidGem: 0
-    largeVoidGem: 0
-    smallSpectralGem: 0
-    mediumSpectralGem: 0
-    largeSpectralGem: 0
-    magamon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    equipt1: 0
-    equipt2: -1
---- !u!1 &2108422266
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2108422267}
-  m_Layer: 0
-  m_Name: Shooting Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2108422267
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108422266}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.04}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1616590949}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2133240681
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,55 +483,931 @@ MonoBehaviour:
     mediumSpectralGem: 0
     largeSpectralGem: 0
     magamon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    skillTree: {fileID: 0}
+    skillMonEquipted: 0
     equipt1: 0
     equipt2: -1
+--- !u!1001 &4527872261041422036
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4527872260846675462, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 535374367}
+    - target: {fileID: 4527872260846675481, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_Name
+      value: LucyBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527872260846675482, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527872260846675482, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527872260846675482, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7299995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527872260846675482, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527872260846675482, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527872260846675482, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527872260846675482, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527872260846675482, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527872260846675482, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527872260846675482, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527872260846675482, guid: 04932225a7c24194f874f5092fa3739f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 04932225a7c24194f874f5092fa3739f, type: 3}

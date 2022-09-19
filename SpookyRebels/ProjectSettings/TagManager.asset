@@ -15,6 +15,7 @@ TagManager:
   - SpawnController
   - BuildManager
   - GalleryCanvas
+  - Bullet
   layers:
   - Default
   - TransparentFX
