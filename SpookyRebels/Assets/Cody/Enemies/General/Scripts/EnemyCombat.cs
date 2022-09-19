@@ -8,21 +8,19 @@ public class EnemyCombat : MonoBehaviour
 
     private Animator animator = null;
 
-    [SerializeField]
-    private GameObject bullet = null;
-
-    //private Rigidbody rb = null;
-
+    [Header("Melee Only")]
     [SerializeField]
     private float waitTimeAttacking = 0;
     [SerializeField]
     private float waitTimeStill = 0;
-
     private bool canMelee = false;
+
+    [Header("Ranged Only")]
+    [SerializeField]
+    private GameObject bullet = null;
     // Start is called before the first frame update
     private void Start()
     {
-        //rb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.GetComponent<Animator>();
         enemyValues = gameObject.GetComponent<EnemyValues>();
 

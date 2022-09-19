@@ -2,11 +2,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyFollow : MonoBehaviour
+public class PassiveMobMovement : MonoBehaviour
 {
-    private NavMeshAgent enemyNav = null;
+    private NavMeshAgent passiveMobNav = null;
 
-    private Rigidbody enemyRb = null;
+    private Rigidbody passiveMobRb = null;
 
     private GameObject player = null;
 
@@ -18,7 +18,7 @@ public class EnemyFollow : MonoBehaviour
     
     private void Start()
     {
-        enemyRb = gameObject.GetComponent<Rigidbody>();
+        passiveMobRb = gameObject.GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -29,11 +29,11 @@ public class EnemyFollow : MonoBehaviour
 
     private void Follow()
     {
-        if(enemyNav != null && enemyNav.isOnNavMesh)
+        if(passiveMobNav != null && passiveMobNav.isOnNavMesh)
         {
-            enemyNav.SetDestination(player.transform.position);
+            passiveMobNav.SetDestination(player.transform.position);
         }
-        else if(enemyNav != null)
+        else if(passiveMobNav != null)
         {
             Destroy(gameObject);
         }
@@ -46,25 +46,25 @@ public class EnemyFollow : MonoBehaviour
             StartCoroutine(Bounce(other));
         }
 
-        if(other.gameObject.CompareTag("Enemy"))
+        if(other.gameObject.CompareTag("PassiveMob"))
         {
-            enemyRb.velocity = Vector3.zero;
-            enemyRb.angularVelocity = Vector3.zero;
+            passiveMobRb.velocity = Vector3.zero;
+            passiveMobRb.angularVelocity = Vector3.zero;
         }
     }
 
     private IEnumerator Bounce(Collision other)
     {
-        float tempSpeed = enemyNav.speed;
-        enemyNav.speed = 0;
+        float tempSpeed = passiveMobNav.speed;
+        passiveMobNav.speed = 0;
 
         float bounce = 6f; //amount of force to apply
-        enemyRb.AddForce(other.GetContact(0).normal * bounce, ForceMode.Impulse);
+        passiveMobRb.AddForce(other.GetContact(0).normal * bounce, ForceMode.Impulse);
 
         yield return new WaitForSeconds(waitTime);
-        enemyNav.speed = tempSpeed;
-        enemyRb.velocity = Vector3.zero;
-        enemyRb.angularVelocity = Vector3.zero;
+        passiveMobNav.speed = tempSpeed;
+        passiveMobRb.velocity = Vector3.zero;
+        passiveMobRb.angularVelocity = Vector3.zero;
     }
 
     public void SetNavAgent()
@@ -74,6 +74,6 @@ public class EnemyFollow : MonoBehaviour
 
     private void SetNavAgentHelper()
     {
-        enemyNav = gameObject.GetComponent<NavMeshAgent>();
+        passiveMobNav = gameObject.GetComponent<NavMeshAgent>();
     }
 }

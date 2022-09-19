@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
 
-public class EnemyValues : MonoBehaviour
+public class PassiveMobValues : MonoBehaviour
 {
     [Header("Basic Values")]
     [SerializeField]
