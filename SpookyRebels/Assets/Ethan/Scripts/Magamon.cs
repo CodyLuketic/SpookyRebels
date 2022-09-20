@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Magamon : MonoBehaviour
+[System.Serializable]
+public class Magamon 
 {
     // these might be added
     public string name;
@@ -13,13 +14,13 @@ public class Magamon : MonoBehaviour
     public string species;
     public string element;
     public int maxLevel;
-
+    
     // these kinda change
     public int conditionHealth;
     public int range;
     public int bulletCount;
     public int skillAvailable;
-
+    public SkillTree sTree;
     //these change
     public int attack;
     public int attackSpeed;

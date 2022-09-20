@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
 
-public class EnemyValues : MonoBehaviour
+public class PassiveMobValues : MonoBehaviour
 {
     [Header("Basic Values")]
     [SerializeField]
-    private int _health = 0;
+    private float _health = 0;
 
     [SerializeField]
     private float _speed = 0;
@@ -18,16 +18,13 @@ public class EnemyValues : MonoBehaviour
     private float _defense = 0;
 
     [SerializeField]
-    private AnimationClip _attackAnim = null;
-
-    [SerializeField]
     private bool _melee = false;
     
     [Header("Melee Values")]
     [SerializeField]
     private float _bounceBack = 0;
 
-    [Header("Range Values")]
+    [Header("Ranged Values")]
     [SerializeField]
     private float _attackSpeed = 0;
 
@@ -63,15 +60,21 @@ public class EnemyValues : MonoBehaviour
     private void SetSpeedHelper(float speed)
     {
         _speed = speed;
+        gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         SetHealthHelper(health);
     }
-    private void SetHealthHelper(int health)
+    private void SetHealthHelper(float health)
     {
         _health = health;
+        
+        if(_health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetDamage(float damage)

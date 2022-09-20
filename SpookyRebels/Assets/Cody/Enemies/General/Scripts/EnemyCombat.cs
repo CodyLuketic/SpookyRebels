@@ -8,22 +8,19 @@ public class EnemyCombat : MonoBehaviour
 
     private Animator animator = null;
 
+    [Header("Melee Only")]
+    [SerializeField]
+    private float waitTimeAttacking = 0;
+    [SerializeField]
+    private float waitTimeStill = 0;
+    private bool canMelee = false;
+
+    [Header("Ranged Only")]
     [SerializeField]
     private GameObject bullet = null;
-
-    //private Rigidbody rb = null;
-
-    [SerializeField]
-    private float waitTimeStart = 0;
-
-    [SerializeField]
-    private float waitTimeEnd = 0;
-
-    private bool canMelee = false;
     // Start is called before the first frame update
     private void Start()
     {
-        //rb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.GetComponent<Animator>();
         enemyValues = gameObject.GetComponent<EnemyValues>();
 
@@ -51,17 +48,30 @@ public class EnemyCombat : MonoBehaviour
             StartCoroutine(MeleeAttack());
             canMelee = false;
         }
+
+        if(other.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log(gameObject.name + "hit");
+            enemyValues.SetHealth(enemyValues.GetHealth() - 1);
+
+            Destroy(other.gameObject);
+        }
     }
 
     private IEnumerator MeleeAttack()
     {
+        float tempSpeed = enemyValues.GetSpeed();
+
         animator.SetBool("attacking", true);
-        yield return new WaitForSeconds(waitTimeStart);
+        enemyValues.SetSpeed(0);
 
         // Player Damage Call Goes Here
 
-        yield return new WaitForSeconds(waitTimeEnd);
+        yield return new WaitForSeconds(waitTimeAttacking);
         animator.SetBool("attacking", false);
+        
+        yield return new WaitForSeconds(waitTimeStill);
+        enemyValues.SetSpeed(tempSpeed);
         canMelee = true;
     }
 

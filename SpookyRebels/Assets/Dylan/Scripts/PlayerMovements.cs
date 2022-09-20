@@ -10,6 +10,7 @@ public class PlayerMovements : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
 
+    public Vector3 lookPoint = mouseWorldPosition;
     //private Animator animator = null;
     //public Texture2D crosshair;
     CharacterController characterController;
@@ -77,12 +78,15 @@ public class PlayerMovements : MonoBehaviour
             generateMousePos();
 
             // Player rotation to Cursor
-            Vector3 lookPoint = mouseWorldPosition;
+            lookPoint = mouseWorldPosition;
             lookPoint.y = transform.position.y;
             transform.LookAt(lookPoint, Vector3.up);
         }
 
-
+         Vector3 getRotation()
+        {
+            return moveDirection;
+        }
 
 
         // Extraneous Code
