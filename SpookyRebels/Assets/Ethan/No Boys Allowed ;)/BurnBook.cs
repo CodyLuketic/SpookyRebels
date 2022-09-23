@@ -12,4 +12,5 @@ public class BurnBook : MonoBehaviour
     // Entry 3: Hannah kinda helped me out frfr but like she still goin in the book frfr
     // Entry 4: Miranda literally threw hands the other day. So like her frfr
     // Entry 5: Hannah made me listen to CBat. Wasn't mclovin it frfr
+    // Entry 6: Miranda, Madison, Hannah and me got burned by a Bridget. Idk frfr
 }
