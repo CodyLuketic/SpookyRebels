@@ -5,17 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - DialogueLocation
-  - Dialogue
   - NPC
   - Blueprint
-  - Fuel
-  - Stone
-  - Steel
   - SpawnController
   - BuildManager
   - GalleryCanvas
   - Bullet
+  - TestBuildingCanvas
+  - Pet
   layers:
   - Default
   - TransparentFX
