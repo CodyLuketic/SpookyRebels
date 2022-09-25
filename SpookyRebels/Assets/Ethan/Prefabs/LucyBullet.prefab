@@ -111,11 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba3c845e85fd13429b2929ad8c1696d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit: {fileID: 0}
   rb: {fileID: 195795155}
   player: {fileID: 0}
-  speed: 20
-  damage: 100
+  speed: 5
+  damage: 10
   BMaxTime: 2
 --- !u!54 &195795155
 Rigidbody:

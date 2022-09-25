@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill : MonoBehaviour
+[System.Serializable]
+public class Skill
 {
     public string skillName;
     public Sprite skillIcon;

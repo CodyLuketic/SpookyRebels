@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2108422267}
-  lucyShotPrefab: {fileID: 0}
+  lucyShotPrefab: {fileID: 4527872260846675481, guid: 04932225a7c24194f874f5092fa3739f,
+    type: 3}
   currentBullets: 0
   hasBullets: 1
   heldAttacking:
@@ -119,6 +120,7 @@ MonoBehaviour:
     species: 
     element: 
     maxLevel: 0
+    level: 0
     conditionHealth: 0
     range: 0
     bulletCount: 0
@@ -177,6 +179,7 @@ MonoBehaviour:
     species: 
     element: 
     maxLevel: 0
+    level: 0
     conditionHealth: 0
     range: 0
     bulletCount: 0
@@ -262,6 +265,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -319,6 +323,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -376,6 +381,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -433,6 +439,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -490,6 +497,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -547,6 +555,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -604,6 +613,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -661,6 +671,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -718,6 +729,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -775,6 +787,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -832,6 +845,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -889,6 +903,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -946,6 +961,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1003,6 +1019,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1060,6 +1077,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1117,6 +1135,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1174,6 +1193,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1231,6 +1251,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1288,6 +1309,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1345,6 +1367,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1402,6 +1425,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1459,6 +1483,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1516,6 +1541,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1573,6 +1599,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1630,6 +1657,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1687,6 +1715,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1744,6 +1773,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1801,6 +1831,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1858,6 +1889,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1915,6 +1947,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -1972,6 +2005,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2029,6 +2063,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2086,6 +2121,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2143,6 +2179,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2200,6 +2237,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2257,6 +2295,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2314,6 +2353,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2371,6 +2411,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2428,6 +2469,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2485,6 +2527,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2542,6 +2585,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2599,6 +2643,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2656,6 +2701,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2713,6 +2759,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2770,6 +2817,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2827,6 +2875,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2884,6 +2933,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2941,6 +2991,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -2998,6 +3049,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
@@ -3055,6 +3107,7 @@ MonoBehaviour:
       species: 
       element: 
       maxLevel: 0
+      level: 0
       conditionHealth: 0
       range: 0
       bulletCount: 0
