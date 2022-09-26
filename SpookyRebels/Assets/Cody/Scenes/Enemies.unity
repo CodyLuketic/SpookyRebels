@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 262.38354, g: 325.1084, b: 430.30957, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -286,8 +286,9 @@ MonoBehaviour:
   enemies:
   - {fileID: 2373522628951742640, guid: 7cfdeb858d2a5db459f4576395052ce5, type: 3}
   boss: {fileID: 2263733754358686865, guid: 6e05538033a18b944b59a47612e51490, type: 3}
-  spawnRadius: 10
-  time: 3
+  minRadius: 5
+  maxRadius: 3
+  time: 1
   level: 1
 --- !u!1 &628746622
 GameObject:
