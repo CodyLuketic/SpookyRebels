@@ -93,8 +93,7 @@ public class PassiveMobCombat : MonoBehaviour
         yield return new WaitForSeconds(waitTimeAttacking);
         animator.SetBool("attacking", false);
 
-        float bounce = 6f; // Amount of force to apply
-        passiveMobRb.AddForce(other.GetContact(0).normal * bounce, ForceMode.Impulse);
+        passiveMobRb.AddForce(other.GetContact(0).normal * passiveMobValues.GetBounceBack(), ForceMode.Impulse);
         
         yield return new WaitForSeconds(waitTimeStill);
         passiveMobValues.SetSpeed(tempSpeed);

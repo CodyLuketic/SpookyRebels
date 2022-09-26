@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3001618358800626977}
   - component: {fileID: 79261741115435634}
   m_Layer: 0
-  m_Name: PassiveMob
+  m_Name: PassiveMobMelee
   m_TagString: PassiveMob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 4c1d70cd7b0f1044e8091a8f9947d84b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,12 +130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9ee49637ffdbb40a5823330af4c693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 0
-  _speed: 0
-  _damage: 0
-  _defense: 0
-  _melee: 0
-  _bounceBack: 0
+  _health: 10
+  _speed: 4
+  _damage: 3
+  _defense: 2
+  _melee: 1
+  _bounceBack: 3
   _attackSpeed: 0
 --- !u!114 &3001618358800626977
 MonoBehaviour:

@@ -7,8 +7,6 @@ public class EnemyFollow : MonoBehaviour
     private NavMeshAgent enemyNav = null;
 
     private GameObject player = null;
-
-    private Vector3 position;
     
     private void Start()
     {

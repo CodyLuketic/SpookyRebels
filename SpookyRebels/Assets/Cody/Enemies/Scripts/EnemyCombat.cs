@@ -93,8 +93,7 @@ public class EnemyCombat : MonoBehaviour
         yield return new WaitForSeconds(waitTimeAttacking);
         animator.SetBool("attacking", false);
 
-        float bounce = 6f; // Amount of force to apply
-        enemyRb.AddForce(other.GetContact(0).normal * bounce, ForceMode.Impulse);
+        enemyRb.AddForce(other.GetContact(0).normal * enemyValues.GetBounceBack(), ForceMode.Impulse);
         
         yield return new WaitForSeconds(waitTimeStill);
         enemyValues.SetSpeed(tempSpeed);
