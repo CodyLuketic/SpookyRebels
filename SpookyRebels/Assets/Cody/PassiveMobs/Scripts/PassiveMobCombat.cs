@@ -1,16 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PassiveMobCombat : MonoBehaviour
 {
-    private PassiveMobValues passiveMobValues = null;
+    private PassiveMobValues passiveMobValuesScript = null;
+    private PassiveMobMovement passiveMobMovementScript = null;
 
     private Rigidbody passiveMobRb = null;
 
-    private UnityEngine.AI.NavMeshAgent passiveMobNav = null;
+    private NavMeshAgent passiveMobNav = null;
 
     private Animator animator = null;
+
+    private bool agroed = false;
 
     [Header("Melee Only")]
     [SerializeField]
@@ -26,11 +29,11 @@ public class PassiveMobCombat : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        passiveMobValues = gameObject.GetComponent<PassiveMobValues>();
+        passiveMobValuesScript = gameObject.GetComponent<PassiveMobValues>();
         passiveMobRb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.GetComponent<Animator>();
 
-        AttackStart(passiveMobValues.GetMelee());
+        AttackStart(passiveMobValuesScript.GetMelee());
         StartCoroutine(PhysicsConst());
     }
 
@@ -69,14 +72,20 @@ public class PassiveMobCombat : MonoBehaviour
 
         if(other.gameObject.CompareTag("Bullet"))
         {
-            passiveMobValues.SetHealth(passiveMobValues.GetHealth() - 1);
+            if(!agroed)
+            {
+                agroed = true;
+                AttackStart(passiveMobValuesScript.GetMelee());
+            }
+
+            passiveMobValuesScript.SetHealth(passiveMobValuesScript.GetHealth() - 1);
 
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.CompareTag("PassiveMobBullet"))
         {
-            passiveMobValues.SetHealth(passiveMobValues.GetHealth() - 1);
+            passiveMobValuesScript.SetHealth(passiveMobValuesScript.GetHealth() - 1);
 
             Destroy(other.gameObject);
         }
@@ -84,19 +93,19 @@ public class PassiveMobCombat : MonoBehaviour
 
     private IEnumerator MeleeAttack(Collision other)
     {
-        float tempSpeed = passiveMobValues.GetSpeed();
+        float tempSpeed = passiveMobValuesScript.GetSpeed();
         animator.SetBool("attacking", true);
-        passiveMobValues.SetSpeed(0);
+        passiveMobValuesScript.SetSpeed(0);
 
         // Player Damage Call Goes Here
 
         yield return new WaitForSeconds(waitTimeAttacking);
         animator.SetBool("attacking", false);
 
-        passiveMobRb.AddForce(other.GetContact(0).normal * passiveMobValues.GetBounceBack(), ForceMode.Impulse);
+        passiveMobRb.AddForce(other.GetContact(0).normal * passiveMobValuesScript.GetBounceBack(), ForceMode.Impulse);
         
         yield return new WaitForSeconds(waitTimeStill);
-        passiveMobValues.SetSpeed(tempSpeed);
+        passiveMobValuesScript.SetSpeed(tempSpeed);
         ResetPhysics();
         canMelee = true;
     }
@@ -108,7 +117,7 @@ public class PassiveMobCombat : MonoBehaviour
             Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward;
             Instantiate(passiveMobBullet, position, transform.rotation);
 
-            yield return new WaitForSeconds(passiveMobValues.GetAttackSpeed());
+            yield return new WaitForSeconds(passiveMobValuesScript.GetAttackSpeed());
         }
     }
     

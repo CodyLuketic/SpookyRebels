@@ -38,7 +38,12 @@ public class EnemyValues : MonoBehaviour
         enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
     }
 
-    private void ApplyValues()
+    public void ApplyValues()
+    {
+        ApplyValuesHelper();
+    }
+
+    private void ApplyValuesHelper()
     {
         gameObject.GetComponent<EnemyFollow>().SetNavAgent();
         gameObject.GetComponent<EnemyCombat>().SetNavAgent();
@@ -60,7 +65,7 @@ public class EnemyValues : MonoBehaviour
         _bounceBack += level;
         _attackSpeed += level;
 
-        ApplyValues();
+        ApplyValuesHelper();
     }
 
     // Setters

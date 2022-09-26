@@ -126,7 +126,7 @@ public class SpawnController : MonoBehaviour
             bossInstance.AddComponent<NavMeshAgent>();  
         }
 
-        bossInstance.GetComponent<EnemyValues>().IncreaseValues(level);
+        bossInstance.GetComponent<EnemyValues>().ApplyValues();
     }
 
     public void IncreaseLevel()

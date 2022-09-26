@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Animations;
 
 public class PassiveMobValues : MonoBehaviour
 {
@@ -28,9 +27,15 @@ public class PassiveMobValues : MonoBehaviour
     [SerializeField]
     private float _attackSpeed = 0;
 
-    private void ApplyValues()
+    public void ApplyValues()
     {
-        gameObject.GetComponent<EnemyFollow>().SetNavAgent();
+        ApplyValuesHelper();
+    }
+
+    private void ApplyValuesHelper()
+    {
+        gameObject.GetComponent<PassiveMobMovement>().SetNavAgent();
+        gameObject.GetComponent<PassiveMobCombat>().SetNavAgent();
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 

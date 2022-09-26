@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 3145550136091048279}
   - component: {fileID: 3145550136091048276}
   - component: {fileID: 3145550136091048277}
+  - component: {fileID: 5344798469381707690}
   - component: {fileID: 3145550136091048274}
   - component: {fileID: 3145550136091048275}
   - component: {fileID: 6801706110586970060}
   - component: {fileID: 3001618358800626977}
   - component: {fileID: 79261741115435634}
   m_Layer: 0
-  m_Name: PassiveMobRanged
+  m_Name: PassiveMobMelee
   m_TagString: PassiveMob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,6 +89,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &5344798469381707690
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3145550136091048272}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!136 &3145550136091048274
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -134,9 +155,9 @@ MonoBehaviour:
   _speed: 4
   _damage: 3
   _defense: 2
-  _melee: 0
-  _bounceBack: 0
-  _attackSpeed: 2
+  _melee: 1
+  _bounceBack: 3
+  _attackSpeed: 0
 --- !u!114 &3001618358800626977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12ad6614a709a34d951e97006559c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 0
+  spawnRadius: 10
 --- !u!114 &79261741115435634
 MonoBehaviour:
   m_ObjectHideFlags: 0

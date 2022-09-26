@@ -7,10 +7,12 @@ public class PassiveMobMovement : MonoBehaviour
 
     private GameObject player = null;
 
-    private Vector3 spawnPoint;
+    private Vector3 _spawnPoint;
 
     [SerializeField]
     private float spawnRadius = 0;
+
+    private bool running = false;
     
     private void Start()
     {
@@ -19,23 +21,26 @@ public class PassiveMobMovement : MonoBehaviour
 
     private void Update()
     {
-        Follow();
+        if(running)
+        {
+
+        }
+        else
+        {
+            MoveTo();
+        }
     }
 
-    private void Follow()
+    private void MoveTo()
     {
-        float ranX = Random.Range(-spawnPoint.x * spawnRadius, spawnPoint.x * spawnRadius);
-        float ranZ = Random.Range(-spawnPoint.z * spawnRadius, spawnPoint.z * spawnRadius);
+        float ranX = Random.Range(-_spawnPoint.x * spawnRadius, _spawnPoint.x * spawnRadius);
+        float ranZ = Random.Range(-_spawnPoint.z * spawnRadius, _spawnPoint.z * spawnRadius);
 
-        //Vector3 moveTo = new Vector3(
-       //         Random.insideUnitCircle.normalized.x + ranX,
-        //        0,
-        //        circlePoint.normalized.z + ranZ) 
-         //       * maxRadius;
+        Vector3 moveTo = new Vector3(ranX, 0, ranZ);
 
         if(passiveMobNav != null && passiveMobNav.isOnNavMesh)
         {
-            passiveMobNav.SetDestination(player.transform.position);
+            passiveMobNav.SetDestination(moveTo);
         }
         else if(passiveMobNav != null)
         {
@@ -50,5 +55,15 @@ public class PassiveMobMovement : MonoBehaviour
     private void SetNavAgentHelper()
     {
         passiveMobNav = gameObject.GetComponent<NavMeshAgent>();
+    }
+
+    public void SetSpawnPoint(Vector3 spawnPoint)
+    {
+        SetSpawnPointHelper(spawnPoint);
+    }
+
+    private void SetSpawnPointHelper(Vector3 spawnPoint)
+    {
+        _spawnPoint = spawnPoint;
     }
 }

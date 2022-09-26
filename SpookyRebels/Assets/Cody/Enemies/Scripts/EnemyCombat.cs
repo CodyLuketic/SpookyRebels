@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyCombat : MonoBehaviour
 {
-    private EnemyValues enemyValues = null;
+    private EnemyValues enemyValuesScript = null;
 
     private Rigidbody enemyRb = null;
 
@@ -26,11 +26,11 @@ public class EnemyCombat : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        enemyValues = gameObject.GetComponent<EnemyValues>();
+        enemyValuesScript = gameObject.GetComponent<EnemyValues>();
         enemyRb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.GetComponent<Animator>();
 
-        AttackStart(enemyValues.GetMelee());
+        AttackStart(enemyValuesScript.GetMelee());
         StartCoroutine(PhysicsConst());
     }
 
@@ -69,34 +69,32 @@ public class EnemyCombat : MonoBehaviour
 
         if(other.gameObject.CompareTag("Bullet"))
         {
-            enemyValues.SetHealth(enemyValues.GetHealth() - 1);
+            enemyValuesScript.SetHealth(enemyValuesScript.GetHealth() - 1);
 
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.CompareTag("EnemyBullet"))
         {
-            enemyValues.SetHealth(enemyValues.GetHealth() - 1);
-
             Destroy(other.gameObject);
         }
     }
 
     private IEnumerator MeleeAttack(Collision other)
     {
-        float tempSpeed = enemyValues.GetSpeed();
+        float tempSpeed = enemyValuesScript.GetSpeed();
         animator.SetBool("attacking", true);
-        enemyValues.SetSpeed(0);
+        enemyValuesScript.SetSpeed(0);
 
         // Player Damage Call Goes Here
 
         yield return new WaitForSeconds(waitTimeAttacking);
         animator.SetBool("attacking", false);
 
-        enemyRb.AddForce(other.GetContact(0).normal * enemyValues.GetBounceBack(), ForceMode.Impulse);
+        enemyRb.AddForce(other.GetContact(0).normal * enemyValuesScript.GetBounceBack(), ForceMode.Impulse);
         
         yield return new WaitForSeconds(waitTimeStill);
-        enemyValues.SetSpeed(tempSpeed);
+        enemyValuesScript.SetSpeed(tempSpeed);
         ResetPhysics();
         canMelee = true;
     }
@@ -108,7 +106,7 @@ public class EnemyCombat : MonoBehaviour
             Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward;
             Instantiate(enemyBullet, position, transform.rotation);
 
-            yield return new WaitForSeconds(enemyValues.GetAttackSpeed());
+            yield return new WaitForSeconds(enemyValuesScript.GetAttackSpeed());
         }
     }
     
