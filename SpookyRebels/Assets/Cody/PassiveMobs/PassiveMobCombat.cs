@@ -1,14 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class EnemyCombat : MonoBehaviour
+public class PassiveMobCombat : MonoBehaviour
 {
-    private EnemyValues enemyValues = null;
+    private PassiveMobValues passiveMobValues = null;
 
-    private Rigidbody enemyRb = null;
+    private Rigidbody passiveMobRb = null;
 
-    private NavMeshAgent enemyNav = null;
+    private UnityEngine.AI.NavMeshAgent passiveMobNav = null;
 
     private Animator animator = null;
 
@@ -21,16 +21,16 @@ public class EnemyCombat : MonoBehaviour
 
     [Header("Ranged Only")]
     [SerializeField]
-    private GameObject enemyBullet = null;
+    private GameObject passiveMobBullet = null;
 
     // Start is called before the first frame update
     private void Start()
     {
-        enemyValues = gameObject.GetComponent<EnemyValues>();
-        enemyRb = gameObject.GetComponent<Rigidbody>();
+        passiveMobValues = gameObject.GetComponent<PassiveMobValues>();
+        passiveMobRb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.GetComponent<Animator>();
 
-        AttackStart(enemyValues.GetMelee());
+        AttackStart(passiveMobValues.GetMelee());
         StartCoroutine(PhysicsConst());
     }
 
@@ -57,20 +57,26 @@ public class EnemyCombat : MonoBehaviour
 
         if(other.gameObject.CompareTag("Enemy"))
         {
-            enemyRb.velocity = Vector3.zero;
-            enemyRb.angularVelocity = Vector3.zero;
+            passiveMobRb.velocity = Vector3.zero;
+            passiveMobRb.angularVelocity = Vector3.zero;
+        }
+
+        if(other.gameObject.CompareTag("PassiveMob"))
+        {
+            passiveMobRb.velocity = Vector3.zero;
+            passiveMobRb.angularVelocity = Vector3.zero;
         }
 
         if(other.gameObject.CompareTag("Bullet"))
         {
-            enemyValues.SetHealth(enemyValues.GetHealth() - 1);
+            passiveMobValues.SetHealth(passiveMobValues.GetHealth() - 1);
 
             Destroy(other.gameObject);
         }
 
-        if(other.gameObject.CompareTag("EnemyBullet"))
+        if(other.gameObject.CompareTag("PassiveMobBullet"))
         {
-            enemyValues.SetHealth(enemyValues.GetHealth() - 1);
+            passiveMobValues.SetHealth(passiveMobValues.GetHealth() - 1);
 
             Destroy(other.gameObject);
         }
@@ -78,9 +84,9 @@ public class EnemyCombat : MonoBehaviour
 
     private IEnumerator MeleeAttack(Collision other)
     {
-        float tempSpeed = enemyValues.GetSpeed();
+        float tempSpeed = passiveMobValues.GetSpeed();
         animator.SetBool("attacking", true);
-        enemyValues.SetSpeed(0);
+        passiveMobValues.SetSpeed(0);
 
         // Player Damage Call Goes Here
 
@@ -88,10 +94,10 @@ public class EnemyCombat : MonoBehaviour
         animator.SetBool("attacking", false);
 
         float bounce = 6f; // Amount of force to apply
-        enemyRb.AddForce(other.GetContact(0).normal * bounce, ForceMode.Impulse);
+        passiveMobRb.AddForce(other.GetContact(0).normal * bounce, ForceMode.Impulse);
         
         yield return new WaitForSeconds(waitTimeStill);
-        enemyValues.SetSpeed(tempSpeed);
+        passiveMobValues.SetSpeed(tempSpeed);
         ResetPhysics();
         canMelee = true;
     }
@@ -101,9 +107,9 @@ public class EnemyCombat : MonoBehaviour
         while (true)
         {
             Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward;
-            Instantiate(enemyBullet, position, transform.rotation);
+            Instantiate(passiveMobBullet, position, transform.rotation);
 
-            yield return new WaitForSeconds(enemyValues.GetAttackSpeed());
+            yield return new WaitForSeconds(passiveMobValues.GetAttackSpeed());
         }
     }
     
@@ -115,8 +121,8 @@ public class EnemyCombat : MonoBehaviour
 
     private void ResetPhysics()
     {
-        enemyRb.velocity = Vector3.zero;
-        enemyRb.angularVelocity = Vector3.zero;
+        passiveMobRb.velocity = Vector3.zero;
+        passiveMobRb.angularVelocity = Vector3.zero;
     }
 
     public void SetNavAgent()
@@ -126,6 +132,6 @@ public class EnemyCombat : MonoBehaviour
 
     private void SetNavAgentHelper()
     {
-        enemyNav = gameObject.GetComponent<NavMeshAgent>();
+        passiveMobNav = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 }

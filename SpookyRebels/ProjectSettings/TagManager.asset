@@ -13,6 +13,9 @@ TagManager:
   - Bullet
   - TestBuildingCanvas
   - Pet
+  - EnemyBullet
+  - PassiveMob
+  - PassiveMobBullet
   layers:
   - Default
   - TransparentFX

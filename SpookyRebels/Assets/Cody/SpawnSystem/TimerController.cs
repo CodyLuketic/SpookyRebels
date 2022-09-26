@@ -4,7 +4,6 @@ using TMPro;
 
 public class TimerController : MonoBehaviour
 {
-    [SerializeField]
     private SpawnController spawnController = null;
 
     [SerializeField]
