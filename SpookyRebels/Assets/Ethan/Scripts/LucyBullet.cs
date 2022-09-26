@@ -12,8 +12,8 @@ public class LucyBullet : MonoBehaviour
     private GameObject player;
 
     //these change
-    public float speed = 20f;
-    public int damage = 100;
+    public float speed = 2f;
+    public int damage = 10;
     public float BMaxTime = 2f;
 
     // Start is called before the first frame update
@@ -24,10 +24,10 @@ public class LucyBullet : MonoBehaviour
         //Vector3 bullDirection = (Vector3)pMovScript.getRotation();
 
         PlayerMovements pMovScript = player.GetComponent<PlayerMovements>();
-        Vector3 bullDir = pMovScript.moveDirection;
+        Vector3 bullDir = pMovScript.gunPoint;
 
         //Vector3 bullDirection = GameObject.Find("Player").GetComponent("PlayerMovements").getRotation();
-       // rb.velocity = bullDirection * speed;
+        rb.velocity = bullDir * speed;
         Destroy(gameObject, BMaxTime);
     }
 

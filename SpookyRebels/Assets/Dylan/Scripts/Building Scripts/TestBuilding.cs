@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Gallery : MonoBehaviour
+public class TestBuilding : MonoBehaviour
 {
     float m_LastPressTime;
     float m_PressDelay = 0.5f;
@@ -29,7 +29,7 @@ public class Gallery : MonoBehaviour
                 player.canMove = !player.canMove;
 
                 // Enable or Disable the Canvas
-                GameObject CanvasObject = GameObject.FindGameObjectWithTag("GalleryCanvas");
+                GameObject CanvasObject = GameObject.FindGameObjectWithTag("TestBuildingCanvas");
                 CanvasObject.GetComponent<Canvas>().enabled = !canvasEnabled;
                 canvasEnabled = !canvasEnabled;
             }

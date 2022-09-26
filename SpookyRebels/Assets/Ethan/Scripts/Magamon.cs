@@ -14,22 +14,23 @@ public class Magamon
     public string species;
     public string element;
     public int maxLevel;
-    
+
     // these kinda change
+    public int level;
     public int conditionHealth;
-    public int range;
+    public float range;
     public int bulletCount;
     public int skillAvailable;
     public SkillTree sTree;
     //these change
     public int attack;
-    public int attackSpeed;
-    public int reloadSpeed; // this is when out of bullets
+    public float attackSpeed;
+    public float reloadSpeed; // this is when out of bullets
     public int health;
     public int speed;
-    public int bulletSpeed;
+    public float bulletSpeed;
 
-    public int defensetimer;
+    public float defensetimer;
 
     ////////////here for animations
 }

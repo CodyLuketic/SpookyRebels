@@ -44,8 +44,10 @@ public class Shoot : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
+            //Debug.Log("fire1");
             if (canAttack && hasBullets)
             {
+                //Debug.Log("canAttack");
                 Attack();
             }
         }
@@ -73,6 +75,7 @@ public class Shoot : MonoBehaviour
         //getting base gun out of way before mods
         if (heldAttacking.species == "Lucyfur")
         {
+            //Debug.Log("lucygun");
             Instantiate(lucyShotPrefab, firePoint.position, firePoint.rotation);
         }
         else

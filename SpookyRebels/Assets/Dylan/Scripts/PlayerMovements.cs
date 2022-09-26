@@ -10,7 +10,9 @@ public class PlayerMovements : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
 
-    public Vector3 lookPoint = mouseWorldPosition;
+    public Vector3 lookPoint;
+    //gun vec 3
+    public Vector3 gunPoint; 
     //private Animator animator = null;
     //public Texture2D crosshair;
     CharacterController characterController;
@@ -81,6 +83,8 @@ public class PlayerMovements : MonoBehaviour
             lookPoint = mouseWorldPosition;
             lookPoint.y = transform.position.y;
             transform.LookAt(lookPoint, Vector3.up);
+
+            gunPoint = transform.forward;
         }
 
          Vector3 getRotation()
