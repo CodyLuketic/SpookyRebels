@@ -9,8 +9,7 @@ public class TimerController : MonoBehaviour
     [SerializeField]
     private TMP_Text timeText = null;
 
-    private int timer = 0;
-    private int tempTimer = 0;
+    private int timer = 0, tempTimer = 0;
 
     private void Start()
     {
@@ -26,14 +25,14 @@ public class TimerController : MonoBehaviour
             yield return new WaitForSeconds(1);
             timer++;
 
-            if(timer == tempTimer + 30)
+            if(timer >= tempTimer + 40)
             {
                 tempTimer = timer;
 
                 spawnController.IncreaseLevel();
             }
 
-            if(timer == 10)
+            if(timer % 50 == 0)
             {
                 spawnController.SpawnBoss();
             }

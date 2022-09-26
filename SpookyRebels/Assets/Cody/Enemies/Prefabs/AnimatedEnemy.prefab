@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd1503d57c32ff43999b7db3c5775b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTimeAttacking: 0.75
+  waitTimeAttacking: 0.65
   waitTimeStill: 0.8
   enemyBullet: {fileID: 7432057383437670610, guid: 4397abfc387f2814a9dead6b7e281b90,
     type: 3}

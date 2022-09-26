@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -30,42 +29,39 @@ public class SpawnController : MonoBehaviour
                 enemies[Random.Range(0, enemies.Length)],
                 Vector3.zero, Quaternion.identity);
 
-            float ranX = Random.Range(-minRadius, minRadius);
-            float ranZ = Random.Range(-minRadius, minRadius);
+            float ranX = Random.Range(-maxRadius, maxRadius);
+            float ranZ = Random.Range(-maxRadius, maxRadius);
 
-            if(ranX < minRadius && ranX > -minRadius)
+            if(ranX < minRadius && ranX > -minRadius && ranZ < minRadius && ranZ > -minRadius)
             {
-                if(Mathf.Sign(ranX) == 1)
+                int temp = Random.Range(0, 1);
+
+                if(temp == 1)
                 {
-                    ranX += minRadius;
+                    if(Mathf.Sign(ranX) == 1)
+                    {
+                        ranX += minRadius;
+                    }
+                    else
+                    {
+                        ranX -= minRadius;
+                    }
                 }
                 else
                 {
-                    ranX -= minRadius;
-                }
-            }
-
-            if(ranZ < minRadius && ranZ > -minRadius)
-            {
-                if(Mathf.Sign(ranZ) == 1)
-                {
-                    ranZ += minRadius;
-                }
-                else
-                {
-                    ranZ -= minRadius;
+                    if(Mathf.Sign(ranZ) == 1)
+                    {
+                        ranZ += minRadius;
+                    }
+                    else
+                    {
+                        ranZ -= minRadius;
+                    }
                 }
             }
             Vector3 spawnPos = GameObject.FindGameObjectWithTag("Player").transform.position;
 
-            Vector3 circlePoint = Random.insideUnitCircle.normalized;
-
-            spawnPos += new Vector3(
-                Random.insideUnitCircle.normalized.x + ranX,
-                0,
-                circlePoint.normalized.z + ranZ) 
-                * maxRadius;
-            Debug.Log(spawnPos);
+            spawnPos += new Vector3(ranX, 0,ranZ);
 
             NavMeshHit closestHit;
             if(NavMesh.SamplePosition(spawnPos, out closestHit, 500, 1 ))
@@ -89,42 +85,39 @@ public class SpawnController : MonoBehaviour
     {
         GameObject bossInstance = Instantiate(boss, Vector3.zero, Quaternion.identity);
 
-        float ranX = Random.Range(-minRadius, minRadius);
-        float ranZ = Random.Range(-minRadius, minRadius);
+        float ranX = Random.Range(-maxRadius, maxRadius);
+        float ranZ = Random.Range(-maxRadius, maxRadius);
 
-        if(ranX < minRadius && ranX > -minRadius)
+        if(ranX < minRadius && ranX > -minRadius && ranZ < minRadius && ranZ > -minRadius)
         {
-            if(Mathf.Sign(ranX) == 1)
+            int temp = Random.Range(0, 1);
+
+            if(temp == 1)
             {
-                ranX += minRadius;
+                if(Mathf.Sign(ranX) == 1)
+                {
+                    ranX += minRadius;
+                }
+                else
+                {
+                    ranX -= minRadius;
+                }
             }
             else
             {
-                ranX -= minRadius;
-            }
-        }
-
-        if(ranZ < minRadius && ranZ > -minRadius)
-        {
-            if(Mathf.Sign(ranZ) == 1)
-            {
-                ranZ += minRadius;
-            }
-            else
-            {
-                ranZ -= minRadius;
+                if(Mathf.Sign(ranZ) == 1)
+                {
+                    ranZ += minRadius;
+                }
+                else
+                {
+                    ranZ -= minRadius;
+                }
             }
         }
         Vector3 spawnPos = GameObject.FindGameObjectWithTag("Player").transform.position;
 
-        Vector3 circlePoint = Random.insideUnitCircle.normalized;
-
-        spawnPos += new Vector3(
-            Random.insideUnitCircle.normalized.x + ranX,
-            0,
-            circlePoint.normalized.z + ranZ) 
-            * maxRadius;
-        Debug.Log(spawnPos);
+        spawnPos += new Vector3(ranX, 0,ranZ);
 
         NavMeshHit closestHit;
         if(NavMesh.SamplePosition(spawnPos, out closestHit, 500, 1 ))

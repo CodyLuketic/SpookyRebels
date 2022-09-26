@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,7 +10,7 @@ public class PassiveMobMovement : MonoBehaviour
     private Vector3 spawnPoint;
 
     [SerializeField]
-    private float moveDistance = 0;
+    private float spawnRadius = 0;
     
     private void Start()
     {
@@ -25,7 +24,14 @@ public class PassiveMobMovement : MonoBehaviour
 
     private void Follow()
     {
-        //float x = Random.RandomRange(spawnPoint.x, spawnPoint.x * moveDistance);
+        float ranX = Random.Range(-spawnPoint.x * spawnRadius, spawnPoint.x * spawnRadius);
+        float ranZ = Random.Range(-spawnPoint.z * spawnRadius, spawnPoint.z * spawnRadius);
+
+        //Vector3 moveTo = new Vector3(
+       //         Random.insideUnitCircle.normalized.x + ranX,
+        //        0,
+        //        circlePoint.normalized.z + ranZ) 
+         //       * maxRadius;
 
         if(passiveMobNav != null && passiveMobNav.isOnNavMesh)
         {
