@@ -1,10 +1,14 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Animations;
+using UnityEngine.AI;
 
 public class EnemyCombat : MonoBehaviour
 {
     private EnemyValues enemyValues = null;
+
+    private Rigidbody enemyRb = null;
+
+    private NavMeshAgent enemyNav = null;
 
     private Animator animator = null;
 
@@ -17,14 +21,17 @@ public class EnemyCombat : MonoBehaviour
 
     [Header("Ranged Only")]
     [SerializeField]
-    private GameObject bullet = null;
+    private GameObject enemyBullet = null;
+
     // Start is called before the first frame update
     private void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
         enemyValues = gameObject.GetComponent<EnemyValues>();
+        enemyRb = gameObject.GetComponent<Rigidbody>();
+        animator = gameObject.GetComponent<Animator>();
 
         AttackStart(enemyValues.GetMelee());
+        StartCoroutine(PhysicsConst());
     }
 
     private void AttackStart(bool melee)
@@ -44,24 +51,34 @@ public class EnemyCombat : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player") && canMelee)
         {
-            Debug.Log("Collided");
-            StartCoroutine(MeleeAttack());
+            StartCoroutine(MeleeAttack(other));
             canMelee = false;
+        }
+
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+            enemyRb.velocity = Vector3.zero;
+            enemyRb.angularVelocity = Vector3.zero;
         }
 
         if(other.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log(gameObject.name + "hit");
+            enemyValues.SetHealth(enemyValues.GetHealth() - 1);
+
+            Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.CompareTag("EnemyBullet"))
+        {
             enemyValues.SetHealth(enemyValues.GetHealth() - 1);
 
             Destroy(other.gameObject);
         }
     }
 
-    private IEnumerator MeleeAttack()
+    private IEnumerator MeleeAttack(Collision other)
     {
         float tempSpeed = enemyValues.GetSpeed();
-
         animator.SetBool("attacking", true);
         enemyValues.SetSpeed(0);
 
@@ -69,9 +86,13 @@ public class EnemyCombat : MonoBehaviour
 
         yield return new WaitForSeconds(waitTimeAttacking);
         animator.SetBool("attacking", false);
+
+        float bounce = 6f; // Amount of force to apply
+        enemyRb.AddForce(other.GetContact(0).normal * bounce, ForceMode.Impulse);
         
         yield return new WaitForSeconds(waitTimeStill);
         enemyValues.SetSpeed(tempSpeed);
+        ResetPhysics();
         canMelee = true;
     }
 
@@ -80,9 +101,31 @@ public class EnemyCombat : MonoBehaviour
         while (true)
         {
             Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward;
-            Instantiate(bullet, position, transform.rotation);
+            Instantiate(enemyBullet, position, transform.rotation);
 
             yield return new WaitForSeconds(enemyValues.GetAttackSpeed());
         }
+    }
+    
+    private IEnumerator PhysicsConst()
+    {
+        yield return new WaitForSeconds(1);
+        ResetPhysics();
+    }
+
+    private void ResetPhysics()
+    {
+        enemyRb.velocity = Vector3.zero;
+        enemyRb.angularVelocity = Vector3.zero;
+    }
+
+    public void SetNavAgent()
+    {
+        SetNavAgentHelper();
+    }
+
+    private void SetNavAgentHelper()
+    {
+        enemyNav = gameObject.GetComponent<NavMeshAgent>();
     }
 }

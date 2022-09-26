@@ -859,7 +859,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &1784361856238988441
 MonoBehaviour:
@@ -892,7 +892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d98ab4f8d1c3b440956dc0a84934841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 1.5
 --- !u!114 &8442335422071548396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,9 +904,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd1503d57c32ff43999b7db3c5775b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7432057383437670610, guid: 2c1ad3780e4ed0f41acbb3ce0eaff455, type: 3}
   waitTimeAttacking: 0.75
   waitTimeStill: 0.8
+  enemyBullet: {fileID: 7432057383437670610, guid: 4397abfc387f2814a9dead6b7e281b90,
+    type: 3}
 --- !u!1 &2476827414503623828
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,10 @@ using UnityEngine.Animations;
 
 public class EnemyValues : MonoBehaviour
 {
+    private EnemyFollow enemyFollowScript = null;
+
+    private EnemyCombat enemyCombatScript = null;
+
     [Header("Basic Values")]
     [SerializeField]
     private float _health = 0;
@@ -28,9 +32,16 @@ public class EnemyValues : MonoBehaviour
     [SerializeField]
     private float _attackSpeed = 0;
 
+    private void Start()
+    {
+        enemyFollowScript = gameObject.GetComponent<EnemyFollow>();
+        enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
+    }
+
     private void ApplyValues()
     {
         gameObject.GetComponent<EnemyFollow>().SetNavAgent();
+        gameObject.GetComponent<EnemyCombat>().SetNavAgent();
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
