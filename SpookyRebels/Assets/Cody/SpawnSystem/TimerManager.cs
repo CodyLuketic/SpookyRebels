@@ -2,9 +2,9 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class TimerController : MonoBehaviour
+public class TimerManager : MonoBehaviour
 {
-    private SpawnController spawnController = null;
+    private SpawnManager spawnManager = null;
 
     [SerializeField]
     private TMP_Text timeText = null;
@@ -13,14 +13,14 @@ public class TimerController : MonoBehaviour
 
     private void Start()
     {
-        spawnController = GameObject.FindGameObjectWithTag("SpawnController").GetComponent<SpawnController>();
+        spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager>();
 
         StartCoroutine(TimerCount());
     }
 
     private IEnumerator TimerCount()
     {
-        while(true)
+        while(timer <= 300)
         {
             yield return new WaitForSeconds(1);
             timer++;
@@ -29,16 +29,14 @@ public class TimerController : MonoBehaviour
             {
                 tempTimer = timer;
 
-                spawnController.IncreaseLevel();
+                spawnManager.IncreaseLevel();
             }
-
-            if(timer % 50 == 0)
-            {
-                spawnController.SpawnBoss();
-            }
-
             UpdateTimeText();
         }
+
+        spawnManager.SpawnBoss();
+
+        UpdateTimeText();
     }
 
     private void UpdateTimeText()

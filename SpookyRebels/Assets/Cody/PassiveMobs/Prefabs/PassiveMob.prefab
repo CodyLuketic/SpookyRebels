@@ -11,14 +11,13 @@ GameObject:
   - component: {fileID: 3145550136091048279}
   - component: {fileID: 3145550136091048276}
   - component: {fileID: 3145550136091048277}
-  - component: {fileID: -2645075438873878422}
+  - component: {fileID: 5344798469381707690}
   - component: {fileID: 3145550136091048274}
   - component: {fileID: 3145550136091048275}
   - component: {fileID: 6801706110586970060}
   - component: {fileID: 3001618358800626977}
-  - component: {fileID: 79261741115435634}
   m_Layer: 0
-  m_Name: PassiveMobRanged
+  m_Name: PassiveMob
   m_TagString: PassiveMob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +88,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &-2645075438873878422
+--- !u!95 &5344798469381707690
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -155,9 +154,9 @@ MonoBehaviour:
   _speed: 4
   _damage: 3
   _defense: 2
-  _melee: 0
-  _bounceBack: 0
-  _attackSpeed: 2
+  _melee: 1
+  _bounceBack: 3
+  _attackSpeed: 0
 --- !u!114 &3001618358800626977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,19 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 10
---- !u!114 &79261741115435634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3145550136091048272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95cd4d8fab7382e4b8db5ba255982eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTimeAttacking: 0
-  waitTimeStill: 0
-  passiveMobBullet: {fileID: 7432057383437670610, guid: 4888710e455e05645a1979a25f00cc5c,
-    type: 3}
+  detectRadius: 20
+  runDistance: 20
+  nextTurnTime: 3

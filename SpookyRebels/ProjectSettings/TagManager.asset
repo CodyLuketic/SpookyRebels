@@ -7,7 +7,6 @@ TagManager:
   - Enemy
   - NPC
   - Blueprint
-  - SpawnController
   - BuildManager
   - GalleryCanvas
   - Bullet
@@ -16,6 +15,7 @@ TagManager:
   - EnemyBullet
   - PassiveMob
   - PassiveMobBullet
+  - SpawnManager
   layers:
   - Default
   - TransparentFX
