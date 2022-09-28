@@ -35,7 +35,6 @@ public class PassiveMobValues : MonoBehaviour
     private void ApplyValuesHelper()
     {
         gameObject.GetComponent<PassiveMobMovement>().SetNavAgent();
-        gameObject.GetComponent<PassiveMobCombat>().SetNavAgent();
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
