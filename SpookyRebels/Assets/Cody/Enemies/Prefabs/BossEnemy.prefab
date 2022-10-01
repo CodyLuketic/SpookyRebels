@@ -134,8 +134,8 @@ MonoBehaviour:
   _speed: 1
   _damage: 10
   _defense: 10
-  _attackAnim: {fileID: 0}
   _melee: 1
+  isBoss: 1
   _bounceBack: 10
   _attackSpeed: 0
 --- !u!114 &3124126094804730768
@@ -162,6 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd1503d57c32ff43999b7db3c5775b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7432057383437670610, guid: 2c1ad3780e4ed0f41acbb3ce0eaff455, type: 3}
-  waitTime: 0
-  waitTimeEnd: 0
+  waitTimeAttacking: 0
+  waitTimeStill: 0
+  enemyBullet: {fileID: 0}

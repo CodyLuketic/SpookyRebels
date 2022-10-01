@@ -6,6 +6,8 @@ public class TimerManager : MonoBehaviour
 {
     private SpawnManager spawnManager = null;
 
+    private Coroutine timeCoroutine = null;
+
     [SerializeField]
     private TMP_Text timeText = null;
 
@@ -15,12 +17,12 @@ public class TimerManager : MonoBehaviour
     {
         spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager>();
 
-        StartCoroutine(TimerCount());
+        timeCoroutine = StartCoroutine(TimerCount());
     }
 
     private IEnumerator TimerCount()
     {
-        while(timer <= 300)
+        while(timer <= 10)
         {
             yield return new WaitForSeconds(1);
             timer++;
@@ -34,9 +36,13 @@ public class TimerManager : MonoBehaviour
             UpdateTimeText();
         }
 
+        spawnManager.EndSpawnCoroutine();
+
         spawnManager.SpawnBoss();
 
         UpdateTimeText();
+
+        EndTimerCount();
     }
 
     private void UpdateTimeText()
@@ -45,5 +51,10 @@ public class TimerManager : MonoBehaviour
         float seconds = Mathf.FloorToInt(timer % 60);
 
         timeText.text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
+    }
+
+    private void EndTimerCount()
+    {
+        StopCoroutine(timeCoroutine);
     }
 }

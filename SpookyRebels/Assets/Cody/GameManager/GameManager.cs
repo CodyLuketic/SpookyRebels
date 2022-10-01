@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     {
         timerObject.SetActive(false);
         winObject.SetActive(true);
+
+        Time.timeScale = 0;
     }
 
     public void Lose()
@@ -39,5 +41,7 @@ public class GameManager : MonoBehaviour
     {
         timerObject.SetActive(false);
         loseObject.SetActive(true);
+
+        Time.timeScale = 0;
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine.AI;
 
 public class SpawnManager : MonoBehaviour
 {
+    private Coroutine spawnCoroutine = null;
+
     [SerializeField]
     private GameObject[] enemies = null;
 
@@ -18,7 +20,7 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnEnemy());
+        spawnCoroutine = StartCoroutine(SpawnEnemy());
     }
 
     private IEnumerator SpawnEnemy()
@@ -136,5 +138,14 @@ public class SpawnManager : MonoBehaviour
     private void IncreaseLevelHelper()
     {
         level++;
+    }
+
+    public void EndSpawnCoroutine()
+    {
+        EndSpawnCoroutineHelper();
+    }
+    private void EndSpawnCoroutineHelper()
+    {
+        StopCoroutine(spawnCoroutine);
     }
 }

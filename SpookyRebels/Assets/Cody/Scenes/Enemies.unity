@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.38354, g: 325.1084, b: 430.30957, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 266727979}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,9 +410,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59b09a8424b339428cf53205fa7fc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerObject: {fileID: 0}
-  winObject: {fileID: 0}
-  loseObject: {fileID: 0}
+  timerObject: {fileID: 204814586}
+  winObject: {fileID: 1419250071}
+  loseObject: {fileID: 1219175684}
 --- !u!1 &628746622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1102,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 100000
+  m_Intensity: 130000
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1143,7 +1143,7 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 1
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 100000
+  m_Intensity: 130000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -2035,6 +2035,7 @@ GameObject:
   - component: {fileID: 7123170691306742565}
   - component: {fileID: 7123170691306742560}
   - component: {fileID: 738469894}
+  - component: {fileID: 7123170691306742568}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2108,6 +2109,23 @@ Transform:
   m_Father: {fileID: 7123170691124214480}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 53.6, y: 0, z: 0}
+--- !u!114 &7123170691306742568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123170691306742564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 8ba92e2dd7f884a0f88b98fa2d235fe7, type: 2}
 --- !u!23 &7123170691650703236
 MeshRenderer:
   m_ObjectHideFlags: 0

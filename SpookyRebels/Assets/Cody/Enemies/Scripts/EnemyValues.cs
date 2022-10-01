@@ -4,6 +4,7 @@ using UnityEngine.Animations;
 
 public class EnemyValues : MonoBehaviour
 {
+    private GameManager gameManager = null;
     private EnemyFollow enemyFollowScript = null;
 
     private EnemyCombat enemyCombatScript = null;
@@ -23,6 +24,9 @@ public class EnemyValues : MonoBehaviour
 
     [SerializeField]
     private bool _melee = false;
+
+    [SerializeField]
+    private bool isBoss = false;
     
     [Header("Melee Values")]
     [SerializeField]
@@ -34,6 +38,7 @@ public class EnemyValues : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         enemyFollowScript = gameObject.GetComponent<EnemyFollow>();
         enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
     }
@@ -89,6 +94,11 @@ public class EnemyValues : MonoBehaviour
         
         if(_health <= 0)
         {
+            if(isBoss)
+            {
+                gameManager.Win();
+            }
+
             Destroy(gameObject);
         }
     }
