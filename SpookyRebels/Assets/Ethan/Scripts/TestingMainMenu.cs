@@ -5,16 +5,58 @@ using UnityEngine.SceneManagement;
 
 public class TestingMainMenu : MonoBehaviour
 {
-    public void EthanScene()
+    [SerializeField]
+    private Canvas SettingsCanvas;
+    [SerializeField]
+    private Canvas NewGameCanvas;
+
+    private bool subCanvasEnabled = false;
+
+    /////////////////////////////////////////////////////////////////////// CANVAS SWITCH
+
+    public void SettingsProc()
     {
-        SceneManager.LoadScene(1);
+        CleanCanvas(SettingsCanvas);
+        SettingsCanvas.enabled = !SettingsCanvas.enabled;
+        subCanvasEnabled = true;
     }
-    public void DylanScene()
+
+    public void NewGameProc()
     {
-        SceneManager.LoadScene(2);
+        CleanCanvas(NewGameCanvas);
+        NewGameCanvas.enabled = !NewGameCanvas.enabled;
+        subCanvasEnabled = true;
     }
-    public void CodyScene()
+
+    /////////////////////////////////////////////////////////////////////// HELPER METHODS
+
+    private void CleanCanvas()
     {
-        SceneManager.LoadScene(3);
+        // Check to see if any Layered Canvases are already enabled, disable them all if they are
+        if (subCanvasEnabled)
+        {
+            foreach (GameObject layerCanvas in GameObject.FindGameObjectsWithTag("LayerCanvas"))
+            {
+                layerCanvas.GetComponent<Canvas>().enabled = false;
+            }
+            subCanvasEnabled = false;
+        }
+    }
+
+    private void CleanCanvas(Canvas canvas)
+    {
+        // Check to see if any Layered Canvases are already enabled, disable them all if they are
+        if (subCanvasEnabled)
+        {
+            foreach (GameObject layerCanvas in GameObject.FindGameObjectsWithTag("LayerCanvas"))
+            {
+                Canvas tmp = layerCanvas.GetComponent<Canvas>();
+                if (!canvas.Equals(tmp))
+                {
+                    tmp.enabled = false;
+                }
+            }
+            subCanvasEnabled = false;
+        }
     }
 }

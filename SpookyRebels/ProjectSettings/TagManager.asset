@@ -16,6 +16,10 @@ TagManager:
   - PassiveMob
   - PassiveMobBullet
   - SpawnManager
+  - SettingsCanvas
+  - NewGameCanvas
+  - LayerCanvas
+  - popupCanvas
   layers:
   - Default
   - TransparentFX

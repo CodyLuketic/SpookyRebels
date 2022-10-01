@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/StartScreenTest.unity
+    path: Assets/Final Scenes/StartScreenTest.unity
     guid: 7199e49be6f9f594da039f6b843b29e7
   - enabled: 1
     path: Assets/Ethan/Scenes/GunRange.unity
@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cody/Scenes/Enemies.unity
     guid: d45f4ff02f64dfb42ad7035eff2076c3
+  - enabled: 1
+    path: Assets/Ethan/Scenes/SkillTreeBase.unity
+    guid: 54224a506bc56b64ab6812b96b112e80
   - enabled: 0
     path: Assets/Other/PreClassTesting/OutdoorsScene.unity
     guid: 8124e5870f4fd4c779e7a5f994e84ad1
