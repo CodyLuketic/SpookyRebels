@@ -14,4 +14,5 @@ public class BurnBook : MonoBehaviour
     // Entry 5: Hannah made me listen to CBat. Wasn't mclovin it frfr
     // Entry 6: Miranda, Madison, Hannah and me got burned by a Bridget. Idk frfr
     // Entry 7: Me, Hannah and Madison have plans tonight so this will be wild frfr
+    // Entry 8: Hannah said I don't make much on the corner. But what does she know frfr
 }

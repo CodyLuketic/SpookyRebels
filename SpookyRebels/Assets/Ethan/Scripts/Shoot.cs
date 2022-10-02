@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Shoot : MonoBehaviour
 {
     // bullet prefabs
     public Transform firePoint;
     public GameObject lucyShotPrefab;
-
+    public GameObject CrabMiddleShotPrefab;
 
     public int currentBullets;
     public bool hasBullets = true;
@@ -20,6 +22,8 @@ public class Shoot : MonoBehaviour
     public bool canAttack = true;
     public int tempbulletDamage = 0;
 
+    //ui
+    [SerializeField] private TextMeshProUGUI ammoTxt;
 
     //switching things
     public bool swapped = false;
@@ -80,9 +84,24 @@ public class Shoot : MonoBehaviour
         }
         else
         {
+            //Debug.Log("notLucy");
+            if (heldAttacking.species == "CystalCrab")
+            {
+                //Debug.Log("snail");
+                //double shot
+                if (heldAttacking.sTree.Skills[12].skillOwned)
+                {
 
+                }
+                else 
+                {
+                   // Debug.Log("snailshoot");
+                    Instantiate(CrabMiddleShotPrefab, firePoint.position, firePoint.rotation);
+                }
+            }
 
             currentBullets--;
+            ammoTxt.text = currentBullets + "";
         }
         if (currentBullets == 0)
         {
@@ -108,6 +127,8 @@ public class Shoot : MonoBehaviour
         yield return new WaitForSeconds(heldAttacking.reloadSpeed);
         currentBullets = heldAttacking.bulletCount;
         hasBullets= true;
+        canAttack = true;
+        ammoTxt.text = currentBullets + "";
     }
 
 
@@ -154,6 +175,14 @@ public class Shoot : MonoBehaviour
 
             //swap sound
             //update ui
+            if (heldAttacking.species == "Lucyfur")
+            {
+                ammoTxt.text = "infinite";
+            }
+            else
+            {
+                ammoTxt.text = currentBullets + "";
+            }
             StartCoroutine(eSwitchCooldown());
         }
     }
