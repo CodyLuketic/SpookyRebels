@@ -11,6 +11,7 @@ public class SkillTreeManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI skillTxt;
     [SerializeField] private TextMeshProUGUI skilltextTxt;
     [SerializeField] private TextMeshProUGUI requirementsTxt;
+    [SerializeField] private TextMeshProUGUI skillPointsTxt;
     public int selectedSkill;
 
     void Start()
@@ -30,10 +31,43 @@ public class SkillTreeManager : MonoBehaviour
             skillTxt.text = p.magamon[p.skillMonEquipted].sTree.Skills[selectedSkill].skillName;
             skilltextTxt.text = p.magamon[p.skillMonEquipted].sTree.Skills[selectedSkill].skillDescription;
             requirementsTxt.text = p.magamon[p.skillMonEquipted].sTree.Skills[selectedSkill].skillCost;
+            skillPointsTxt.text = p.magamon[p.skillMonEquipted].skillAvailable + "";
+    }
+    public void unlockSkill()
+    {
+        if(p.magamon[p.skillMonEquipted].skillAvailable > 0)
+        {
+            if (!p.magamon[p.skillMonEquipted].sTree.Skills[selectedSkill].skillOwned)
+            {
+                if(ownedParent(selectedSkill))
+                {
+                    p.magamon[p.skillMonEquipted].sTree.Skills[selectedSkill].skillOwned = true;
+                    p.magamon[p.skillMonEquipted].skillAvailable--;
+                    MainProfile.Instance.mainP = p;
+                }
+            }
+        }
 
     }
 
+    public bool ownedParent(int skillNum)
+    {
+        if (skillNum <= 3) return true;
+        if (skillNum == 4) return p.magamon[p.skillMonEquipted].sTree.Skills[1].skillOwned;
+        if (skillNum == 5) return p.magamon[p.skillMonEquipted].sTree.Skills[1].skillOwned;
+        if (skillNum == 6) return p.magamon[p.skillMonEquipted].sTree.Skills[2].skillOwned;
+        if (skillNum == 7) return p.magamon[p.skillMonEquipted].sTree.Skills[2].skillOwned;
+        if (skillNum == 8) return p.magamon[p.skillMonEquipted].sTree.Skills[3].skillOwned;
+        if (skillNum == 9) return p.magamon[p.skillMonEquipted].sTree.Skills[3].skillOwned;
+        if (skillNum == 10) return p.magamon[p.skillMonEquipted].sTree.Skills[4].skillOwned;
+        if (skillNum == 11) return p.magamon[p.skillMonEquipted].sTree.Skills[5].skillOwned;
+        if (skillNum == 12) return p.magamon[p.skillMonEquipted].sTree.Skills[6].skillOwned;
+        if (skillNum == 13) return p.magamon[p.skillMonEquipted].sTree.Skills[7].skillOwned;
+        if (skillNum == 14) return p.magamon[p.skillMonEquipted].sTree.Skills[8].skillOwned;
+        if (skillNum == 15) return p.magamon[p.skillMonEquipted].sTree.Skills[9].skillOwned;
 
+        return false;
+    }
     //buttons
     public void select0()
     {

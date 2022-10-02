@@ -134,6 +134,7 @@ MonoBehaviour:
   _damage: 3
   _defense: 2
   _melee: 0
+  isBoss: 0
   _bounceBack: 0
   _attackSpeed: 1
 --- !u!114 &918106958487649787

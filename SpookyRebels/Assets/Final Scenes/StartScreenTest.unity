@@ -1667,7 +1667,7 @@ MonoBehaviour:
       conditionHealth: 0
       range: 1
       bulletCount: 30
-      skillAvailable: 0
+      skillAvailable: 10
       sTree:
         Skills:
         - skillName: Gem Shot

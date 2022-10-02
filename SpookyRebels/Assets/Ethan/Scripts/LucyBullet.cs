@@ -32,10 +32,12 @@ public class LucyBullet : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
+        Debug.Log("hit?");
+        if (other.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("enemyhit");
             EnemyValues eValScript = other.gameObject.GetComponent<EnemyValues>();
 
             eValScript.SetHealth(eValScript.GetHealth() - damage);
