@@ -44176,6 +44176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057a1064c34dbfe4fae05838c4765691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
 --- !u!54 &7123170691650703244
 Rigidbody:
   m_ObjectHideFlags: 0
