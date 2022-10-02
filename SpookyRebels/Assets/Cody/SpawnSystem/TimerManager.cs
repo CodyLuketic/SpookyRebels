@@ -22,7 +22,7 @@ public class TimerManager : MonoBehaviour
 
     private IEnumerator TimerCount()
     {
-        while(timer <= 10)
+        while(timer <= 300)
         {
             yield return new WaitForSeconds(1);
             timer++;
