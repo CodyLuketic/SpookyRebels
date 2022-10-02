@@ -15,4 +15,5 @@ public class BurnBook : MonoBehaviour
     // Entry 6: Miranda, Madison, Hannah and me got burned by a Bridget. Idk frfr
     // Entry 7: Me, Hannah and Madison have plans tonight so this will be wild frfr
     // Entry 8: Hannah said I don't make much on the corner. But what does she know frfr
+    // Entry 9: Miranda legit hasn't reached out in over a week. Guess there is gonna be more blood on the clocktower frfr
 }

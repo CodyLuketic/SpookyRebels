@@ -8,6 +8,8 @@ public class Shoot : MonoBehaviour
 {
     // bullet prefabs
     public Transform firePoint;
+    public Transform leftCrabPoint;
+    public Transform rightCrabPoint;
     public GameObject lucyShotPrefab;
     public GameObject CrabMiddleShotPrefab;
 
@@ -21,7 +23,7 @@ public class Shoot : MonoBehaviour
     public bool canDefend = true;
     public bool canAttack = true;
     public int tempbulletDamage = 0;
-
+    public float attackSpeedMod = 0;
     //ui
     [SerializeField] private TextMeshProUGUI ammoTxt;
 
@@ -39,6 +41,18 @@ public class Shoot : MonoBehaviour
         if(p.equipt2 != -1) heldDefending = p.magamon[p.equipt2];
 
         currentBullets = heldAttacking.bulletCount;
+        //Start of start game abilities
+        //extra ammo and attack speed
+        if (heldAttacking.species == "CystalCrab")
+        {
+            if (heldAttacking.sTree.Skills[7].skillOwned) currentBullets += 15;
+            if (heldAttacking.sTree.Skills[6].skillOwned) attackSpeedMod -= .25f;
+        }
+        else
+        {
+            attackSpeedMod = 0;
+        }
+        
 
 
         //////add the skills that are only at the begining
@@ -91,7 +105,9 @@ public class Shoot : MonoBehaviour
                 //double shot
                 if (heldAttacking.sTree.Skills[12].skillOwned)
                 {
-
+                    Instantiate(CrabMiddleShotPrefab, leftCrabPoint.position, leftCrabPoint.rotation);
+                    Instantiate(CrabMiddleShotPrefab, rightCrabPoint.position, rightCrabPoint.rotation);
+                    currentBullets--;
                 }
                 else 
                 {
@@ -103,7 +119,7 @@ public class Shoot : MonoBehaviour
             currentBullets--;
             ammoTxt.text = currentBullets + "";
         }
-        if (currentBullets == 0)
+        if (currentBullets <= 0)
         {
             hasBullets = false;
             StartCoroutine(eReloadCooldown());
@@ -117,7 +133,7 @@ public class Shoot : MonoBehaviour
     IEnumerator eAttackCooldown()
     {
         // will need to change this for swap speed if i make it
-        yield return new WaitForSeconds(heldAttacking.attackSpeed);
+        yield return new WaitForSeconds(heldAttacking.attackSpeed + attackSpeedMod);
         canAttack = true;
     }
 
@@ -168,7 +184,18 @@ public class Shoot : MonoBehaviour
             }
             // stop cooldowns
             currentBullets = heldAttacking.bulletCount;
-            if(canAttack == false) StopCoroutine(eAttackCooldown());
+            //start abilities
+            if (heldAttacking.species == "CystalCrab")
+            {
+                if (heldAttacking.sTree.Skills[7].skillOwned) currentBullets += 15;
+                if (heldAttacking.sTree.Skills[6].skillOwned) attackSpeedMod -= .25f;
+            }
+            else
+            {
+                attackSpeedMod = 0;
+            }
+
+            if (canAttack == false) StopCoroutine(eAttackCooldown());
             if (hasBullets == false) StopCoroutine(eReloadCooldown());
             hasBullets = true;
             canAttack = true;

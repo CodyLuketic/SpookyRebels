@@ -15,7 +15,7 @@ public class LucyBullet : MonoBehaviour
     public float speed = 2f;
     public int damage = 10;
     public float BMaxTime = 2f;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,19 +31,32 @@ public class LucyBullet : MonoBehaviour
         Destroy(gameObject, BMaxTime);
     }
 
-    /* Have to implement with Cody enemy code
-    void OnTriggerEnter(Collider other)
-    {
-        magEnemy enemy = other.GetComponent<magEnemy>();
-        if (enemy != null)
-        {
-            AudioSource.PlayClipAtPoint(hit, transform.position);
-            enemy.Damage();
-            enemy.CheckDeath();
-            
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+            EnemyValues eValScript = other.gameObject.GetComponent<EnemyValues>();
+
+            eValScript.SetHealth(eValScript.GetHealth() - damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+
+
     }
-    */
-}
+        /* Have to implement with Cody enemy code
+        void OnTriggerEnter(Collider other)
+        {
+            magEnemy enemy = other.GetComponent<magEnemy>();
+            if (enemy != null)
+            {
+                AudioSource.PlayClipAtPoint(hit, transform.position);
+                enemy.Damage();
+                enemy.CheckDeath();
+
+
+            }
+            Destroy(gameObject);
+        }
+        */
+    }
