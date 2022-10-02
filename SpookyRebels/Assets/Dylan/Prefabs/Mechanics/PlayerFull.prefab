@@ -29,7 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7123170690156522224}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &517097813
 GameObject:
@@ -60,38 +60,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7123170690156522224}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1177200661
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1177200662}
-  m_Layer: 0
-  m_Name: HoldArea
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1177200662
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177200661}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7123170690156522224}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2108422266
 GameObject:
@@ -170,7 +139,6 @@ GameObject:
   - component: {fileID: 7123170690156522226}
   - component: {fileID: 499818234}
   - component: {fileID: 499818235}
-  - component: {fileID: 1307721643}
   - component: {fileID: 535374369}
   m_Layer: 0
   m_Name: Player
@@ -193,7 +161,6 @@ Transform:
   m_Children:
   - {fileID: 7123170690468466138}
   - {fileID: 2108422267}
-  - {fileID: 1177200662}
   - {fileID: 454861021}
   - {fileID: 517097814}
   m_Father: {fileID: 7123170689632051110}
@@ -290,20 +257,6 @@ MonoBehaviour:
   cam: {fileID: 7123170690385004112}
   moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
---- !u!114 &1307721643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7123170690156522236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a8af3e2757e637418626b77042822de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holdArea: {fileID: 1177200662}
-  throwForce: 1000
 --- !u!114 &535374369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,6 +704,7 @@ MonoBehaviour:
   canDefend: 1
   canAttack: 1
   tempbulletDamage: 0
+  attackSpeedMod: 0
   ammoTxt: {fileID: 0}
   swapped: 0
   p:

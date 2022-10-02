@@ -21,6 +21,7 @@ TagManager:
   - LayerCanvas
   - popupCanvas
   - GameManager
+  - OldGatesCanvas
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,9 @@ public class BuildManager : MonoBehaviour
     [SerializeField]
     private GameObject galleryPrefab;
     [SerializeField]
+    private GameObject oldgatesPrefab;
     /*
+    [SerializeField]
     private GameObject daycarePrefab;
     [SerializeField]
     private GameObject repairPrefab;
@@ -32,6 +34,10 @@ public class BuildManager : MonoBehaviour
             case "Gallery":
                 Instantiate(galleryPrefab, transform.position, transform.rotation);
                 currentCost = 10;
+                break;
+            case "OldGates":
+                Instantiate(oldgatesPrefab, transform.position, transform.rotation);
+                currentCost = 0;
                 break;
             default:
                 Instantiate(testHousePrefab, transform.position, transform.rotation);
