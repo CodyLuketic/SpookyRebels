@@ -5594,10 +5594,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 5213105247653237366, guid: 48730cdafc12d3249833693d945cb26b, type: 3}
+  - {fileID: 2373522628951742640, guid: 7cfdeb858d2a5db459f4576395052ce5, type: 3}
   boss: {fileID: 2263733754358686865, guid: 6e05538033a18b944b59a47612e51490, type: 3}
-  minRadius: 10
-  maxRadius: 13
-  time: 1
+  minRadius: 20
+  maxRadius: 25
+  time: 3
   level: 1
 --- !u!4 &260897389 stripped
 Transform:
