@@ -44,6 +44,7 @@ public class SkillTreeManager : MonoBehaviour
                     p.magamon[p.skillMonEquipted].sTree.Skills[selectedSkill].skillOwned = true;
                     p.magamon[p.skillMonEquipted].skillAvailable--;
                     MainProfile.Instance.mainP = p;
+                    displayInfo();
                 }
             }
         }
