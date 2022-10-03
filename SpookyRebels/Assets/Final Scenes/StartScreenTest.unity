@@ -12141,7 +12141,7 @@ MonoBehaviour:
         skillOwned: 0
         skillDescription: 
         skillCost: 
-    skillMonEquipted: 0
+    skillMonEquipted: 1
     equipt1: 0
     equipt2: 1
 --- !u!4 &959316670

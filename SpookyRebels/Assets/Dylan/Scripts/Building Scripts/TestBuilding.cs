@@ -12,6 +12,8 @@ public class TestBuilding : MonoBehaviour
 
     [SerializeField]
     private TextMeshPro myText;
+    [SerializeField]
+    private GameObject myActivateText;
 
     private void OnTriggerStay(Collider other)
     {
@@ -42,6 +44,9 @@ public class TestBuilding : MonoBehaviour
         {
             // Change text color to white on enter
             myText.color = Color.white;
+
+            // Turn on activate prompt
+            myActivateText.SetActive(true);
         }
     }
 
@@ -51,6 +56,9 @@ public class TestBuilding : MonoBehaviour
         {
             // Change text color to grey on exit
             myText.color = new Color32(75, 75, 75, 255);
+
+            // Turn off activate prompt
+            myActivateText.SetActive(false);
         }
     }
 
