@@ -19,7 +19,7 @@ public class Gallery : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (Input.GetButton("Fire1"))
+            if (Input.GetButton("Interact"))
             {
                 // Ensure Player Doesn't Get Stuck on Button Press
                 if (m_LastPressTime + m_PressDelay > Time.unscaledTime)

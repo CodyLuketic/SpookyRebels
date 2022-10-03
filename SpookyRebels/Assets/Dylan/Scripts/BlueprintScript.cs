@@ -60,7 +60,7 @@ public class BlueprintScript : MonoBehaviour
         transform.Rotate(Vector3.up, mouseWheelRotation * 10.0f);
 
         // Place
-        if (Input.GetMouseButton(0) && valid)
+        if (Input.GetButton("Fire1") && valid)
         {
             Instantiate(prefab, transform.position, transform.rotation);
             
