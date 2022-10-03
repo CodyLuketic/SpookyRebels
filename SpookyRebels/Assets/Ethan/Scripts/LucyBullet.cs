@@ -44,7 +44,10 @@ public class LucyBullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
         /* Have to implement with Cody enemy code
         void OnTriggerEnter(Collider other)

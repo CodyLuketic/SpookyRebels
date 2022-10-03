@@ -101,6 +101,10 @@ public class SnailBulletMiddle : MonoBehaviour
             if(pierce <= 0) Destroy(gameObject);
         }
 
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
 
     }
     /* Have to implement with Cody enemy code
