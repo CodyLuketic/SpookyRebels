@@ -142,7 +142,11 @@ public class Shoot : MonoBehaviour
         // will need to change this for swap speed if i make it
         yield return new WaitForSeconds(heldAttacking.reloadSpeed);
         currentBullets = heldAttacking.bulletCount;
-        hasBullets= true;
+        if (heldAttacking.species == "CystalCrab")
+        {
+            if (heldAttacking.sTree.Skills[7].skillOwned) currentBullets += 15;   
+        }
+            hasBullets = true;
         canAttack = true;
         ammoTxt.text = currentBullets + "";
     }

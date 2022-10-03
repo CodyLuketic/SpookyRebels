@@ -442,7 +442,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 535374369, guid: 7967546a39972404f87543692ea5634c, type: 3}
+    - target: {fileID: 3757707364220109452, guid: 7967546a39972404f87543692ea5634c,
+        type: 3}
       propertyPath: ammoTxt
       value: 
       objectReference: {fileID: 2758851}
