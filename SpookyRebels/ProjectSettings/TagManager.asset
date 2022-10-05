@@ -23,6 +23,7 @@ TagManager:
   - GameManager
   - OldGatesCanvas
   - Building
+  - ObjectPooler
   layers:
   - Default
   - TransparentFX
