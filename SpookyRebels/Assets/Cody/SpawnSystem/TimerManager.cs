@@ -4,7 +4,8 @@ using TMPro;
 
 public class TimerManager : MonoBehaviour
 {
-    private SpawnManager spawnManager = null;
+    //private SpawnManager spawnManager = null;
+    private ObjectPooler objectPooler = null;
 
     private Coroutine timeCoroutine = null;
 
@@ -15,7 +16,8 @@ public class TimerManager : MonoBehaviour
 
     private void Start()
     {
-        spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager>();
+        //spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager>();
+        objectPooler = GameObject.FindGameObjectWithTag("ObjectPooler").GetComponent<ObjectPooler>();
 
         timeCoroutine = StartCoroutine(TimerCount());
     }
@@ -31,14 +33,17 @@ public class TimerManager : MonoBehaviour
             {
                 tempTimer = timer;
 
-                spawnManager.IncreaseLevel();
+                //spawnManager.IncreaseLevel();
+                objectPooler.IncreaseLevel();
             }
             UpdateTimeText();
         }
 
-        spawnManager.EndSpawnCoroutine();
+        //spawnManager.EndSpawnCoroutine();
+        objectPooler.EndSpawnCoroutine();
 
-        spawnManager.SpawnBoss();
+        //spawnManager.SpawnBoss();
+        objectPooler.SpawnBoss();
 
         UpdateTimeText();
 

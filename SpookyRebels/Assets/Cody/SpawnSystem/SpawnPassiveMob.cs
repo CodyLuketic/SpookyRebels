@@ -3,8 +3,6 @@ using UnityEngine.AI;
 
 public class SpawnPassiveMob : MonoBehaviour
 {
-    private PassiveMobMovement passiveMobMovScript = null;
-
     [SerializeField]
     private GameObject passiveMob = null;
 
