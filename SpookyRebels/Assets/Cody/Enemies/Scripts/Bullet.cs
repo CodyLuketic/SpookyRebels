@@ -4,28 +4,36 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed;
+    [SerializeField]
+    private float speed = 0;
 
-    private float time;
+    [SerializeField]
+    private float waitTime = 0;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        time++;
+        StartCoroutine(DestroyThisTimer());
+    }
 
-        if(time >= 600)
-        {
-            Destroy(gameObject);
-        }
-
-        transform.Translate(Vector3.forward * speed);
+    private void Update()
+    {
+        Travel();
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
+    }
+
+    private IEnumerator DestroyThisTimer()
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        Destroy(gameObject);
+    }
+
+    private void Travel()
+    {
+        transform.Translate(Vector3.forward * speed);
     }
 }

@@ -79,9 +79,7 @@ public class ObjectPooler : MonoBehaviour
             return null;
         }
         
-        GameObject enemyInstance  = poolDictionary[index].Dequeue();
-
-        enemyInstance.GetComponent<NavMeshAgent>().enabled = false;
+        GameObject enemyInstance = poolDictionary[index].Dequeue();
         enemyInstance.SetActive(true);
 
         float ranX = Random.Range(-maxRadius, maxRadius);
