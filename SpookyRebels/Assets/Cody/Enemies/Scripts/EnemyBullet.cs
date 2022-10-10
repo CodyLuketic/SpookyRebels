@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     [SerializeField]
     private float speed = 0;
@@ -22,14 +22,14 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private IEnumerator DestroyThisTimer()
     {
         yield return new WaitForSeconds(waitTime);
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void Travel()

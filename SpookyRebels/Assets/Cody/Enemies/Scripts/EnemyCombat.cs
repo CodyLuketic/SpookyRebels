@@ -6,6 +6,8 @@ public class EnemyCombat : MonoBehaviour
 {
     private EnemyValues enemyValuesScript = null;
 
+    private BulletPooler bulletPooler = null;
+
     private Rigidbody enemyRb = null;
 
     private NavMeshAgent enemyNav = null;
@@ -23,9 +25,10 @@ public class EnemyCombat : MonoBehaviour
     [SerializeField]
     private GameObject enemyBullet = null;
 
-    // Start is called before the first frame update
     private void Start()
     {
+        bulletPooler = GameObject.FindGameObjectWithTag("BulletPooler").GetComponent<BulletPooler>();
+
         enemyValuesScript = gameObject.GetComponent<EnemyValues>();
         enemyRb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.GetComponent<Animator>();
@@ -76,7 +79,7 @@ public class EnemyCombat : MonoBehaviour
 
         if(other.gameObject.CompareTag("EnemyBullet"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
     }
 
@@ -103,8 +106,7 @@ public class EnemyCombat : MonoBehaviour
     {
         while (true)
         {
-            Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward;
-            Instantiate(enemyBullet, position, transform.rotation);
+            bulletPooler.SpawnFromPool(transform);
 
             yield return new WaitForSeconds(enemyValuesScript.GetAttackSpeed());
         }
