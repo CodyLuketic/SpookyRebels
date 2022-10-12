@@ -13,7 +13,7 @@ public class EnemyFollow : MonoBehaviour
 
     private bool isMelee = false;
     
-    private void Awake()
+    private void Start()
     {
         valuesScript = gameObject.GetComponent<EnemyValues>();
         isMelee = valuesScript.GetMelee();
@@ -21,7 +21,7 @@ public class EnemyFollow : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(isMelee)
         {

@@ -9,7 +9,7 @@ public class EnemyBullet : MonoBehaviour
     [SerializeField]
     private float waitTime = 0;
 
-    void Awake()
+    private void Start()
     {
         StartCoroutine(DestroyThisTimer());
     }
@@ -19,9 +19,21 @@ public class EnemyBullet : MonoBehaviour
         Travel();
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        gameObject.SetActive(false);
+        if(other.gameObject.CompareTag("Player"))
+        {
+            gameObject.SetActive(false);
+        }
+        else if(other.gameObject.CompareTag("Enemy"))
+        {
+            gameObject.SetActive(false);
+        }
+        else if(other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Bullet"))
+        {
+            other.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
     }
 
     private IEnumerator DestroyThisTimer()

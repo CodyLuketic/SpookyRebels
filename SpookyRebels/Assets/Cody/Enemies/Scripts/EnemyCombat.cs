@@ -13,15 +13,9 @@ public class EnemyCombat : MonoBehaviour
     [Header("Melee Only")]
     [SerializeField]
     private float waitTimeAttacking = 0;
-    [SerializeField]
-    private float waitTimeStill = 0;
     private bool canMelee = false;
 
-    [Header("Ranged Only")]
-    [SerializeField]
-    private Transform firePoint = null;
-
-    private void Awake()
+    private void Start()
     {
         bulletPooler = GameObject.FindGameObjectWithTag("BulletPooler").GetComponent<BulletPooler>();
         enemyValuesScript = gameObject.GetComponent<EnemyValues>();
@@ -59,11 +53,6 @@ public class EnemyCombat : MonoBehaviour
             enemyValuesScript.SetHealth(enemyValuesScript.GetHealth() - 1);
             Destroy(other.gameObject);
         }
-
-        //if(other.gameObject.CompareTag("EnemyBullet"))
-        //{
-        //    other.gameObject.SetActive(false);
-        //}
     }
 
     private IEnumerator MeleeAttack(Collider other)
@@ -82,9 +71,10 @@ public class EnemyCombat : MonoBehaviour
 
     private IEnumerator RangedAttack()
     {
-        while (true)
+        while(true)
         {
-            bulletPooler.SpawnFromPool(firePoint);
+            bulletPooler.SpawnFromPool(transform);
+            Debug.Log("Called Bullet Pooler");
             yield return new WaitForSeconds(enemyValuesScript.GetAttackSpeed());
         }
     }

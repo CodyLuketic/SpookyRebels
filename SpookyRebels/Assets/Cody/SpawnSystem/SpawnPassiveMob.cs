@@ -10,6 +10,11 @@ public class SpawnPassiveMob : MonoBehaviour
 
     private void Start()
     {
+        Spawn();
+    }
+
+    private void Spawn()
+    {
         spawnPos = gameObject.transform.position;
 
         GameObject passiveMobInstance = Instantiate(passiveMob, spawnPos, Quaternion.identity);

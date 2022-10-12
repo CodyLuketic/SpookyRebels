@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.107910156, g: 0.107910156, b: 0.107910156, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25156,7 +25156,7 @@ MonoBehaviour:
   - tag: EnemyBullet
     prefab: {fileID: 7432057383437670610, guid: 4397abfc387f2814a9dead6b7e281b90,
       type: 3}
-    size: 200
+    size: 1000
 --- !u!4 &1150036124
 Transform:
   m_ObjectHideFlags: 0
@@ -29604,15 +29604,7 @@ MonoBehaviour:
   - tag: Ranged
     prefab: {fileID: 5213105247653237366, guid: 8ba1fbb3a9b0d294ea51c76777f53472,
       type: 3}
-    size: 50
-  - tag: Melee
-    prefab: {fileID: 5213105247653237366, guid: 8ba1fbb3a9b0d294ea51c76777f53472,
-      type: 3}
     size: 20
-  - tag: Ranged2
-    prefab: {fileID: 5213105247653237366, guid: 8ba1fbb3a9b0d294ea51c76777f53472,
-      type: 3}
-    size: 10
   boss: {fileID: 2263733754358686865, guid: 6e05538033a18b944b59a47612e51490, type: 3}
   minRadius: 20
   maxRadius: 25

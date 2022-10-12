@@ -31,7 +31,7 @@ public class EnemyValues : MonoBehaviour
     [SerializeField]
     private float _attackSpeed = 0;
 
-    private void Awake()
+    private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         enemyFollowScript = gameObject.GetComponent<EnemyFollow>();
