@@ -21,10 +21,6 @@ public class EnemyCombat : MonoBehaviour
     private float waitTimeStill = 0;
     private bool canMelee = false;
 
-    [Header("Ranged Only")]
-    [SerializeField]
-    private GameObject enemyBullet = null;
-
     private void Start()
     {
         bulletPooler = GameObject.FindGameObjectWithTag("BulletPooler").GetComponent<BulletPooler>();
@@ -49,11 +45,11 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
-    
     private void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("Player") && canMelee)
         {
+            Debug.Log("Collided");
             StartCoroutine(MeleeAttack(other));
             canMelee = false;
         }

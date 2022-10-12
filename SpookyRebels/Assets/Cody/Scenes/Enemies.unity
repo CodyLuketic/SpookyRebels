@@ -17354,6 +17354,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7123170690468466117, guid: 7967546a39972404f87543692ea5634c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123170691059256791, guid: 7967546a39972404f87543692ea5634c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123170691647693179, guid: 7967546a39972404f87543692ea5634c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7967546a39972404f87543692ea5634c, type: 3}
 --- !u!4 &741631883 stripped
@@ -29583,7 +29598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: Ranged
-    prefab: {fileID: 5213105247653237366, guid: 8ba1fbb3a9b0d294ea51c76777f53472,
+    prefab: {fileID: 2373522628951742640, guid: 7cfdeb858d2a5db459f4576395052ce5,
       type: 3}
     size: 50
   - tag: Melee
@@ -29591,7 +29606,7 @@ MonoBehaviour:
       type: 3}
     size: 20
   - tag: Ranged2
-    prefab: {fileID: 5213105247653237366, guid: 8ba1fbb3a9b0d294ea51c76777f53472,
+    prefab: {fileID: 2373522628951742640, guid: 7cfdeb858d2a5db459f4576395052ce5,
       type: 3}
     size: 10
   boss: {fileID: 2263733754358686865, guid: 6e05538033a18b944b59a47612e51490, type: 3}

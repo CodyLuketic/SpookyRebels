@@ -1,32 +1,57 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyFollow : MonoBehaviour
 {
+    private EnemyValues valuesScript = null;
     private NavMeshAgent enemyNav = null;
 
-    private GameObject player = null;
+    private Transform player;
+
+    [SerializeField]
+    private float minDistance = 2f;
+
+    private bool isMelee = false;
     
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        valuesScript = gameObject.GetComponent<EnemyValues>();
+        isMelee = valuesScript.GetMelee();
+
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
     {
-        Follow();
+        if(isMelee)
+        {
+            FollowMelee();
+        } else {
+            FollowRanged();
+        }
     }
 
-    private void Follow()
-    {
+    private void FollowMelee()
+    { 
         if(enemyNav != null && enemyNav.isOnNavMesh)
         {
-            enemyNav.SetDestination(player.transform.position);
+            enemyNav.SetDestination(player.position);
         }
-        else if(enemyNav != null)
+    }
+
+    private void FollowRanged()
+    {
+        float distance = Vector3.Distance(player.position, transform.position);
+        if(distance < 0)
         {
-            Destroy(gameObject);
+            distance *= -1;
+        }
+        
+        if(enemyNav != null && enemyNav.isOnNavMesh && distance > minDistance)
+        {
+            enemyNav.SetDestination(player.position);
+        } else {
+            enemyNav.SetDestination(transform.position);
         }
     }
 

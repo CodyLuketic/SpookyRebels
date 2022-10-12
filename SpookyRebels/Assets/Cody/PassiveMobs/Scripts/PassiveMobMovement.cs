@@ -80,12 +80,10 @@ public class PassiveMobMovement : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(transform.position - player.transform.position);
 
         Vector3 runTo = transform.position + transform.forward * runDistance;
-        Debug.Log("runTo = " + runTo);
         
         NavMeshHit hit;
 
         NavMesh.SamplePosition(runTo, out hit, 5, 1); 
-        Debug.Log("hit = " + hit + " hit.position = " + hit.position);
 
         nextTurnTime = Time.time + 5;
 

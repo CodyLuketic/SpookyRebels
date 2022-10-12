@@ -781,8 +781,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3151291507222594058}
   - component: {fileID: -5441072286316669648}
-  - component: {fileID: 376833920029636287}
   - component: {fileID: 765517454540569619}
+  - component: {fileID: 2604654129661411692}
   - component: {fileID: -5367534535278037644}
   - component: {fileID: 1784361856238988441}
   - component: {fileID: 476290248875161912}
@@ -832,20 +832,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &376833920029636287
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2373522628951742640}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.7047779
-  m_Height: 1.7684263
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.81313866, z: 0.14436448}
 --- !u!54 &765517454540569619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -862,6 +848,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!65 &2604654129661411692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2373522628951742640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0698724, y: 1.6926073, z: 0.5528312}
+  m_Center: {x: -0.023966473, y: 0.854695, z: 0.7272751}
 --- !u!195 &-5367534535278037644
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -880,8 +879,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
+  m_Height: 1.7
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1784361856238988441
@@ -916,6 +915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d98ab4f8d1c3b440956dc0a84934841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minDistance: 2
 --- !u!114 &8442335422071548396
 MonoBehaviour:
   m_ObjectHideFlags: 0
