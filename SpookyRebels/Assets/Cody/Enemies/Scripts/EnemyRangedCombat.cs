@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyCombat : MonoBehaviour
+public class EnemyRangedCombat : MonoBehaviour
 {
     private EnemyValues enemyValuesScript = null;
 
@@ -14,13 +14,6 @@ public class EnemyCombat : MonoBehaviour
 
     private Animator animator = null;
 
-    [Header("Melee Only")]
-    [SerializeField]
-    private float waitTimeAttacking = 0;
-    [SerializeField]
-    private float waitTimeStill = 0;
-    private bool canMelee = false;
-
     private void Start()
     {
         bulletPooler = GameObject.FindGameObjectWithTag("BulletPooler").GetComponent<BulletPooler>();
@@ -29,41 +22,15 @@ public class EnemyCombat : MonoBehaviour
         enemyRb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.GetComponent<Animator>();
 
-        AttackStart(enemyValuesScript.GetMelee());
+        StartCoroutine(RangedAttack());
         StartCoroutine(PhysicsConst());
-    }
-
-    private void AttackStart(bool melee)
-    {
-        if(melee)
-        {
-            canMelee = true;
-        }
-        else
-        {
-            StartCoroutine(RangedAttack());
-        }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Player") && canMelee)
+        if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("PassiveMob"))
         {
-            Debug.Log("Collided");
-            StartCoroutine(MeleeAttack(other));
-            canMelee = false;
-        }
-
-        if(other.gameObject.CompareTag("Enemy"))
-        {
-            enemyRb.velocity = Vector3.zero;
-            enemyRb.angularVelocity = Vector3.zero;
-        }
-
-        if(other.gameObject.CompareTag("PassiveMob"))
-        {
-            enemyRb.velocity = Vector3.zero;
-            enemyRb.angularVelocity = Vector3.zero;
+            ResetPhysics();
         }
 
         if(other.gameObject.CompareTag("Bullet"))
@@ -77,25 +44,6 @@ public class EnemyCombat : MonoBehaviour
         {
             other.gameObject.SetActive(false);
         }
-    }
-
-    private IEnumerator MeleeAttack(Collision other)
-    {
-        float tempSpeed = enemyValuesScript.GetSpeed();
-        animator.SetBool("attacking", true);
-        enemyValuesScript.SetSpeed(0);
-
-        // Player Damage Call Goes Here
-
-        yield return new WaitForSeconds(waitTimeAttacking);
-        animator.SetBool("attacking", false);
-
-        enemyRb.AddForce(other.GetContact(0).normal * enemyValuesScript.GetBounceBack(), ForceMode.Impulse);
-        
-        yield return new WaitForSeconds(waitTimeStill);
-        enemyValuesScript.SetSpeed(tempSpeed);
-        ResetPhysics();
-        canMelee = true;
     }
 
     private IEnumerator RangedAttack()

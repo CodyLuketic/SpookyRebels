@@ -49,6 +49,7 @@ public class EnemyPooler : MonoBehaviour
             {
                 GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
+                obj.transform.parent = gameObject.transform;
                 objectPool.Enqueue(obj);
             }
 
@@ -127,12 +128,12 @@ public class EnemyPooler : MonoBehaviour
         return enemyInstance;
     }
 
-    public void SpawnBoss()
+    public GameObject SpawnBoss()
     {
-        SpawnBossHelper();
+        return SpawnBossHelper();
     }
 
-    private void SpawnBossHelper()
+    private GameObject SpawnBossHelper()
     {
         GameObject bossInstance = Instantiate(boss);
 
@@ -178,6 +179,8 @@ public class EnemyPooler : MonoBehaviour
         }
 
         bossInstance.GetComponent<EnemyValues>().ApplyValues();
+
+        return bossInstance;
     }
 
     public void IncreaseLevel()

@@ -14,6 +14,8 @@ public class SpawnPassiveMob : MonoBehaviour
 
         GameObject passiveMobInstance = Instantiate(passiveMob, spawnPos, Quaternion.identity);
 
+        passiveMobInstance.transform.parent = gameObject.transform;
+
         UnityEngine.AI.NavMeshHit closestHit;
         if(UnityEngine.AI.NavMesh.SamplePosition(spawnPos, out closestHit, 500, 1 ))
         {

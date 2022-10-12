@@ -5,7 +5,7 @@ public class EnemyValues : MonoBehaviour
 {
     private GameManager gameManager = null;
     private EnemyFollow enemyFollowScript = null;
-    private EnemyCombat enemyCombatScript = null;
+    //private EnemyMeleeCombat enemyCombatScript = null;
 
     [Header("Basic Values")]
     [SerializeField]
@@ -38,7 +38,7 @@ public class EnemyValues : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         enemyFollowScript = gameObject.GetComponent<EnemyFollow>();
-        enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
+        //enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
     }
 
     public void ApplyValues()
@@ -49,7 +49,7 @@ public class EnemyValues : MonoBehaviour
     private void ApplyValuesHelper()
     {
         gameObject.GetComponent<EnemyFollow>().SetNavAgent();
-        gameObject.GetComponent<EnemyCombat>().SetNavAgent();
+       // gameObject.GetComponent<EnemyCombat>().SetNavAgent();
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
