@@ -1,12 +1,10 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Animations;
 
 public class EnemyValues : MonoBehaviour
 {
     private GameManager gameManager = null;
     private EnemyFollow enemyFollowScript = null;
-
     private EnemyCombat enemyCombatScript = null;
 
     [Header("Basic Values")]
@@ -99,7 +97,8 @@ public class EnemyValues : MonoBehaviour
                 gameManager.Win();
             }
 
-            Destroy(gameObject);
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            gameObject.SetActive(false);
         }
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ObjectPooler : MonoBehaviour
+public class EnemyPooler : MonoBehaviour
 {
     [System.Serializable]
     public class Pool
@@ -17,8 +17,6 @@ public class ObjectPooler : MonoBehaviour
     private List<Pool> pools;
 
     private Dictionary<string, Queue<GameObject>> poolDictionary;
-
-    private int poolIndex = 0;
 
     private Coroutine spawnCoroutine = null;
 
@@ -40,6 +38,8 @@ public class ObjectPooler : MonoBehaviour
     private void SetDictionary()
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
+        
+        int index = 0;
 
         foreach (Pool pool in pools)
         {
@@ -52,9 +52,8 @@ public class ObjectPooler : MonoBehaviour
                 objectPool.Enqueue(obj);
             }
 
-            poolDictionary.Add(poolIndex.ToString(), objectPool);
-            Debug.Log(poolIndex);
-            poolIndex++;
+            poolDictionary.Add(index.ToString(), objectPool);
+            index++;
         }
     }
 
@@ -72,16 +71,13 @@ public class ObjectPooler : MonoBehaviour
     {
         string index = Random.Range(0, pools.Count).ToString();
             
-        Debug.Log(index);
         if(!poolDictionary.ContainsKey(index))
         {
             Debug.LogWarning("Pool in index " + index + " doesn't exist");
             return null;
         }
         
-        GameObject enemyInstance  = poolDictionary[index].Dequeue();
-
-        enemyInstance.GetComponent<NavMeshAgent>().enabled = false;
+        GameObject enemyInstance = poolDictionary[index].Dequeue();
         enemyInstance.SetActive(true);
 
         float ranX = Random.Range(-maxRadius, maxRadius);
