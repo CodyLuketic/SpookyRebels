@@ -17282,6 +17282,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 499818234, guid: 7967546a39972404f87543692ea5634c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 499818234, guid: 7967546a39972404f87543692ea5634c, type: 3}
       propertyPath: m_SlopeLimit
       value: 45
       objectReference: {fileID: 0}
@@ -29598,15 +29602,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: Ranged
-    prefab: {fileID: 2373522628951742640, guid: 7cfdeb858d2a5db459f4576395052ce5,
+    prefab: {fileID: 5213105247653237366, guid: 8ba1fbb3a9b0d294ea51c76777f53472,
       type: 3}
     size: 50
   - tag: Melee
-    prefab: {fileID: 2373522628951742640, guid: 7cfdeb858d2a5db459f4576395052ce5,
+    prefab: {fileID: 5213105247653237366, guid: 8ba1fbb3a9b0d294ea51c76777f53472,
       type: 3}
     size: 20
   - tag: Ranged2
-    prefab: {fileID: 2373522628951742640, guid: 7cfdeb858d2a5db459f4576395052ce5,
+    prefab: {fileID: 5213105247653237366, guid: 8ba1fbb3a9b0d294ea51c76777f53472,
       type: 3}
     size: 10
   boss: {fileID: 2263733754358686865, guid: 6e05538033a18b944b59a47612e51490, type: 3}

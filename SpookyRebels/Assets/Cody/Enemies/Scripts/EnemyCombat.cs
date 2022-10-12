@@ -2,14 +2,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyMeleeCombat : MonoBehaviour
+public class EnemyCombat : MonoBehaviour
 {
     private EnemyValues enemyValuesScript = null;
-
+    private BulletPooler bulletPooler = null;
     private Rigidbody enemyRb = null;
-
     private NavMeshAgent enemyNav = null;
-
     private Animator animator = null;
 
     [Header("Melee Only")]
@@ -17,46 +15,59 @@ public class EnemyMeleeCombat : MonoBehaviour
     private float waitTimeAttacking = 0;
     [SerializeField]
     private float waitTimeStill = 0;
-    private bool canMelee = true;
+    private bool canMelee = false;
 
-    private void Start()
+    [Header("Ranged Only")]
+    [SerializeField]
+    private Transform firePoint = null;
+
+    private void Awake()
     {
+        bulletPooler = GameObject.FindGameObjectWithTag("BulletPooler").GetComponent<BulletPooler>();
         enemyValuesScript = gameObject.GetComponent<EnemyValues>();
         enemyRb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.GetComponent<Animator>();
 
-        StartCoroutine(PhysicsConst());
+        AttackStart(enemyValuesScript.GetMelee());
+    }
+    private void AttackStart(bool melee)
+    {
+        if(melee)
+        {
+            canMelee = true;
+        }
+        else
+        {
+            StartCoroutine(RangedAttack());
+        }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player") && canMelee && gameObject.activeSelf)
         {
             StartCoroutine(MeleeAttack(other));
             canMelee = false;
         }
+    }
 
-        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("PassiveMob"))
-        {
-            ResetPhysics();
-        }
+    private void OnCollisionEnter(Collision other)
+    {
 
         if(other.gameObject.CompareTag("Bullet"))
         {
             enemyValuesScript.SetHealth(enemyValuesScript.GetHealth() - 1);
-
             Destroy(other.gameObject);
         }
 
-        if(other.gameObject.CompareTag("EnemyBullet"))
-        {
-            other.gameObject.SetActive(false);
-        }
+        //if(other.gameObject.CompareTag("EnemyBullet"))
+        //{
+        //    other.gameObject.SetActive(false);
+        //}
     }
 
-    private IEnumerator MeleeAttack(Collision other)
+    private IEnumerator MeleeAttack(Collider other)
     {
-        ResetPhysics();
         float tempSpeed = enemyValuesScript.GetSpeed();
         animator.SetBool("attacking", true);
         enemyValuesScript.SetSpeed(0);
@@ -65,33 +76,23 @@ public class EnemyMeleeCombat : MonoBehaviour
 
         yield return new WaitForSeconds(waitTimeAttacking);
         animator.SetBool("attacking", false);
-
-        enemyRb.AddForce(other.GetContact(0).normal * enemyValuesScript.GetBounceBack(), ForceMode.Impulse);
-        enemyRb.angularVelocity = Vector3.zero;
-
-        yield return new WaitForSeconds(waitTimeStill);
         enemyValuesScript.SetSpeed(tempSpeed);
-        ResetPhysics();
         canMelee = true;
     }
-    
-    private IEnumerator PhysicsConst()
-    {
-        yield return new WaitForSeconds(1);
-        ResetPhysics();
-    }
 
-    private void ResetPhysics()
+    private IEnumerator RangedAttack()
     {
-        enemyRb.velocity = Vector3.zero;
-        enemyRb.angularVelocity = Vector3.zero;
+        while (true)
+        {
+            bulletPooler.SpawnFromPool(firePoint);
+            yield return new WaitForSeconds(enemyValuesScript.GetAttackSpeed());
+        }
     }
 
     public void SetNavAgent()
     {
         SetNavAgentHelper();
     }
-
     private void SetNavAgentHelper()
     {
         enemyNav = gameObject.GetComponent<NavMeshAgent>();

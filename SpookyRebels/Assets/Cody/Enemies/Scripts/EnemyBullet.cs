@@ -9,12 +9,12 @@ public class EnemyBullet : MonoBehaviour
     [SerializeField]
     private float waitTime = 0;
 
-    void Start()
+    void Awake()
     {
         StartCoroutine(DestroyThisTimer());
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Travel();
     }
@@ -33,6 +33,6 @@ public class EnemyBullet : MonoBehaviour
 
     private void Travel()
     {
-        transform.Translate(Vector3.forward * speed);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }

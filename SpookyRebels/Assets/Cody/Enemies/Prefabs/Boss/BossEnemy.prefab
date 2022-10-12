@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4520520705211699361}
   - component: {fileID: 1415696844525062171}
   - component: {fileID: 3124126094804730768}
-  - component: {fileID: 7546864234251785447}
+  - component: {fileID: 4619067750039871858}
   m_Layer: 0
   m_Name: BossEnemy
   m_TagString: Enemy
@@ -150,7 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d98ab4f8d1c3b440956dc0a84934841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7546864234251785447
+  minDistance: 2
+--- !u!114 &4619067750039871858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,9 +160,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2263733754358686865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdd1503d57c32ff43999b7db3c5775b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f8d9367735a50d40908c3a5f84aceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waitTimeAttacking: 0
   waitTimeStill: 0
-  enemyBullet: {fileID: 0}

@@ -5,20 +5,17 @@ public class EnemyValues : MonoBehaviour
 {
     private GameManager gameManager = null;
     private EnemyFollow enemyFollowScript = null;
-    //private EnemyMeleeCombat enemyCombatScript = null;
+    private EnemyCombat enemyCombatScript = null;
 
     [Header("Basic Values")]
     [SerializeField]
-    private float _health = 0;
+    private int _health = 0;
 
     [SerializeField]
     private float _speed = 0;
 
     [SerializeField]
     private float _damage = 0;
-
-    [SerializeField]
-    private float _defense = 0;
 
     [SerializeField]
     private bool _melee = false;
@@ -34,11 +31,11 @@ public class EnemyValues : MonoBehaviour
     [SerializeField]
     private float _attackSpeed = 0;
 
-    private void Start()
+    private void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         enemyFollowScript = gameObject.GetComponent<EnemyFollow>();
-        //enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
+        enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
     }
 
     public void ApplyValues()
@@ -49,7 +46,7 @@ public class EnemyValues : MonoBehaviour
     private void ApplyValuesHelper()
     {
         gameObject.GetComponent<EnemyFollow>().SetNavAgent();
-       // gameObject.GetComponent<EnemyCombat>().SetNavAgent();
+        gameObject.GetComponent<EnemyCombat>().SetNavAgent();
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
@@ -63,7 +60,6 @@ public class EnemyValues : MonoBehaviour
         _speed += level;
         _health += level;
         _damage += level;
-        _defense += level;
 
         _bounceBack += level;
         _attackSpeed += level;
@@ -82,11 +78,11 @@ public class EnemyValues : MonoBehaviour
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
-    public void SetHealth(float health)
+    public void SetHealth(int health)
     {
         SetHealthHelper(health);
     }
-    private void SetHealthHelper(float health)
+    private void SetHealthHelper(int health)
     {
         _health = health;
         
@@ -109,15 +105,6 @@ public class EnemyValues : MonoBehaviour
     private void SetDamageHelper(float damage)
     {
         _damage = damage;
-    }
-
-    public void SetDefense(float defense)
-    {
-        SetDefenseHelper(defense);
-    }
-    private void SetDefenseHelper(float defense)
-    {
-        _defense = defense;
     }
 
     public void SetBounceBack(float bounceBack)
@@ -148,11 +135,11 @@ public class EnemyValues : MonoBehaviour
         return _speed;
     }
 
-    public float GetHealth()
+    public int GetHealth()
     {
         return GetHealthHelper();
     }
-    private float GetHealthHelper()
+    private int GetHealthHelper()
     {
         return _health;
     }
@@ -164,15 +151,6 @@ public class EnemyValues : MonoBehaviour
     private float GetDamageHelper()
     {
         return _damage;
-    }
-
-    public float GetDefense()
-    {
-        return GetDefenseHelper();
-    }
-    private float GetDefenseHelper()
-    {
-        return _defense;
     }
 
     public bool GetMelee()
