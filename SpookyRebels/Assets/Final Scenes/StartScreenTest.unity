@@ -1752,61 +1752,62 @@ MonoBehaviour:
           skillOwned: 0
           skillDescription: Increase the distance that your bullets travel.
           skillCost: 1 Skill Point
-        - skillName: 
+        - skillName: Gem Shield
+          skillIcon: {fileID: 0}
+          skillOwned: 1
+          skillDescription: Become imortal for a few seconds but lose the ability
+            to move
+          skillCost: 
+        - skillName: Longer Lasting Shield
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increases the length of time Gem Shield lasts
+          skillCost: 1 Skill Point
+        - skillName: Gem Wave
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: When you start Gem Shield you also now spawn a gem wave
+          skillCost: 1 Skill Point
+        - skillName: Rapid Fire Crab
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Double your attack speed during Gem Shield
+          skillCost: 1 Skill Point
+        - skillName: ???????????????
           skillIcon: {fileID: 0}
           skillOwned: 0
           skillDescription: 
           skillCost: 
-        - skillName: 
+        - skillName: Bigger Gem Wave
           skillIcon: {fileID: 0}
           skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
+          skillDescription: Increases your Gem Wave's range
+          skillCost: 1 Skill Point
+        - skillName: Stronger Gem Wave
           skillIcon: {fileID: 0}
           skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
+          skillDescription: Increases the damage that Gem Wave does
+          skillCost: 1 Skill Point
+        - skillName: Crab Rampage
           skillIcon: {fileID: 0}
           skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
+          skillDescription: You can no longer run out of ammo during Gem Shield
+          skillCost: 1 Skill Point
+        - skillName: More Shields
           skillIcon: {fileID: 0}
           skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
+          skillDescription: Decreases the cooldown of Gem Shield
+          skillCost: 1 Skill Point
+        - skillName: Bigger Gem Wave+
           skillIcon: {fileID: 0}
           skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
+          skillDescription: Increases your Gem Wave's Range even more
+          skillCost: 1 Skill Point
+        - skillName: Stronger Gem Wave+
           skillIcon: {fileID: 0}
           skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
+          skillDescription: Increases the damage that Gem Wave does even more
+          skillCost: 1 Skill Point
         - skillName: 
           skillIcon: {fileID: 0}
           skillOwned: 0
@@ -1868,7 +1869,7 @@ MonoBehaviour:
       health: 100
       speed: 1
       bulletSpeed: 4
-      defensetimer: 5
+      defensetimer: 15
     - name: 
       Icon: {fileID: 0}
       gunIcon: {fileID: 0}

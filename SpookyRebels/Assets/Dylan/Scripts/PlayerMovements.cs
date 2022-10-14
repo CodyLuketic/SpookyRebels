@@ -81,16 +81,17 @@ public class PlayerMovements : MonoBehaviour
             // Move the controller
             characterController.Move(moveDirection * Time.deltaTime);
 
-            generateMousePos();
 
-            // Player rotation to Cursor
-            lookPoint = mouseWorldPosition;
-            lookPoint.y = transform.position.y;
-            transform.LookAt(lookPoint, Vector3.up);
 
-            gunPoint = transform.forward;
         }
 
+        generateMousePos();
+        // Player rotation to Cursor
+        lookPoint = mouseWorldPosition;
+        lookPoint.y = transform.position.y;
+        transform.LookAt(lookPoint, Vector3.up);
+
+        gunPoint = transform.forward;
         Vector3 getRotation()
         {
             return moveDirection;

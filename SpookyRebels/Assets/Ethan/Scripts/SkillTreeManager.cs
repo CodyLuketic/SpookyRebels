@@ -67,6 +67,19 @@ public class SkillTreeManager : MonoBehaviour
         if (skillNum == 14) return p.magamon[p.skillMonEquipted].sTree.Skills[8].skillOwned;
         if (skillNum == 15) return p.magamon[p.skillMonEquipted].sTree.Skills[9].skillOwned;
 
+
+        //defense tree
+        if (skillNum == 16) return true;
+        if (skillNum == 17) return p.magamon[p.skillMonEquipted].sTree.Skills[16].skillOwned;
+        if (skillNum == 18) return p.magamon[p.skillMonEquipted].sTree.Skills[16].skillOwned;
+        if (skillNum == 19) return p.magamon[p.skillMonEquipted].sTree.Skills[17].skillOwned;
+        if (skillNum == 20) return p.magamon[p.skillMonEquipted].sTree.Skills[17].skillOwned;
+        if (skillNum == 21) return p.magamon[p.skillMonEquipted].sTree.Skills[18].skillOwned;
+        if (skillNum == 22) return p.magamon[p.skillMonEquipted].sTree.Skills[18].skillOwned;
+        if (skillNum == 23) return p.magamon[p.skillMonEquipted].sTree.Skills[19].skillOwned;
+        if (skillNum == 24) return p.magamon[p.skillMonEquipted].sTree.Skills[20].skillOwned;
+        if (skillNum == 25) return p.magamon[p.skillMonEquipted].sTree.Skills[21].skillOwned;
+        if (skillNum == 26) return p.magamon[p.skillMonEquipted].sTree.Skills[22].skillOwned;
         return false;
     }
     //buttons

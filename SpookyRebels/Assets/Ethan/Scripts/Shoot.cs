@@ -27,15 +27,22 @@ public class Shoot : MonoBehaviour
     //ui
     [SerializeField] private TextMeshProUGUI ammoTxt;
 
+    // player conections
+    private GameObject player;
     //switching things
     public bool swapped = false;
 
+    //skill stuff
+    public bool ammoLoss = true;
     // profile stuff
     public Profile p;
-
+    public PlayerMovements pMovScript = null;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        pMovScript = player.GetComponent<PlayerMovements>();
+
         p = MainProfile.Instance.mainP;
         heldAttacking = p.magamon[p.equipt1];
         if(p.equipt2 != -1) heldDefending = p.magamon[p.equipt2];
@@ -52,8 +59,11 @@ public class Shoot : MonoBehaviour
         {
             attackSpeedMod = 0;
         }
-        
 
+        if (heldDefending.species == "CystalCrab")
+        {
+            if (heldDefending.sTree.Skills[24].skillOwned) CrystalCrab.defensetimer = 10;
+        }
 
         //////add the skills that are only at the begining
     }
@@ -106,8 +116,8 @@ public class Shoot : MonoBehaviour
                 if (heldAttacking.sTree.Skills[12].skillOwned)
                 {
                     Instantiate(CrabMiddleShotPrefab, leftCrabPoint.position, leftCrabPoint.rotation);
-                    Instantiate(CrabMiddleShotPrefab, rightCrabPoint.position, rightCrabPoint.rotation);
-                    currentBullets--;
+                    Instantiate(CrabMiddleShotPrefab, rightCrabPoint.position, rightCrabPoint.rotation);                 
+                    if(ammoLoss) currentBullets--;
                 }
                 else 
                 {
@@ -116,7 +126,8 @@ public class Shoot : MonoBehaviour
                 }
             }
 
-            currentBullets--;
+            if(ammoLoss) currentBullets--;
+            if (currentBullets < 0) currentBullets = 0;
             ammoTxt.text = currentBullets + "";
         }
         if (currentBullets <= 0)
@@ -155,11 +166,62 @@ public class Shoot : MonoBehaviour
 
     ////defending method
     void Defend() 
-    { 
-    
+    {
+        Debug.Log("defense");
+        if (heldDefending.species == "Lucyfur")
+        {
+            //play sound clip
+        }
+        else if (heldDefending.species == "CystalCrab")
+        {
+            StartCoroutine(eShieldMode());
+        }
+
+        canDefend = false;
+        StartCoroutine(eDefendCooldown());
     }
 
+    IEnumerator eShieldMode()
+    {
+        pMovScript.canMove = false;
+        canSwitch = false;
+        //make no damage
+        if (heldDefending.sTree.Skills[19].skillOwned)
+        {
+            heldAttacking.attackSpeed /= 2;
+        }
+        if (heldDefending.sTree.Skills[23].skillOwned)
+        {
+            ammoLoss = false;
+        }
 
+        if (heldDefending.sTree.Skills[17].skillOwned)
+        {
+            yield return new WaitForSeconds(5);
+        } 
+        else
+        {
+            yield return new WaitForSeconds(3);
+        }
+
+        if (heldDefending.sTree.Skills[23].skillOwned)
+        {
+            ammoLoss = true;
+        }
+        if (heldDefending.sTree.Skills[19].skillOwned)
+        {
+            heldAttacking.attackSpeed *= 2;
+        }
+        //can take damage
+        canSwitch = true;
+        pMovScript.canMove = true;
+    }
+
+    IEnumerator eDefendCooldown()
+    {
+        yield return new WaitForSeconds(heldDefending.defensetimer);
+        canDefend = true;
+    }
 
 
 
@@ -199,11 +261,19 @@ public class Shoot : MonoBehaviour
                 attackSpeedMod = 0;
             }
 
+
+            if (heldDefending.species == "CystalCrab")
+            {
+                if (heldDefending.sTree.Skills[24].skillOwned) CrystalCrab.defensetimer = 10;
+            }
+
+            // stop cooldowns
             if (canAttack == false) StopCoroutine(eAttackCooldown());
+            if (canDefend == false) StopCoroutine(eDefendCooldown());
             if (hasBullets == false) StopCoroutine(eReloadCooldown());
             hasBullets = true;
             canAttack = true;
-
+            canDefend = true;
             //swap sound
             //update ui
             if (heldAttacking.species == "Lucyfur")
