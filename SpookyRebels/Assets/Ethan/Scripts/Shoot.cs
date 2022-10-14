@@ -62,7 +62,7 @@ public class Shoot : MonoBehaviour
 
         if (heldDefending.species == "CystalCrab")
         {
-            if (heldDefending.sTree.Skills[24].skillOwned) CrystalCrab.defensetimer = 10;
+            if (heldDefending.sTree.Skills[24].skillOwned) heldDefending.defensetimer = 10;
         }
 
         //////add the skills that are only at the begining
@@ -264,7 +264,7 @@ public class Shoot : MonoBehaviour
 
             if (heldDefending.species == "CystalCrab")
             {
-                if (heldDefending.sTree.Skills[24].skillOwned) CrystalCrab.defensetimer = 10;
+                if (heldDefending.sTree.Skills[24].skillOwned) heldDefending.defensetimer = 10;
             }
 
             // stop cooldowns
