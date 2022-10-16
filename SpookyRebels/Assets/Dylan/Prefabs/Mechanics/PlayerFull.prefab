@@ -62,6 +62,37 @@ Transform:
   m_Father: {fileID: 7123170690156522224}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1062348073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1062348074}
+  m_Layer: 0
+  m_Name: GemWavePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1062348074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062348073}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.79, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7123170690156522224}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1749488636
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,6 +194,7 @@ Transform:
   - {fileID: 607727490}
   - {fileID: 835676099}
   - {fileID: 1749488637}
+  - {fileID: 1062348074}
   m_Father: {fileID: 7123170689632051110}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -275,6 +307,9 @@ MonoBehaviour:
   lucyShotPrefab: {fileID: 4527872260846675481, guid: 04932225a7c24194f874f5092fa3739f,
     type: 3}
   CrabMiddleShotPrefab: {fileID: 6061546009853785350, guid: 0c441f61d2dcba74bb60207f9beaa6fc,
+    type: 3}
+  GemWavePoint: {fileID: 1062348074}
+  GemWavePrefab: {fileID: 1665272785231200273, guid: 55359b934c583f544afafe04c991cf50,
     type: 3}
   currentBullets: 0
   hasBullets: 1
@@ -707,6 +742,7 @@ MonoBehaviour:
   attackSpeedMod: 0
   ammoTxt: {fileID: 0}
   swapped: 0
+  ammoLoss: 1
   p:
     name: 
     Money: 0
@@ -11425,6 +11461,7 @@ MonoBehaviour:
     skillMonEquipted: 0
     equipt1: 0
     equipt2: -1
+  pMovScript: {fileID: 0}
 --- !u!1 &7123170690385004114
 GameObject:
   m_ObjectHideFlags: 0

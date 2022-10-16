@@ -12,6 +12,8 @@ public class Shoot : MonoBehaviour
     public Transform rightCrabPoint;
     public GameObject lucyShotPrefab;
     public GameObject CrabMiddleShotPrefab;
+    public Transform GemWavePoint;
+    public GameObject GemWavePrefab;
 
     public int currentBullets;
     public bool hasBullets = true;
@@ -174,6 +176,7 @@ public class Shoot : MonoBehaviour
         }
         else if (heldDefending.species == "CystalCrab")
         {
+            if (heldDefending.sTree.Skills[18].skillOwned) Instantiate(GemWavePrefab, GemWavePoint.position, GemWavePoint.rotation);
             StartCoroutine(eShieldMode());
         }
 
