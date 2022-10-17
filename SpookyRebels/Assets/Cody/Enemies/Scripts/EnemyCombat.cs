@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class EnemyCombat : MonoBehaviour
 {
     private EnemyValues enemyValuesScript = null;
+    private EnemyFollow enemyFollowScript = null;
     private BulletPooler bulletPooler = null;
     private Rigidbody enemyRb = null;
     private NavMeshAgent enemyNav = null;
@@ -12,28 +13,23 @@ public class EnemyCombat : MonoBehaviour
 
     [Header("Melee Only")]
     [SerializeField]
-    private float waitTimeAttacking = 0;
+    private float waitTimeAttacking = 0f;
+
     private bool canMelee = false;
+    private float tempSpeed = 0f;
+    private Coroutine rangedAttack = null;
 
     private void Start()
     {
-        bulletPooler = GameObject.FindGameObjectWithTag("BulletPooler").GetComponent<BulletPooler>();
         enemyValuesScript = gameObject.GetComponent<EnemyValues>();
+        enemyFollowScript = gameObject.GetComponent<EnemyFollow>();
+        enemyNav = gameObject.GetComponent<NavMeshAgent>();
         enemyRb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.GetComponent<Animator>();
 
-        AttackStart(enemyValuesScript.GetMelee());
-    }
-    private void AttackStart(bool melee)
-    {
-        if(melee)
-        {
-            canMelee = true;
-        }
-        else
-        {
-            StartCoroutine(RangedAttack());
-        }
+        bulletPooler = GameObject.FindGameObjectWithTag("BulletPooler").GetComponent<BulletPooler>();
+
+        canMelee = enemyValuesScript.GetMelee();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -69,22 +65,25 @@ public class EnemyCombat : MonoBehaviour
         canMelee = true;
     }
 
+    public void StartRangedAttack()
+    {
+        rangedAttack = StartCoroutine(RangedAttack());
+    }
     private IEnumerator RangedAttack()
     {
+        animator.SetBool("attacking", true);
+        tempSpeed = enemyValuesScript.GetSpeed();
+        enemyValuesScript.SetSpeed(0);
         while(true)
         {
             bulletPooler.SpawnFromPool(transform);
-            Debug.Log("Called Bullet Pooler");
             yield return new WaitForSeconds(enemyValuesScript.GetAttackSpeed());
         }
     }
-
-    public void SetNavAgent()
+    public void StopRangedAttack()
     {
-        SetNavAgentHelper();
-    }
-    private void SetNavAgentHelper()
-    {
-        enemyNav = gameObject.GetComponent<NavMeshAgent>();
+        StopCoroutine(rangedAttack);
+        animator.SetBool("attacking", false);
+        enemyValuesScript.SetSpeed(tempSpeed);
     }
 }

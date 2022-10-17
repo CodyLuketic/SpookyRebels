@@ -4,19 +4,28 @@ using UnityEngine.AI;
 public class EnemyFollow : MonoBehaviour
 {
     private EnemyValues valuesScript = null;
+    private EnemyCombat enemyCombatScript = null;
     private NavMeshAgent enemyNav = null;
 
     private Transform player;
+    private float distance = 0f;
+    private bool isFollowing = true;
 
     [SerializeField]
     private float minDistance = 2f;
 
     private bool isMelee = false;
+    private float rotationSpeed = 0f;
+    private bool attackRunning = false;
     
     private void Start()
     {
         valuesScript = gameObject.GetComponent<EnemyValues>();
+        enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
+        enemyNav = gameObject.GetComponent<NavMeshAgent>();
+
         isMelee = valuesScript.GetMelee();
+        rotationSpeed = valuesScript.GetRotationSpeed();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -41,7 +50,7 @@ public class EnemyFollow : MonoBehaviour
 
     private void FollowRanged()
     {
-        float distance = Vector3.Distance(player.position, transform.position);
+        distance = Vector3.Distance(player.position, transform.position);
         if(distance < 0)
         {
             distance *= -1;
@@ -49,19 +58,34 @@ public class EnemyFollow : MonoBehaviour
         
         if(enemyNav != null && enemyNav.isOnNavMesh && distance > minDistance)
         {
+            if(attackRunning)
+            {
+                enemyCombatScript.StopRangedAttack();
+                attackRunning = false;
+            }
+
             enemyNav.SetDestination(player.position);
         } else {
+            if(!attackRunning)
+            {
+                enemyCombatScript.StartRangedAttack();
+                attackRunning = true;
+            }
+
             enemyNav.SetDestination(transform.position);
+
+            Vector3 direction = (player.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
         }
     }
 
-    public void SetNavAgent()
+    public bool GetIsFollowing()
     {
-        SetNavAgentHelper();
+        return GetIsFollowingHelper();
     }
-
-    private void SetNavAgentHelper()
+    private bool GetIsFollowingHelper()
     {
-        enemyNav = gameObject.GetComponent<NavMeshAgent>();
+        return isFollowing;
     }
 }

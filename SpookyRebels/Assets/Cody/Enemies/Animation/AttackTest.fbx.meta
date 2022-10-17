@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: attack
+    second: MeleeAttack
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -46,7 +46,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: attack
+      name: MeleeAttack
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0

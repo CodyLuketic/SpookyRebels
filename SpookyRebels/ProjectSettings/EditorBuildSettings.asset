@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Final Scenes/TheHub.unity
     guid: 549056ace29e5ca47bd120a4df08e7c3
   - enabled: 1
-    path: Assets/Cody/Scenes/Enemies.unity
+    path: Assets/Cody/Enemies.unity
     guid: d45f4ff02f64dfb42ad7035eff2076c3
   - enabled: 1
     path: Assets/Ethan/Scenes/SkillTreeBase.unity

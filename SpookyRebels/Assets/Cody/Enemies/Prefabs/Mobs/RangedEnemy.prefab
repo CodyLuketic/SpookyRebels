@@ -116,7 +116,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!195 &-9144993814690053197
 NavMeshAgent:
@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
-  _speed: 4
+  _speed: 3
   _damage: 3
-  _melee: 0
+  isMelee: 0
   isBoss: 0
   _bounceBack: 0
   _attackSpeed: 1
@@ -185,4 +185,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTimeAttacking: 0
-  waitTimeStill: 0

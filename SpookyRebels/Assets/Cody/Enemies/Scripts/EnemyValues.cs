@@ -17,8 +17,9 @@ public class EnemyValues : MonoBehaviour
     [SerializeField]
     private float _damage = 0;
 
+    [Header("Enemy Type")]
     [SerializeField]
-    private bool _melee = false;
+    private bool isMelee = false;
 
     [SerializeField]
     private bool isBoss = false;
@@ -30,6 +31,7 @@ public class EnemyValues : MonoBehaviour
     [Header("Ranged Values")]
     [SerializeField]
     private float _attackSpeed = 0;
+    private float _rotationSpeed = 0;
 
     private void Start()
     {
@@ -45,8 +47,6 @@ public class EnemyValues : MonoBehaviour
 
     private void ApplyValuesHelper()
     {
-        gameObject.GetComponent<EnemyFollow>().SetNavAgent();
-        gameObject.GetComponent<EnemyCombat>().SetNavAgent();
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
@@ -63,6 +63,7 @@ public class EnemyValues : MonoBehaviour
 
         _bounceBack += level;
         _attackSpeed += level;
+        _rotationSpeed += level;
 
         ApplyValuesHelper();
     }
@@ -125,6 +126,15 @@ public class EnemyValues : MonoBehaviour
         _attackSpeed = attackSpeed;
     }
 
+    public void SetRotationSpeed(float rotationSpeed)
+    {
+        SetRotationSpeedHelper(rotationSpeed);
+    }
+    private void SetRotationSpeedHelper(float rotationSpeed)
+    {
+        _rotationSpeed = rotationSpeed;
+    }
+
     // Getters
     public float GetSpeed()
     {
@@ -159,7 +169,7 @@ public class EnemyValues : MonoBehaviour
     }
     private bool GetMeleeHelper()
     {
-        return _melee;
+        return isMelee;
     }
 
     public float GetBounceBack()
@@ -178,5 +188,14 @@ public class EnemyValues : MonoBehaviour
     private float GetAttackSpeedHelper()
     {
         return _attackSpeed;
+    }
+
+    public float GetRotationSpeed()
+    {
+        return GetRotationSpeedHelper();
+    }
+    private float GetRotationSpeedHelper()
+    {
+        return _rotationSpeed;
     }
 }
