@@ -39,6 +39,7 @@ public class EnemyValues : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         enemyFollowScript = gameObject.GetComponent<EnemyFollow>();
         enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
+        tempSpeed = _speed;
     }
 
     public void ApplyValues()
@@ -76,9 +77,7 @@ public class EnemyValues : MonoBehaviour
     }
     private void ZeroSpeedHelper()
     {
-        tempSpeed = _speed;
-        _speed = 0;
-        gameObject.GetComponent<NavMeshAgent>().speed = _speed;
+        gameObject.GetComponent<NavMeshAgent>().speed = 0;
     }
     public void ResetSpeed()
     {
@@ -86,7 +85,6 @@ public class EnemyValues : MonoBehaviour
     }
     private void ResetSpeedHelper()
     {
-        _speed = tempSpeed;
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
