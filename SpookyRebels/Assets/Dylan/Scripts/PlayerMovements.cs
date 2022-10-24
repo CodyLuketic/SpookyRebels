@@ -92,10 +92,12 @@ public class PlayerMovements : MonoBehaviour
         transform.LookAt(lookPoint, Vector3.up);
 
         gunPoint = transform.forward;
+        /*
         Vector3 getRotation()
         {
             return moveDirection;
         }
+        */
 
         if (Input.GetButton("Popup"))
         {

@@ -62,6 +62,7 @@ public class BulletPooler : MonoBehaviour
         bulletInstance.SetActive(true);
 
         Vector3 spawnPos = new Vector3(enemyTransform.position.x, enemyTransform.position.y, enemyTransform.position.z) + enemyTransform.forward;
+        spawnPos.y += 1;
         bulletInstance.transform.position = spawnPos;
         bulletInstance.transform.eulerAngles = new Vector3(
         bulletInstance.transform.eulerAngles.x,

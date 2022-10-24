@@ -1,22 +1,12 @@
 fileFormatVersion: 2
-guid: 15859f998dc22634dbbc245421783845
+guid: 91cfbe9c73cbcb743844a6ffb9f83b68
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: MeleeAttack
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Beta_HighLimbsGeoSG3
-    second: {fileID: 2100000, guid: 4e3bc6c9c6987c54fbd843f1ab3829d9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Beta_Joints_MAT1
-    second: {fileID: 2100000, guid: c35e094f279d7384eae806e3b78b7a74, type: 2}
+    second: RangedAttack
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -46,18 +36,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: MeleeAttack
+      name: RangedAttack
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 63
+      lastFrame: 56
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

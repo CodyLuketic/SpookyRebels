@@ -9,13 +9,14 @@ public class EnemyValues : MonoBehaviour
 
     [Header("Basic Values")]
     [SerializeField]
-    private int _health = 0;
+    private float _health = 0f;
 
     [SerializeField]
-    private float _speed = 0;
+    private float _speed = 0f;
+    private float tempSpeed = 0;
 
     [SerializeField]
-    private float _damage = 0;
+    private float _damage = 0f;
 
     [Header("Enemy Type")]
     [SerializeField]
@@ -26,12 +27,12 @@ public class EnemyValues : MonoBehaviour
     
     [Header("Melee Values")]
     [SerializeField]
-    private float _bounceBack = 0;
+    private float _bounceBack = 0f;
 
     [Header("Ranged Values")]
     [SerializeField]
-    private float _attackSpeed = 0;
-    private float _rotationSpeed = 0;
+    private float _attackSpeed = 0f;
+    private float _rotationSpeed = 0f;
 
     private void Start()
     {
@@ -69,21 +70,31 @@ public class EnemyValues : MonoBehaviour
     }
 
     // Setters
-    public void SetSpeed(float speed)
+    public void ZeroSpeed()
     {
-        SetSpeedHelper(speed);
+        ZeroSpeedHelper();
     }
-    private void SetSpeedHelper(float speed)
+    private void ZeroSpeedHelper()
     {
-        _speed = speed;
+        tempSpeed = _speed;
+        _speed = 0;
+        gameObject.GetComponent<NavMeshAgent>().speed = _speed;
+    }
+    public void ResetSpeed()
+    {
+        ResetSpeedHelper();
+    }
+    private void ResetSpeedHelper()
+    {
+        _speed = tempSpeed;
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         SetHealthHelper(health);
     }
-    private void SetHealthHelper(int health)
+    private void SetHealthHelper(float health)
     {
         _health = health;
         
@@ -136,20 +147,11 @@ public class EnemyValues : MonoBehaviour
     }
 
     // Getters
-    public float GetSpeed()
-    {
-        return GetSpeedHelper();
-    }
-    private float GetSpeedHelper()
-    {
-        return _speed;
-    }
-
-    public int GetHealth()
+    public float GetHealth()
     {
         return GetHealthHelper();
     }
-    private int GetHealthHelper()
+    private float GetHealthHelper()
     {
         return _health;
     }

@@ -11,13 +11,9 @@ public class EnemyCombat : MonoBehaviour
     private NavMeshAgent enemyNav = null;
     private Animator animator = null;
 
-    [Header("Melee Only")]
-    [SerializeField]
-    private float waitTimeAttacking = 0f;
-
-    private bool canMelee = false;
-    private float tempSpeed = 0f;
+    private bool isMelee = false;
     private Coroutine rangedAttack = null;
+    private Coroutine meleeAttack = null;
 
     private void Start()
     {
@@ -29,15 +25,24 @@ public class EnemyCombat : MonoBehaviour
 
         bulletPooler = GameObject.FindGameObjectWithTag("BulletPooler").GetComponent<BulletPooler>();
 
-        canMelee = enemyValuesScript.GetMelee();
+        isMelee = enemyValuesScript.GetMelee();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") && canMelee && gameObject.activeSelf)
+        if(isMelee && other.gameObject.CompareTag("Player") && gameObject.activeSelf)
         {
-            StartCoroutine(MeleeAttack(other));
-            canMelee = false;
+            enemyValuesScript.ZeroSpeed();
+            StartMeleeAttack();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(isMelee && other.gameObject.CompareTag("Player") && gameObject.activeSelf)
+        {
+            enemyValuesScript.ResetSpeed();
+            StopMeleeAttack();
         }
     }
 
@@ -46,34 +51,54 @@ public class EnemyCombat : MonoBehaviour
 
         if(other.gameObject.CompareTag("Bullet"))
         {
+            // Change 1 to player damage
             enemyValuesScript.SetHealth(enemyValuesScript.GetHealth() - 1);
             Destroy(other.gameObject);
         }
     }
 
-    private IEnumerator MeleeAttack(Collider other)
+    public void StartMeleeAttack()
     {
-        float tempSpeed = enemyValuesScript.GetSpeed();
-        animator.SetBool("attacking", true);
-        enemyValuesScript.SetSpeed(0);
+        StartMeleeAttackHelper();
+    }
+    private void StartMeleeAttackHelper()
+    {
+        animator.speed = enemyValuesScript.GetAttackSpeed() / 3.4f;
+        meleeAttack = StartCoroutine(MeleeAttack());
+    }
+    private IEnumerator MeleeAttack()
+    {
+        animator.SetTrigger("attack");
+        while(true)
+        {
+            // Player Damage Call Goes Here
 
-        // Player Damage Call Goes Here
-
-        yield return new WaitForSeconds(waitTimeAttacking);
-        animator.SetBool("attacking", false);
-        enemyValuesScript.SetSpeed(tempSpeed);
-        canMelee = true;
+            yield return new WaitForSeconds(enemyValuesScript.GetAttackSpeed());
+        }
+    }
+    public void StopMeleeAttack()
+    {
+        StopMeleeAttackHelper();
+    }
+    private void StopMeleeAttackHelper()
+    {
+        animator.SetTrigger("run");
+        StopCoroutine(meleeAttack);
     }
 
     public void StartRangedAttack()
     {
+        StartRangedAttackHelper();
+    }
+    private void StartRangedAttackHelper()
+    {
+        animator.speed = enemyValuesScript.GetAttackSpeed() / 3.4f;
         rangedAttack = StartCoroutine(RangedAttack());
     }
     private IEnumerator RangedAttack()
     {
-        animator.SetBool("attacking", true);
-        tempSpeed = enemyValuesScript.GetSpeed();
-        enemyValuesScript.SetSpeed(0);
+        enemyValuesScript.ZeroSpeed();
+        animator.SetTrigger("attack");
         while(true)
         {
             bulletPooler.SpawnFromPool(transform);
@@ -82,8 +107,12 @@ public class EnemyCombat : MonoBehaviour
     }
     public void StopRangedAttack()
     {
+        StopRangedAttackHelper();
+    }
+    private void StopRangedAttackHelper()
+    {
+        enemyValuesScript.ResetSpeed();
+        animator.SetTrigger("run");
         StopCoroutine(rangedAttack);
-        animator.SetBool("attacking", false);
-        enemyValuesScript.SetSpeed(tempSpeed);
     }
 }

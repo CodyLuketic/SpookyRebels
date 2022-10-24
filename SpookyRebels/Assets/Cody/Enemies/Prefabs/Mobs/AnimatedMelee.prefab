@@ -916,7 +916,7 @@ MonoBehaviour:
   isMelee: 1
   isBoss: 0
   _bounceBack: 5
-  _attackSpeed: 0
+  _attackSpeed: 1
 --- !u!114 &476290248875161912
 MonoBehaviour:
   m_ObjectHideFlags: 0
