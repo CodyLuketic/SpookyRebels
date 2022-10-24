@@ -18,4 +18,5 @@ public class BurnBook : MonoBehaviour
     // Entry 9: Miranda legit hasn't reached out in over a week. Guess there is gonna be more blood on the clocktower frfr
     // Entry 10: Miranda literally killed me in the clocktower for no reason. I was vouching for her but guess we see where that gets us frfr
     // Entry 11: Miranda was so scared of me after the clocktower she fleed to Columbus. Watch for busses bitch frfr
+    // Entry 12: Was gonna hang with Madison but got sick. Luckily got Hannah sick too! It at least proves she is at least a portion human frfr
 }

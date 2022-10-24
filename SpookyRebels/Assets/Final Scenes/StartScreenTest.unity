@@ -1664,7 +1664,7 @@ MonoBehaviour:
       element: gem
       maxLevel: 10
       level: 1
-      conditionHealth: 0
+      conditionHealth: 3
       range: 1
       bulletCount: 30
       skillAvailable: 10
@@ -1870,19 +1870,157 @@ MonoBehaviour:
       speed: 1
       bulletSpeed: 4
       defensetimer: 15
-    - name: 
+    - name: Dodo
       Icon: {fileID: 0}
       gunIcon: {fileID: 0}
-      species: 
-      element: 
-      maxLevel: 0
-      level: 0
-      conditionHealth: 0
-      range: 0
-      bulletCount: 0
-      skillAvailable: 0
+      species: Dodo
+      element: Flora
+      maxLevel: 10
+      level: 1
+      conditionHealth: 3
+      range: 6
+      bulletCount: 10
+      skillAvailable: 10
       sTree:
         Skills:
+        - skillName: Egg Blaster
+          skillIcon: {fileID: 0}
+          skillOwned: 1
+          skillDescription: Fire giant eggs at enemies!
+          skillCost: 
+        - skillName: Cluster Egg
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: When you hit with an egg, two egg shells will shoot off
+            of it.
+          skillCost: 1 Skill Point
+        - skillName: Hatching Eggs
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Gain a small chance to spawn a flower that you can pick
+            up to heal you when you hit an enemy
+          skillCost: 1 Skill Point
+        - skillName: Big Eggs
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Shoot bigger eggs
+          skillCost: 1 Skill Point
+        - skillName: Cluster Egg +
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Now spawn 4 shells from eggs
+          skillCost: 1 Skill Point
+        - skillName: Sharper Egg Shells
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increases the damage of egg shells
+          skillCost: 1 Skill Point
+        - skillName: More Flowers
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Doubles whe chance of spawning a flower
+          skillCost: 1 Skill Point
+        - skillName: Durable Flowers
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increases the length of time that flowers stay out
+          skillCost: 1 Skill Point
+        - skillName: Recoil Up
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increases the distance of your recoil
+          skillCost: 1 Skill Point
+        - skillName: Recoil Down
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Decrease the distance of your recoil
+          skillCost: 1 Skill Point
+        - skillName: Super Cluster Egg
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Now spawn 8 shells from eggs
+          skillCost: 1 Skill Point
+        - skillName: Sharper Egg Shells +
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increases the damage of your egg shells
+          skillCost: 1 Skill Point
+        - skillName: More Flowers +
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Doubles the chance of flowers spawning
+          skillCost: 1 Skill Point
+        - skillName: Herbal Flowers
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increase the healing done by flowers
+          skillCost: 1 Skill Point
+        - skillName: Recoil Up +
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increases the distance of your recoil
+          skillCost: 1 Skill Point
+        - skillName: Recoil Down +
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Removes your recoil from this gun
+          skillCost: 1 Skill Point
+        - skillName: Dodo Dash
+          skillIcon: {fileID: 0}
+          skillOwned: 1
+          skillDescription: Dash towards the direction you are facing
+          skillCost: 
+        - skillName: More Dashes
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Reduces the cooldown on Dodo Dash
+          skillCost: 1 Skill Point
+        - skillName: Eggsplosion
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Leave a Bomb egg at the start of your dash that explodes
+            enemies
+          skillCost: 1 Skill Point
+        - skillName: Bigger Wings
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increase the range of Dodo Dash
+          skillCost: 1 Skill Point
+        - skillName: Even More Dashes
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Reduces the cooldown on Dodo Dash
+          skillCost: 1 Skill Point
+        - skillName: Sturdy Eggs
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increase the length of time that Bomb Eggs stay
+          skillCost: 1 Skill Point
+        - skillName: Stronger Eggs
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increase the damage that Bomb Eggs do
+          skillCost: 1 Skill Point
+        - skillName: InvinciDash
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Become invincable while using Dodo Dash
+          skillCost: 1 Skill Point
+        - skillName: Double Dash
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: You can now dash 2 times instead of one
+          skillCost: 1 Skill Point
+        - skillName: Sturdy Eggs +
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increase the length of time that Bomb Eggs last
+          skillCost: 1 Skill Point
+        - skillName: Bigger Explosions
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: Increases the amount of shells of the Bomb Eggs by 2
+          skillCost: 1 Skill Point
         - skillName: 
           skillIcon: {fileID: 0}
           skillOwned: 0
@@ -1938,148 +2076,13 @@ MonoBehaviour:
           skillOwned: 0
           skillDescription: 
           skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-        - skillName: 
-          skillIcon: {fileID: 0}
-          skillOwned: 0
-          skillDescription: 
-          skillCost: 
-      attack: 0
-      attackSpeed: 0
-      reloadSpeed: 0
-      health: 0
-      speed: 0
-      bulletSpeed: 0
-      defensetimer: 0
+      attack: 50
+      attackSpeed: 2
+      reloadSpeed: 4
+      health: 100
+      speed: 1
+      bulletSpeed: 10
+      defensetimer: 10
     - name: 
       Icon: {fileID: 0}
       gunIcon: {fileID: 0}
