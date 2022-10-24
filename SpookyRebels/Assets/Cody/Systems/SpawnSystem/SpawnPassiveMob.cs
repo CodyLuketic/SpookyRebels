@@ -28,8 +28,6 @@ public class SpawnPassiveMob : MonoBehaviour
             passiveMobInstance.AddComponent<NavMeshAgent>(); 
         }
 
-        passiveMobInstance.GetComponent<PassiveMobMovement>().SetSpawnPoint(gameObject.transform.position);
-
         passiveMobInstance.GetComponent<PassiveMobValues>().ApplyValues();
     }
 }

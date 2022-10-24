@@ -10,8 +10,6 @@ public class PassiveMobMovement : MonoBehaviour
 
     private GameObject player = null;
 
-    private Vector3 _spawnPoint;
-
     [SerializeField]
     private float spawnRadius = 0;
     
@@ -30,36 +28,24 @@ public class PassiveMobMovement : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         passiveMobRb = gameObject.GetComponent<Rigidbody>();
-
-        StartCoroutine(PhysicsConst());
     }
 
     private void Update()
     {
-        if(running && Time.time > nextTurnTime)
+        if(CheckPlayerPos() && Time.time > nextTurnTime)
         {
             MoveAway();
         }
-        else
+        else if(!CheckPlayerPos() && Time.time > nextTurnTime)
         {
             MoveTo();
-        }
-
-        CheckPlayerPos();
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.CompareTag("Enemy"))
-        {
-            ResetPhysics();
         }
     }
 
     private void MoveTo()
     {
-        float ranX = Random.Range(-_spawnPoint.x * spawnRadius, _spawnPoint.x * spawnRadius);
-        float ranZ = Random.Range(-_spawnPoint.z * spawnRadius, _spawnPoint.z * spawnRadius);
+        float ranX = Random.Range(-transform.position.x * spawnRadius, transform.position.x * spawnRadius);
+        float ranZ = Random.Range(-transform.position.z * spawnRadius, transform.position.z * spawnRadius);
 
         Vector3 moveTo = new Vector3(ranX, 0, ranZ);
 
@@ -71,6 +57,8 @@ public class PassiveMobMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        nextTurnTime = Time.time + 5;
     }
 
     private void MoveAway()
@@ -85,32 +73,22 @@ public class PassiveMobMovement : MonoBehaviour
 
         NavMesh.SamplePosition(runTo, out hit, 5, 1); 
 
-        nextTurnTime = Time.time + 5;
-
         transform.position = startTransform.position;
         transform.rotation = startTransform.rotation;
 
         passiveMobNav.SetDestination(hit.position);
+
+        nextTurnTime = Time.time + 5;
     }
 
-    private void CheckPlayerPos()
+    private bool CheckPlayerPos()
     {
         if((player.transform.position - transform.position).sqrMagnitude < detectRadius * detectRadius)
         {
-            running = true;
+            return true;
+        } else {
+            return false;
         }
-    }
-
-    private IEnumerator PhysicsConst()
-    {
-        yield return new WaitForSeconds(1);
-        ResetPhysics();
-    }
-
-    private void ResetPhysics()
-    {
-        passiveMobRb.velocity = Vector3.zero;
-        passiveMobRb.angularVelocity = Vector3.zero;
     }
 
     public void SetNavAgent()
@@ -121,15 +99,5 @@ public class PassiveMobMovement : MonoBehaviour
     private void SetNavAgentHelper()
     {
         passiveMobNav = gameObject.GetComponent<NavMeshAgent>();
-    }
-
-    public void SetSpawnPoint(Vector3 spawnPoint)
-    {
-        SetSpawnPointHelper(spawnPoint);
-    }
-
-    private void SetSpawnPointHelper(Vector3 spawnPoint)
-    {
-        _spawnPoint = spawnPoint;
     }
 }

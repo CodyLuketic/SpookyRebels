@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.107910156, g: 0.107910156, b: 0.107910156, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -29601,12 +29601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pools:
-  - tag: Ranged
-    prefab: {fileID: 1394040223659431934, guid: e8a9d5ca0c9f732489ea526ece4c7994,
-      type: 3}
-    size: 20
   - tag: Enemy
-    prefab: {fileID: 2373522628951742640, guid: 7cfdeb858d2a5db459f4576395052ce5,
+    prefab: {fileID: 7375337052692939380, guid: c0abd1fdfebf1734697a1fd59585e57f,
       type: 3}
     size: 20
   boss: {fileID: 2263733754358686865, guid: 6e05538033a18b944b59a47612e51490, type: 3}
