@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Take 001
+    second: CrabAttack1
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -28,7 +28,7 @@ ModelImporter:
     importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 1
-    animationRotationError: 0.5
+    animationRotationError: 90
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
@@ -36,7 +36,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: CrabAttack1
       takeName: Take 001
       internalID: 0
       firstFrame: 1

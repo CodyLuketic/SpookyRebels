@@ -29602,7 +29602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: Enemy
-    prefab: {fileID: 7375337052692939380, guid: c0abd1fdfebf1734697a1fd59585e57f,
+    prefab: {fileID: 6927393017760547183, guid: f703bf700672d6849812943ca797c7b9,
       type: 3}
     size: 20
   boss: {fileID: 2263733754358686865, guid: 6e05538033a18b944b59a47612e51490, type: 3}

@@ -68,12 +68,26 @@ public class EnemyCombat : MonoBehaviour
     }
     private IEnumerator MeleeAttack()
     {
-        animator.SetTrigger("attack");
+        int num = Random.Range(0, 2);
+
+        if(num == 0)
+        {
+            animator.SetTrigger("Attack1");
+        } else {
+            animator.SetTrigger("Attack2");
+        }
+
         while(true)
         {
             // Player Damage Call Goes Here
 
             yield return new WaitForSeconds(enemyValuesScript.GetAttackSpeed());
+            if(num == 0)
+            {
+                animator.ResetTrigger("Attack1");
+            } else {
+                animator.ResetTrigger("Attack2");
+            }
         }
     }
     public void StopMeleeAttack()
@@ -82,7 +96,6 @@ public class EnemyCombat : MonoBehaviour
     }
     private void StopMeleeAttackHelper()
     {
-        animator.SetTrigger("run");
         StopCoroutine(meleeAttack);
     }
 
