@@ -32,11 +32,11 @@ public class PassiveMobMovement : MonoBehaviour
 
     private void Update()
     {
-        if(CheckPlayerPos() && Time.time > nextTurnTime)
+        if(CheckPlayerPos())
         {
             MoveAway();
         }
-        else if(!CheckPlayerPos() && Time.time > nextTurnTime)
+        else
         {
             MoveTo();
         }

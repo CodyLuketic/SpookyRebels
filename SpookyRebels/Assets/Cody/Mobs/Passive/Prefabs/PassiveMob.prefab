@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
-  _speed: 10
+  _speed: 7
   _damage: 3
   _defense: 2
   _melee: 1

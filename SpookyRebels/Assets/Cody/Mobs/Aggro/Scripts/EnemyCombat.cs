@@ -14,6 +14,7 @@ public class EnemyCombat : MonoBehaviour
     private bool isMelee = false;
     private Coroutine rangedAttack = null;
     private Coroutine meleeAttack = null;
+    private int attackChoice = 0;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class EnemyCombat : MonoBehaviour
         enemyFollowScript = gameObject.GetComponent<EnemyFollow>();
         enemyNav = gameObject.GetComponent<NavMeshAgent>();
         enemyRb = gameObject.GetComponent<Rigidbody>();
-        animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
 
         bulletPooler = GameObject.FindGameObjectWithTag("BulletPooler").GetComponent<BulletPooler>();
 
@@ -68,13 +69,13 @@ public class EnemyCombat : MonoBehaviour
     }
     private IEnumerator MeleeAttack()
     {
-        int num = Random.Range(0, 2);
+        attackChoice = Random.Range(0, 2);
 
-        if(num == 0)
+        if(attackChoice == 0)
         {
-            animator.SetTrigger("Attack1");
+            animator.SetBool("Attack1", true);
         } else {
-            animator.SetTrigger("Attack2");
+            animator.SetBool("Attack2", true);
         }
 
         while(true)
@@ -82,12 +83,6 @@ public class EnemyCombat : MonoBehaviour
             // Player Damage Call Goes Here
 
             yield return new WaitForSeconds(enemyValuesScript.GetAttackSpeed());
-            if(num == 0)
-            {
-                animator.ResetTrigger("Attack1");
-            } else {
-                animator.ResetTrigger("Attack2");
-            }
         }
     }
     public void StopMeleeAttack()
@@ -97,6 +92,12 @@ public class EnemyCombat : MonoBehaviour
     private void StopMeleeAttackHelper()
     {
         StopCoroutine(meleeAttack);
+        if(attackChoice == 0)
+        {
+            animator.SetBool("Attack1", false);
+        } else {
+            animator.SetBool("Attack2", false);
+        }
     }
 
     public void StartRangedAttack()
