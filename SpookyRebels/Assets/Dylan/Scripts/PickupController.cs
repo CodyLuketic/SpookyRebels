@@ -44,7 +44,7 @@ public class PickupController : MonoBehaviour
 
     void PickupObject(GameObject obj)
     {
-        if (obj.CompareTag("Pet"))
+        if (obj.CompareTag("PassiveMob"))
         {
             objY = obj.transform.position.y;
 

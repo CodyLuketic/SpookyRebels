@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Gallery : MonoBehaviour
+public class Building : MonoBehaviour
 {
     float m_LastPressTime;
     float m_PressDelay = 0.5f;
 
     private bool canvasEnabled = false;
 
+    public string myName;
+
     [SerializeField]
     private TextMeshPro myText;
     [SerializeField]
     private GameObject myActivateText;
+    [SerializeField]
+    private Canvas myCanvas;
 
     private void OnTriggerStay(Collider other)
     {
@@ -31,8 +35,7 @@ public class Gallery : MonoBehaviour
                 player.canMove = !player.canMove;
 
                 // Enable or Disable the Canvas
-                GameObject CanvasObject = GameObject.FindGameObjectWithTag("GalleryCanvas");
-                CanvasObject.GetComponent<Canvas>().enabled = !canvasEnabled;
+                myCanvas.enabled = !canvasEnabled;
                 canvasEnabled = !canvasEnabled;
             }
         }
@@ -45,7 +48,7 @@ public class Gallery : MonoBehaviour
             // Change text color to white on enter
             myText.color = Color.white;
 
-            // Turn off activate prompt
+            // Turn on activate prompt
             myActivateText.SetActive(true);
         }
     }
@@ -61,5 +64,4 @@ public class Gallery : MonoBehaviour
             myActivateText.SetActive(false);
         }
     }
-
 }

@@ -107,7 +107,7 @@ public class PlayerMovements : MonoBehaviour
             m_LastPressTime = Time.unscaledTime;
 
             // Enable or Disable the Canvas
-            GameObject CanvasObject = GameObject.FindGameObjectWithTag("popupCanvas");
+            GameObject CanvasObject = GameObject.Find("popupCanvas");
             CanvasObject.GetComponent<Canvas>().enabled = !canvasEnabled;
             canvasEnabled = !canvasEnabled;
         }

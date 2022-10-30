@@ -8,8 +8,6 @@ public class BuildManager : MonoBehaviour
     private GameObject testHousePrefab;
     [SerializeField]
     private GameObject galleryPrefab;
-    [SerializeField]
-    private GameObject oldgatesPrefab;
     /*
     [SerializeField]
     private GameObject daycarePrefab;
@@ -35,10 +33,6 @@ public class BuildManager : MonoBehaviour
                 Instantiate(galleryPrefab, transform.position, transform.rotation);
                 currentCost = 10;
                 break;
-            case "OldGates":
-                Instantiate(oldgatesPrefab, transform.position, transform.rotation);
-                currentCost = 0;
-                break;
             default:
                 Instantiate(testHousePrefab, transform.position, transform.rotation);
                 currentCost = 0;
@@ -50,9 +44,9 @@ public class BuildManager : MonoBehaviour
     {
         currentCost = 0;
 
-        if (GameObject.FindGameObjectWithTag("Blueprint") != null)
+        if (FindObjectOfType<BlueprintScript>() != null)
         {
-            Destroy(GameObject.FindGameObjectWithTag("Blueprint"));
+            Destroy(FindObjectOfType<BlueprintScript>());
         }
     }
 

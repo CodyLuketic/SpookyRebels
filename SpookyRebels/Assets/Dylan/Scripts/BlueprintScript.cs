@@ -62,7 +62,8 @@ public class BlueprintScript : MonoBehaviour
         // Place
         if (Input.GetButton("Fire1") && valid)
         {
-            Instantiate(prefab, transform.position, transform.rotation);
+            GameObject baby = Instantiate(prefab, transform.position, transform.rotation);
+            baby.transform.parent = GameObject.Find("Buildings").transform;
             
             // Destroy Self and Resources
             Destroy(gameObject);

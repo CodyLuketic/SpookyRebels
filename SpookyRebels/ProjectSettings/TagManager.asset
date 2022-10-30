@@ -6,12 +6,7 @@ TagManager:
   tags:
   - Enemy
   - NPC
-  - Blueprint
-  - BuildManager
-  - GalleryCanvas
   - Bullet
-  - TestBuildingCanvas
-  - Pet
   - EnemyBullet
   - PassiveMob
   - PassiveMobBullet
@@ -19,9 +14,7 @@ TagManager:
   - SettingsCanvas
   - NewGameCanvas
   - LayerCanvas
-  - popupCanvas
   - GameManager
-  - OldGatesCanvas
   - Building
   - EnemyPooler
   - BulletPooler
