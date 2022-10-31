@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 63225.625, g: 65485.625, b: 65504, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12145,8 +12145,8 @@ MonoBehaviour:
         skillOwned: 0
         skillDescription: 
         skillCost: 
-    skillMonEquipted: 1
-    equipt1: 0
+    skillMonEquipted: 2
+    equipt1: 2
     equipt2: 1
 --- !u!4 &959316670
 Transform:

@@ -19,4 +19,5 @@ public class BurnBook : MonoBehaviour
     // Entry 10: Miranda literally killed me in the clocktower for no reason. I was vouching for her but guess we see where that gets us frfr
     // Entry 11: Miranda was so scared of me after the clocktower she fleed to Columbus. Watch for busses bitch frfr
     // Entry 12: Was gonna hang with Madison but got sick. Luckily got Hannah sick too! It at least proves she is at least a portion human frfr
+    // Entry 13: Miranda died night one of werewolf. We kept the tradition going and she really derserved it frfr
 }

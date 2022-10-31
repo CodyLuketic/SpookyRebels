@@ -311,6 +311,11 @@ MonoBehaviour:
   GemWavePoint: {fileID: 1062348074}
   GemWavePrefab: {fileID: 1665272785231200273, guid: 55359b934c583f544afafe04c991cf50,
     type: 3}
+  eggShotPrefab: {fileID: 6074853557089199778, guid: 50f3bab7b1ad4e943be9891e59a61065,
+    type: 3}
+  bigEggShotPrefab: {fileID: 9027891696916645226, guid: eecd4aa351aec3041a91a99bb911590e,
+    type: 3}
+  recoil: 2
   currentBullets: 0
   hasBullets: 1
   heldAttacking:
@@ -741,6 +746,8 @@ MonoBehaviour:
   tempbulletDamage: 0
   attackSpeedMod: 0
   ammoTxt: {fileID: 0}
+  rb: {fileID: 0}
+  player: {fileID: 0}
   swapped: 0
   ammoLoss: 1
   p:

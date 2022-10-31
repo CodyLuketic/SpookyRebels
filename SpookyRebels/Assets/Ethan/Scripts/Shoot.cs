@@ -14,7 +14,9 @@ public class Shoot : MonoBehaviour
     public GameObject CrabMiddleShotPrefab;
     public Transform GemWavePoint;
     public GameObject GemWavePrefab;
-
+    public GameObject eggShotPrefab;
+    public GameObject bigEggShotPrefab;
+    public int recoil = 2;
     public int currentBullets;
     public bool hasBullets = true;
 
@@ -30,6 +32,8 @@ public class Shoot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ammoTxt;
 
     // player conections
+    //public Rigidbody rb;
+    [SerializeField]
     private GameObject player;
     //switching things
     public bool swapped = false;
@@ -39,11 +43,16 @@ public class Shoot : MonoBehaviour
     // profile stuff
     public Profile p;
     public PlayerMovements pMovScript = null;
+    Vector3 bullDir = Vector3.zero;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         pMovScript = player.GetComponent<PlayerMovements>();
+
+
+        bullDir = pMovScript.gunPoint;
 
         p = MainProfile.Instance.mainP;
         heldAttacking = p.magamon[p.equipt1];
@@ -52,21 +61,7 @@ public class Shoot : MonoBehaviour
         currentBullets = heldAttacking.bulletCount;
         //Start of start game abilities
         //extra ammo and attack speed
-        if (heldAttacking.species == "CystalCrab")
-        {
-            if (heldAttacking.sTree.Skills[7].skillOwned) currentBullets += 15;
-            if (heldAttacking.sTree.Skills[6].skillOwned) attackSpeedMod -= .25f;
-        }
-        else
-        {
-            attackSpeedMod = 0;
-        }
-
-        if (heldDefending.species == "CystalCrab")
-        {
-            if (heldDefending.sTree.Skills[24].skillOwned) heldDefending.defensetimer = 10;
-        }
-
+        startSkills();
         //////add the skills that are only at the begining
     }
 
@@ -127,8 +122,22 @@ public class Shoot : MonoBehaviour
                     Instantiate(CrabMiddleShotPrefab, firePoint.position, firePoint.rotation);
                 }
             }
+            else if (heldAttacking.species == "Dodo")
+            {
+                //Debug.Log("dodo");
+                //big egg
+                if (heldAttacking.sTree.Skills[4].skillOwned)
+                {
+                    Instantiate(bigEggShotPrefab, firePoint.position, firePoint.rotation);
+                }
+                else
+                {
+                    Instantiate(eggShotPrefab, firePoint.position, firePoint.rotation);
+                }
+                //rb.velocity = bullDir * recoil * -1;
+            }
 
-            if(ammoLoss) currentBullets--;
+            if (ammoLoss) currentBullets--;
             if (currentBullets < 0) currentBullets = 0;
             ammoTxt.text = currentBullets + "";
         }
@@ -254,21 +263,7 @@ public class Shoot : MonoBehaviour
             // stop cooldowns
             currentBullets = heldAttacking.bulletCount;
             //start abilities
-            if (heldAttacking.species == "CystalCrab")
-            {
-                if (heldAttacking.sTree.Skills[7].skillOwned) currentBullets += 15;
-                if (heldAttacking.sTree.Skills[6].skillOwned) attackSpeedMod -= .25f;
-            }
-            else
-            {
-                attackSpeedMod = 0;
-            }
-
-
-            if (heldDefending.species == "CystalCrab")
-            {
-                if (heldDefending.sTree.Skills[24].skillOwned) heldDefending.defensetimer = 10;
-            }
+            startSkills();
 
             // stop cooldowns
             if (canAttack == false) StopCoroutine(eAttackCooldown());
@@ -297,4 +292,36 @@ public class Shoot : MonoBehaviour
         yield return new WaitForSeconds(5f);
         canSwitch = true;
     }
+
+    void startSkills()
+    { 
+    
+        if (heldAttacking.species == "CystalCrab")
+        {
+            if (heldAttacking.sTree.Skills[7].skillOwned) currentBullets += 15;
+            if (heldAttacking.sTree.Skills[6].skillOwned) attackSpeedMod -= .25f;
+        }
+        else
+        {
+            attackSpeedMod = 0;
+        }
+
+        if (heldDefending.species == "CystalCrab")
+        {
+            if (heldDefending.sTree.Skills[24].skillOwned) heldDefending.defensetimer = 10;
+        }
+
+
+
+        if (heldAttacking.species == "Dodo")
+        {
+            if (heldAttacking.sTree.Skills[9].skillOwned) recoil += 1;
+            if (heldAttacking.sTree.Skills[15].skillOwned) recoil += 2;
+            if (heldAttacking.sTree.Skills[10].skillOwned) recoil -= 1;
+            if (heldAttacking.sTree.Skills[16].skillOwned) recoil -= 1;
+        }
+    }
+
+
 }
+ 
