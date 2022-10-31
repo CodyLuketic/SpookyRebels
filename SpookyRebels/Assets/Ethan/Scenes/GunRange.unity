@@ -328,6 +328,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: popupCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5760225855157514401, guid: 9654431a1cfac7e449fb84b43f110e38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5760225855157514429, guid: 9654431a1cfac7e449fb84b43f110e38,
         type: 3}
       propertyPath: m_Pivot.x

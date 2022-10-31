@@ -102,6 +102,10 @@ public class EnemyValues : MonoBehaviour
             {
                 gameManager.Win();
             }
+            else
+            {
+                
+            }
 
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
             gameObject.SetActive(false);

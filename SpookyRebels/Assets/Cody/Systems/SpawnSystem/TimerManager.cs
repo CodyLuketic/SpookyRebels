@@ -14,6 +14,9 @@ public class TimerManager : MonoBehaviour
 
     private int timer = 0, tempTimer = 0;
 
+    [SerializeField]
+    private float bossSpawnTime = 300f;
+
     private void Start()
     {
         timeCoroutine = StartCoroutine(TimerCount());
@@ -21,7 +24,7 @@ public class TimerManager : MonoBehaviour
 
     private IEnumerator TimerCount()
     {
-        while(timer <= 300)
+        while(timer <= bossSpawnTime)
         {
             yield return new WaitForSeconds(1);
             timer++;

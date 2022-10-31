@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4520520705211699361}
   - component: {fileID: 1415696844525062171}
   - component: {fileID: 3124126094804730768}
-  - component: {fileID: 4619067750039871858}
   m_Layer: 0
   m_Name: BossEnemy
   m_TagString: Enemy
@@ -133,8 +132,7 @@ MonoBehaviour:
   _health: 10
   _speed: 1
   _damage: 10
-  _defense: 10
-  _melee: 1
+  isMelee: 0
   isBoss: 1
   _bounceBack: 10
   _attackSpeed: 0
@@ -151,17 +149,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDistance: 2
---- !u!114 &4619067750039871858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2263733754358686865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8d9367735a50d40908c3a5f84aceed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTimeAttacking: 0
-  waitTimeStill: 0
