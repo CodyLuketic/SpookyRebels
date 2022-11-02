@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,6 +7,7 @@ public class EnemyValues : MonoBehaviour
     private GameManager gameManager = null;
     private EnemyFollow enemyFollowScript = null;
     private EnemyCombat enemyCombatScript = null;
+    private Animator animator = null;
 
     [Header("Basic Values")]
     [SerializeField]
@@ -17,6 +19,10 @@ public class EnemyValues : MonoBehaviour
 
     [SerializeField]
     private float _damage = 0f;
+
+
+    [SerializeField]
+    private float animDeathTime = 1f;
 
     [Header("Enemy Type")]
     [SerializeField]
@@ -39,6 +45,8 @@ public class EnemyValues : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         enemyFollowScript = gameObject.GetComponent<EnemyFollow>();
         enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
+        animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
+
         tempSpeed = _speed;
     }
 
@@ -107,9 +115,20 @@ public class EnemyValues : MonoBehaviour
                 
             }
 
-            gameObject.GetComponent<NavMeshAgent>().enabled = false;
-            gameObject.SetActive(false);
+            StartCoroutine(Death());
         }
+    }
+
+    private IEnumerator Death()
+    {
+        animator.SetTrigger("Die");
+        ZeroSpeedHelper();
+
+        yield return new WaitForSeconds(animDeathTime);
+
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        gameObject.SetActive(false);
+        ResetSpeedHelper();
     }
 
     public void SetDamage(float damage)

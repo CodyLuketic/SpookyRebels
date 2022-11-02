@@ -112,7 +112,7 @@ public class EnemyCombat : MonoBehaviour
     private IEnumerator RangedAttack()
     {
         enemyValuesScript.ZeroSpeed();
-        animator.SetTrigger("attack");
+        animator.SetBool("Attack", true);
         while(true)
         {
             bulletPooler.SpawnFromPool(transform);
@@ -126,7 +126,7 @@ public class EnemyCombat : MonoBehaviour
     private void StopRangedAttackHelper()
     {
         enemyValuesScript.ResetSpeed();
-        animator.SetTrigger("run");
+        animator.SetBool("Attack", false);
         StopCoroutine(rangedAttack);
     }
 }

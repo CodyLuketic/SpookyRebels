@@ -2120,7 +2120,7 @@ GameObject:
   - component: {fileID: 6927393017760547176}
   - component: {fileID: 6927393017760547177}
   m_Layer: 0
-  m_Name: CrabCont
+  m_Name: CrabContainer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

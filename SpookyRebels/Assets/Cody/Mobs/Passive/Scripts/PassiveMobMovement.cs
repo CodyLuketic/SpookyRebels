@@ -19,8 +19,10 @@ public class PassiveMobMovement : MonoBehaviour
     [SerializeField]
     private float runDistance = 0;
     
-    [SerializeField]
     private float nextTurnTime = 0;
+
+    [SerializeField]
+    private float nextTurnIncrement = 0;
 
     private bool running = false;
     
@@ -36,7 +38,7 @@ public class PassiveMobMovement : MonoBehaviour
         {
             MoveAway();
         }
-        else
+        else if(nextTurnTime < Time.time)
         {
             MoveTo();
         }
@@ -58,7 +60,7 @@ public class PassiveMobMovement : MonoBehaviour
             Destroy(gameObject);
         }
 
-        nextTurnTime = Time.time + 5;
+        nextTurnTime = Time.time + nextTurnIncrement;
     }
 
     private void MoveAway()
@@ -77,8 +79,6 @@ public class PassiveMobMovement : MonoBehaviour
         transform.rotation = startTransform.rotation;
 
         passiveMobNav.SetDestination(hit.position);
-
-        nextTurnTime = Time.time + 5;
     }
 
     private bool CheckPlayerPos()

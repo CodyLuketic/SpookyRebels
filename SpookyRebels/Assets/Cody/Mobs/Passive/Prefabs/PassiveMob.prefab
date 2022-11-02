@@ -170,10 +170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12ad6614a709a34d951e97006559c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRadius: 10
+  spawnRadius: 20
   detectRadius: 10
   runDistance: 20
-  nextTurnTime: 10
+  nextTurnIncrement: 5
 --- !u!1 &8378979581564545680
 GameObject:
   m_ObjectHideFlags: 0

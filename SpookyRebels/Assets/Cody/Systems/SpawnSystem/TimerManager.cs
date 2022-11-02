@@ -29,7 +29,7 @@ public class TimerManager : MonoBehaviour
             yield return new WaitForSeconds(1);
             timer++;
 
-            if(timer >= tempTimer + 20)
+            if(timer >= tempTimer + 45)
             {
                 tempTimer = timer;
 

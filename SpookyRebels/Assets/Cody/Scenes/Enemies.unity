@@ -4709,7 +4709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPooler: {fileID: 1351652814}
   timeText: {fileID: 628746624}
-  bossSpawnTime: 20
+  bossSpawnTime: 300
 --- !u!114 &204814592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30214,11 +30214,11 @@ MonoBehaviour:
   - tag: Enemy
     prefab: {fileID: 6927393017760547183, guid: f703bf700672d6849812943ca797c7b9,
       type: 3}
-    size: 20
+    size: 100
   boss: {fileID: 2263733754358686865, guid: 6e05538033a18b944b59a47612e51490, type: 3}
   minRadius: 20
   maxRadius: 25
-  time: 2
+  time: 4
   level: 1
 --- !u!4 &1351652815
 Transform:
