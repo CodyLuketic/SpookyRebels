@@ -11,12 +11,12 @@ public class BlueprintScript : MonoBehaviour
     private GameObject me;
     [SerializeField]
     private GameObject prefab;
-    private GameObject player;
 
-    private 
+    private GameObject player;
+    private BuildManager bm = BuildManager.instance;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -26,6 +26,8 @@ public class BlueprintScript : MonoBehaviour
 
         me.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 100);
         me.transform.position = mousePos;
+
+        bm.ClosePanel();
     }
 
     private void OnTriggerStay(Collider other)
@@ -64,10 +66,22 @@ public class BlueprintScript : MonoBehaviour
         {
             GameObject baby = Instantiate(prefab, transform.position, transform.rotation);
             baby.transform.parent = GameObject.Find("Buildings").transform;
-            
+
             // Destroy Self and Resources
-            Destroy(gameObject);
+            Cancel();
         }
+
+        // Cancel
+        if (Input.GetButton("Fire2"))
+        {
+            Cancel();
+        }
+    }
+
+    public void Cancel()
+    {
+        bm.OpenPanel();
+        Destroy(gameObject);
     }
 
 }

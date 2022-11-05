@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
+    public static BuildManager instance;
+
     [SerializeField]
     private GameObject testHousePrefab;
     [SerializeField]
@@ -22,10 +24,39 @@ public class BuildManager : MonoBehaviour
     */
 
     private int currentCost = 0;
+    private bool buildEnabled = false;
+
+    [SerializeField]
+    private Canvas buildCanvas;
+    [SerializeField]
+    private Canvas hubCanvas;
+    [SerializeField]
+    private GameObject buildPanel;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Return"))
+        {
+            hubCanvas.enabled = buildEnabled;
+            buildCanvas.enabled = !buildEnabled;
+
+            buildEnabled = !buildEnabled;
+
+            if (!buildEnabled && FindObjectsOfType<BlueprintScript>() != null)
+            {
+                CleanSelection();
+            }
+        }
+    }
 
     public void SpawnBuilding(string building)
     {
-        cleanSelection();
+        CleanSelection();
 
         switch (building)
         {
@@ -40,14 +71,28 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    private void cleanSelection()
+    private void CleanSelection()
     {
         currentCost = 0;
 
-        if (FindObjectOfType<BlueprintScript>() != null)
+        if (FindObjectsOfType<BlueprintScript>() != null)
         {
-            Destroy(FindObjectOfType<BlueprintScript>());
+            foreach (BlueprintScript blueprint in FindObjectsOfType<BlueprintScript>())
+            {
+                blueprint.Cancel();
+            }
         }
+    }
+
+    public void OpenPanel()
+    {
+        print("stuck on bandaid");
+        buildPanel.SetActive(true);
+    }
+
+    public void ClosePanel()
+    {
+        buildPanel.SetActive(false);
     }
 
 }
