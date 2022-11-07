@@ -18,7 +18,8 @@ public class EggBullet : MonoBehaviour
 
     public int cluster = 0;
     public int flowerSpawn = 0;
-
+    public GameObject flowerPrefab;
+    int flowerRate = 0;
 
     public GameObject eggShell12;
     public GameObject eggShell22;
@@ -63,18 +64,22 @@ public class EggBullet : MonoBehaviour
         speed = gun.bulletSpeed;
         BMaxTime = gun.range;
 
-        if (gun.sTree.Skills[11].skillOwned)
+        if (gun.sTree.Skills[10].skillOwned)
         {
             cluster = 8;
         }
-        else if (gun.sTree.Skills[5].skillOwned)
+        else if (gun.sTree.Skills[4].skillOwned)
         {
             cluster = 4;
         }
-        else if (gun.sTree.Skills[2].skillOwned)
+        else if (gun.sTree.Skills[1].skillOwned)
         {
             cluster = 2;
         }
+
+        if (gun.sTree.Skills[2].skillOwned) flowerRate += 5;
+        if (gun.sTree.Skills[6].skillOwned) flowerRate += 5;
+        if (gun.sTree.Skills[12].skillOwned) flowerRate += 10;
         // start skills
 
         rb.velocity = bullDir * speed;
@@ -91,11 +96,15 @@ public class EggBullet : MonoBehaviour
 
             eValScript.SetHealth(eValScript.GetHealth() - damage);
 
+            int ran = Random.Range(0, 101);
+            if (ran < flowerRate) Instantiate(flowerPrefab, transform.position, transform.rotation);
 
-            if (gun.sTree.Skills[12].skillOwned)
+
+            if (gun.sTree.Skills[11].skillOwned)
             {
                 if (cluster == 2)
                 {
+                    Debug.Log("cluster2");
                     Instantiate(eggShell18, (firePoint.position + new Vector3(1f, 0f, 1f)), firePoint.rotation);
                     Instantiate(eggShell28, (firePoint.position + new Vector3(-1f, 0f, -1f)), firePoint.rotation);
                 }
@@ -118,7 +127,7 @@ public class EggBullet : MonoBehaviour
                     Instantiate(eggShell88, (firePoint.position + new Vector3(0f, 0f, 1f)), firePoint.rotation);
                 }
             }
-            else if (gun.sTree.Skills[6].skillOwned)
+            else if (gun.sTree.Skills[5].skillOwned)
             {
                 if (cluster == 2)
                 {

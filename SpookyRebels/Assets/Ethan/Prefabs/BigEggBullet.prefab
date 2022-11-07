@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4742010205032074623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7751902377709819538}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7751902377709819538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4742010205032074623}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5650360126481244743}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9027891696916645226
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,7 +63,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.83, z: -2.69}
   m_LocalScale: {x: 2, y: 2, z: 3}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7751902377709819538}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -113,12 +145,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4732546644144047577}
   player: {fileID: 0}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 7751902377709819538}
   speed: 2
   damage: 10
   BMaxTime: 2
   cluster: 0
   flowerSpawn: 0
+  flowerPrefab: {fileID: 5936963859317073042, guid: 3542c72aecc5ec44c802428255bb8264,
+    type: 3}
   eggShell12: {fileID: 2982245774135051584, guid: 9f0fae9bea805f14a821a9acf89462a2,
     type: 3}
   eggShell22: {fileID: 7179985959277631971, guid: e2cfca4e5e4c01c46956a48b2e8b039a,

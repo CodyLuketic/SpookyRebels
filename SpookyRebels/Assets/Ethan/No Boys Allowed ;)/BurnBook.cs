@@ -20,4 +20,5 @@ public class BurnBook : MonoBehaviour
     // Entry 11: Miranda was so scared of me after the clocktower she fleed to Columbus. Watch for busses bitch frfr
     // Entry 12: Was gonna hang with Madison but got sick. Luckily got Hannah sick too! It at least proves she is at least a portion human frfr
     // Entry 13: Miranda died night one of werewolf. We kept the tradition going and she really derserved it frfr
+    // Entry 14: Haley frfr just stood me up. Idk that ***** had to be out with the boys. It's hoes before bros for a reason frfr
 }

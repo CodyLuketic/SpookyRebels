@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7179985959277631968}
   - component: {fileID: 7179985959277631969}
   - component: {fileID: 7179985959277631970}
+  - component: {fileID: 2142551968999010960}
   m_Layer: 0
   m_Name: EggShard12 (1)
   m_TagString: Untagged
@@ -110,8 +111,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6596c335cc277e44ca7b6a0ff2227b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 2142551968999010960}
   speed: 5
   damage: 10
   BMaxTime: 2
   whichshell: 1
+--- !u!54 &2142551968999010960
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7179985959277631971}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0

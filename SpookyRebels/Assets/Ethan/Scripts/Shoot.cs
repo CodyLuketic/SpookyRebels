@@ -19,7 +19,7 @@ public class Shoot : MonoBehaviour
     public int recoil = 2;
     public int currentBullets;
     public bool hasBullets = true;
-
+    public Transform eggPoint;
     public Magamon heldAttacking;
     public Magamon heldDefending;
 
@@ -126,13 +126,13 @@ public class Shoot : MonoBehaviour
             {
                 //Debug.Log("dodo");
                 //big egg
-                if (heldAttacking.sTree.Skills[4].skillOwned)
+                if (heldAttacking.sTree.Skills[3].skillOwned)
                 {
-                    Instantiate(bigEggShotPrefab, firePoint.position, firePoint.rotation);
+                    Instantiate(bigEggShotPrefab, eggPoint.position, eggPoint.rotation);
                 }
                 else
                 {
-                    Instantiate(eggShotPrefab, firePoint.position, firePoint.rotation);
+                    Instantiate(eggShotPrefab, eggPoint.position, eggPoint.rotation);
                 }
                 //rb.velocity = bullDir * recoil * -1;
             }
@@ -315,10 +315,10 @@ public class Shoot : MonoBehaviour
 
         if (heldAttacking.species == "Dodo")
         {
-            if (heldAttacking.sTree.Skills[9].skillOwned) recoil += 1;
-            if (heldAttacking.sTree.Skills[15].skillOwned) recoil += 2;
-            if (heldAttacking.sTree.Skills[10].skillOwned) recoil -= 1;
-            if (heldAttacking.sTree.Skills[16].skillOwned) recoil -= 1;
+            if (heldAttacking.sTree.Skills[8].skillOwned) recoil += 1;
+            if (heldAttacking.sTree.Skills[14].skillOwned) recoil += 2;
+            if (heldAttacking.sTree.Skills[9].skillOwned) recoil -= 1;
+            if (heldAttacking.sTree.Skills[15].skillOwned) recoil -= 1;
         }
     }
 
