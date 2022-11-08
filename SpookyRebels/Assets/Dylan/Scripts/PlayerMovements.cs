@@ -32,6 +32,13 @@ public class PlayerMovements : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    //Dash stuff
+    public const float maxDashTime = 2.0f;
+    public float dashDistance = 5;
+    public float dashStoppingSpeed = 0.1f;
+    public float currentDashTime = maxDashTime;
+    public float dashSpeed = 20;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -67,6 +74,19 @@ public class PlayerMovements : MonoBehaviour
         // Check that we can Move
         if (canMove)
         {
+            if (currentDashTime < maxDashTime)
+            {
+                moveDirection = transform.forward * dashDistance;
+                currentDashTime += dashStoppingSpeed;
+                // Move the controller
+                characterController.Move(moveDirection * Time.deltaTime * dashSpeed);
+            }
+            else
+            {
+                //moveDirection = Vector3.zero;
+            
+
+
             // We are grounded, so recalculate move direction based on axes
             Vector3 forward = playerFull.transform.TransformDirection(Vector3.forward);
             Vector3 right = playerFull.transform.TransformDirection(Vector3.right);
@@ -81,8 +101,8 @@ public class PlayerMovements : MonoBehaviour
             // Move the controller
             characterController.Move(moveDirection * Time.deltaTime);
 
-
-
+            }
+      
         }
 
         generateMousePos();

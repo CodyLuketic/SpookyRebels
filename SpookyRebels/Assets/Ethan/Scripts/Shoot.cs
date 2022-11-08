@@ -45,6 +45,11 @@ public class Shoot : MonoBehaviour
     public PlayerMovements pMovScript = null;
     Vector3 bullDir = Vector3.zero;
 
+    //dash stuff
+    public bool canDash = true;
+    public bool canDoubleDash = false;
+    public bool doubleDashable = false;
+    public bool dashTemp = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,7 +83,7 @@ public class Shoot : MonoBehaviour
         }
         if (Input.GetButton("Fire2"))
         {
-            if (canDefend)
+            if (canDefend || canDoubleDash)
             {
                 Defend();
             }
@@ -92,7 +97,7 @@ public class Shoot : MonoBehaviour
         }
     }
 
-
+   
     ////shooting method
     void Attack()
     {
@@ -174,11 +179,11 @@ public class Shoot : MonoBehaviour
     }
 
 
-
+   
     ////defending method
     void Defend() 
     {
-        Debug.Log("defense");
+        //Debug.Log("defense");
         if (heldDefending.species == "Lucyfur")
         {
             //play sound clip
@@ -187,6 +192,17 @@ public class Shoot : MonoBehaviour
         {
             if (heldDefending.sTree.Skills[18].skillOwned) Instantiate(GemWavePrefab, GemWavePoint.position, GemWavePoint.rotation);
             StartCoroutine(eShieldMode());
+        }
+        else if (heldDefending.species == "Dodo")
+        {
+            Debug.Log("dash");
+            //Egg bomb
+            //if (heldDefending.sTree.Skills[18].skillOwned) 
+            //do the dash
+            pMovScript.currentDashTime = 0;
+            if (canDash) canDash = false;
+            else canDoubleDash = false;
+            StartCoroutine(eDashMode());
         }
 
         canDefend = false;
@@ -229,15 +245,31 @@ public class Shoot : MonoBehaviour
         pMovScript.canMove = true;
     }
 
+    IEnumerator eDashMode()
+    {
+        dashTemp = canDoubleDash;
+        canDoubleDash = false;
+        if (heldDefending.sTree.Skills[23].skillOwned)
+        { 
+            //cantake damage = false
+        }
+        yield return new WaitForSeconds(1);
+        //cantake damage = true
+        canDoubleDash = dashTemp;
+    }
+
     IEnumerator eDefendCooldown()
     {
+        
         yield return new WaitForSeconds(heldDefending.defensetimer);
         canDefend = true;
+        canDash = true;
+        if(doubleDashable) canDoubleDash = true;
     }
 
 
 
-
+   
     // switch monsters
     void Switch()
     {
@@ -293,6 +325,7 @@ public class Shoot : MonoBehaviour
         canSwitch = true;
     }
 
+    
     void startSkills()
     { 
     
@@ -320,6 +353,16 @@ public class Shoot : MonoBehaviour
             if (heldAttacking.sTree.Skills[9].skillOwned) recoil -= 1;
             if (heldAttacking.sTree.Skills[15].skillOwned) recoil -= 1;
         }
+        if(heldDefending.species == "Dodo")
+        {
+            if (heldDefending.sTree.Skills[24].skillOwned) doubleDashable = canDoubleDash = true;
+            else doubleDashable = canDoubleDash = false;
+            if (heldDefending.sTree.Skills[19].skillOwned) pMovScript.dashDistance = 8;
+            else pMovScript.dashDistance = 5;
+            if (heldDefending.sTree.Skills[20].skillOwned) heldDefending.defensetimer = 5;
+            else if (heldDefending.sTree.Skills[17].skillOwned) heldDefending.defensetimer = 7;
+        }
+
     }
 
 

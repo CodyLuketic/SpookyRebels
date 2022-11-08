@@ -21,4 +21,5 @@ public class BurnBook : MonoBehaviour
     // Entry 12: Was gonna hang with Madison but got sick. Luckily got Hannah sick too! It at least proves she is at least a portion human frfr
     // Entry 13: Miranda died night one of werewolf. We kept the tradition going and she really derserved it frfr
     // Entry 14: Haley frfr just stood me up. Idk that ***** had to be out with the boys. It's hoes before bros for a reason frfr
+    // Entry 15: Me and Haley were fire in Codenames. Hannah wishes she could be this good frfr
 }
