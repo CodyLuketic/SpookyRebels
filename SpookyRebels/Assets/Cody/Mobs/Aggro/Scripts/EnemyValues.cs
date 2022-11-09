@@ -20,6 +20,9 @@ public class EnemyValues : MonoBehaviour
     [SerializeField]
     private float _damage = 0f;
 
+    [SerializeField]
+    private float _attackSpeed = 0f;
+    private float _rotationSpeed = 0f;
 
     [SerializeField]
     private float animDeathTime = 1f;
@@ -30,15 +33,6 @@ public class EnemyValues : MonoBehaviour
 
     [SerializeField]
     private bool isBoss = false;
-    
-    [Header("Melee Values")]
-    [SerializeField]
-    private float _bounceBack = 0f;
-
-    [Header("Ranged Values")]
-    [SerializeField]
-    private float _attackSpeed = 0f;
-    private float _rotationSpeed = 0f;
 
     private void Start()
     {
@@ -71,7 +65,6 @@ public class EnemyValues : MonoBehaviour
         _health += level;
         _damage += level;
 
-        _bounceBack += level;
         _attackSpeed += level;
         _rotationSpeed += level;
 
@@ -140,15 +133,6 @@ public class EnemyValues : MonoBehaviour
         _damage = damage;
     }
 
-    public void SetBounceBack(float bounceBack)
-    {
-        SetBounceBackHelper(bounceBack);
-    }
-    private void SetBounceBackHelper(float bounceBack)
-    {
-        _bounceBack = bounceBack;
-    }
-
     public void SetAttackSpeed(float attackSpeed)
     {
         SetAttackSpeedHelper(attackSpeed);
@@ -193,15 +177,6 @@ public class EnemyValues : MonoBehaviour
     private bool GetMeleeHelper()
     {
         return isMelee;
-    }
-
-    public float GetBounceBack()
-    {
-        return GetBounceBackHelper();
-    }
-    private float GetBounceBackHelper()
-    {
-        return _bounceBack;
     }
 
     public float GetAttackSpeed()

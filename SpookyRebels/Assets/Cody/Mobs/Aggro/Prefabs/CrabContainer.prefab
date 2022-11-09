@@ -2153,8 +2153,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.7, z: 2}
-  m_Center: {x: 0, y: 1, z: 1.7}
+  m_Size: {x: 2, y: 1.7, z: 4}
+  m_Center: {x: 0, y: 1, z: 1.2}
 --- !u!54 &6927393017760547173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2205,9 +2205,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607ca2e8eb2127c46a530f030ea1a4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 0
+  _health: 1
   _speed: 5
   _damage: 5
+  animDeathTime: 1
   isMelee: 1
   isBoss: 0
   _bounceBack: 5

@@ -34,8 +34,10 @@ public class EnemyFollow : MonoBehaviour
     {
         if(isMelee)
         {
+            Debug.Log(gameObject + " is melee");
             FollowMelee();
         } else {
+            Debug.Log(gameObject + " is ranged");
             FollowRanged();
         }
     }
