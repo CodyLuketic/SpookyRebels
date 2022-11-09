@@ -22,7 +22,6 @@ public class CrabValues : MonoBehaviour
 
     [SerializeField]
     private float _attackSpeed = 0f;
-    private float _rotationSpeed = 0f;
 
     [SerializeField]
     private float animDeathTime = 1f;
@@ -59,7 +58,6 @@ public class CrabValues : MonoBehaviour
         _damage += level;
 
         _attackSpeed += level;
-        _rotationSpeed += level;
 
         ApplyValuesHelper();
     }
@@ -126,15 +124,6 @@ public class CrabValues : MonoBehaviour
         _attackSpeed = attackSpeed;
     }
 
-    public void SetRotationSpeed(float rotationSpeed)
-    {
-        SetRotationSpeedHelper(rotationSpeed);
-    }
-    private void SetRotationSpeedHelper(float rotationSpeed)
-    {
-        _rotationSpeed = rotationSpeed;
-    }
-
     // Getters
     public float GetHealth()
     {
@@ -161,14 +150,5 @@ public class CrabValues : MonoBehaviour
     private float GetAttackSpeedHelper()
     {
         return _attackSpeed;
-    }
-
-    public float GetRotationSpeed()
-    {
-        return GetRotationSpeedHelper();
-    }
-    private float GetRotationSpeedHelper()
-    {
-        return _rotationSpeed;
     }
 }

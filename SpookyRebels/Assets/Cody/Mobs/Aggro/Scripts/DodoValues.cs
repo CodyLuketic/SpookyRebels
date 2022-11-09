@@ -22,6 +22,8 @@ public class DodoValues : MonoBehaviour
 
     [SerializeField]
     private float _attackSpeed = 0f;
+    
+    [SerializeField]
     private float _rotationSpeed = 0f;
 
     [SerializeField]

@@ -88,15 +88,15 @@ public class EggBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("hit?");
+        //Debug.Log("hit?");
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("enemyhit");
-            if (other.gameObject.name == "CrabContainer")
+            //Debug.Log("enemyhit");
+            if (other.gameObject.name == "CrabContainer(Clone)")
             {
                 CrabValues eValScript = other.gameObject.GetComponent<CrabValues>();
                 eValScript.SetHealth(eValScript.GetHealth() - damage);
-            } else if (other.gameObject.name == "DodoContainer")
+            } else if (other.gameObject.name == "DodoContainer(Clone)")
             {
                 DodoValues eValScript = other.gameObject.GetComponent<DodoValues>();
                 eValScript.SetHealth(eValScript.GetHealth() - damage);

@@ -8,6 +8,7 @@ public class CrabCombat : MonoBehaviour
     private Animator animator = null;
 
     private Coroutine attackCoroutine = null;
+    private bool attacking = false;
     private int attackChoice = 0;
 
     private void Start()
@@ -20,16 +21,15 @@ public class CrabCombat : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") && gameObject.activeSelf)
+        if(other.gameObject.CompareTag("Player") && !attacking)
         {
-            crabValuesScript.ZeroSpeed();
-            StartAttack();
+            attackCoroutine = StartCoroutine(Attack());
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") && gameObject.activeSelf)
+        if(other.gameObject.CompareTag("Player"))
         {
             crabValuesScript.ResetSpeed();
             StopAttack();
@@ -44,39 +44,33 @@ public class CrabCombat : MonoBehaviour
         }
     }
 
-    public void StartAttack()
-    {
-        StartAttackHelper();
-    }
-    private void StartAttackHelper()
-    {
-        animator.speed = crabValuesScript.GetAttackSpeed() / 3.4f;
-        attackCoroutine = StartCoroutine(Attack());
-    }
     private IEnumerator Attack()
     {
+        float attackSpeed = crabValuesScript.GetAttackSpeed();
+                    
+        attacking = true;
+        crabValuesScript.ZeroSpeed();
+        animator.speed = attackSpeed;
         attackChoice = Random.Range(0, 2);
-
-        if(attackChoice == 0)
-        {
-            animator.SetBool("Attack1", true);
-        } else {
-            animator.SetBool("Attack2", true);
-        }
 
         while(true)
         {
+            if(attackChoice == 0)
+            {
+                animator.SetBool("Attack1", true);
+            } else {
+                animator.SetBool("Attack2", true);
+            }
+            yield return new WaitForSeconds(1 / attackSpeed);
             // Player Damage Call Goes Here
-
-            yield return new WaitForSeconds(crabValuesScript.GetAttackSpeed());
+            Debug.Log("Player Damaged by: " + gameObject);
         }
     }
-    public void StopAttack()
+
+    private void StopAttack()
     {
-        StopAttackHelper();
-    }
-    private void StopAttackHelper()
-    {
+        attacking = false;
+
         StopCoroutine(attackCoroutine);
         if(attackChoice == 0)
         {

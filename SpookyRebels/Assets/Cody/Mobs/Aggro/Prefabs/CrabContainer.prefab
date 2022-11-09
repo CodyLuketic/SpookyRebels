@@ -2153,8 +2153,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.7, z: 4}
-  m_Center: {x: 0, y: 1, z: 1.2}
+  m_Size: {x: 2, y: 1.7, z: 2.6877956}
+  m_Center: {x: 0, y: 1, z: 0.543898}
 --- !u!54 &6927393017760547173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2208,7 +2208,7 @@ MonoBehaviour:
   _health: 1
   _speed: 5
   _damage: 5
-  _attackSpeed: 1
+  _attackSpeed: 0.2
   animDeathTime: 1
 --- !u!114 &2638486498718583284
 MonoBehaviour:

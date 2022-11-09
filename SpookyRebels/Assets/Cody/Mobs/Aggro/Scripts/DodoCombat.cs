@@ -25,7 +25,6 @@ public class DodoCombat : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Bullet"))
         {
-            dodoValuesScript.SetHealth(dodoValuesScript.GetHealth() - 1);
             Destroy(other.gameObject);
         }
     }
@@ -47,6 +46,7 @@ public class DodoCombat : MonoBehaviour
         animator.SetBool("Jump", true);
         yield return new WaitForSeconds(1f);
         animator.SetBool("Jump", false);
+        
         while(true)
         {
             animator.SetBool("Attack", true);

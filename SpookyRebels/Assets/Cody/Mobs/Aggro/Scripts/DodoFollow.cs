@@ -34,7 +34,7 @@ public class DodoFollow : MonoBehaviour
     private void FollowRanged()
     {
         distance = Vector3.Distance(player.position, transform.position); 
-        if(dodoNav != null && dodoNav.isOnNavMesh && distance > minDistance)
+        if(distance > minDistance)
         {
             if(attackRunning)
             {
@@ -43,7 +43,7 @@ public class DodoFollow : MonoBehaviour
             }
 
             dodoNav.SetDestination(player.position);
-        } else if(dodoNav != null && dodoNav.isOnNavMesh) {
+        } else {
             if(!attackRunning)
             {
                 dodoCombatScript.StartRangedAttack();

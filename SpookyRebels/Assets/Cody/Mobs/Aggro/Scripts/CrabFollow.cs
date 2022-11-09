@@ -24,10 +24,8 @@ public class CrabFollow : MonoBehaviour
     }
 
     private void FollowMelee()
-    { 
-        if(crabNav != null && crabNav.isOnNavMesh)
-        {
-            crabNav.SetDestination(player.position);
-        }
+    {
+        crabNav.SetDestination(player.position);
+
     }
 }

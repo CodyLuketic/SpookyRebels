@@ -874,6 +874,7 @@ MonoBehaviour:
   _speed: 3
   _damage: 5
   _attackSpeed: 1
+  _rotationSpeed: 1
   animDeathTime: 1
 --- !u!114 &-5890351936085892595
 MonoBehaviour:
@@ -2576,7 +2577,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6af34bbc98895834bb415219eeab0ccf, type: 2}
+  - {fileID: 2100000, guid: d85a91c4b011bc64283ede87f1dc4fd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
