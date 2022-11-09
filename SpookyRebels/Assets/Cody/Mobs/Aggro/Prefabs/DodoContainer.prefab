@@ -873,11 +873,10 @@ MonoBehaviour:
   _health: 1
   _speed: 3
   _damage: 5
+  _attackSpeed: 1
   animDeathTime: 1
   isMelee: 0
   isBoss: 0
-  _bounceBack: 1
-  _attackSpeed: 3
 --- !u!114 &3821853954118973606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,7 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d98ab4f8d1c3b440956dc0a84934841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 0
+  minDistance: 10
 --- !u!114 &3821853954118973607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,6 +902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8d9367735a50d40908c3a5f84aceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSpeedModifier: 0.75
+  bullet: {fileID: 7432057383437670610, guid: 4397abfc387f2814a9dead6b7e281b90, type: 3}
 --- !u!1 &3964062559931669415
 GameObject:
   m_ObjectHideFlags: 0

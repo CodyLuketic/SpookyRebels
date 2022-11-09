@@ -25,11 +25,7 @@ public class EnemyBullet : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        else if(other.gameObject.CompareTag("Enemy"))
-        {
-            gameObject.SetActive(false);
-        }
-        else if(other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Bullet"))
+        else if(other.gameObject.CompareTag("Bullet"))
         {
             other.gameObject.SetActive(false);
             gameObject.SetActive(false);

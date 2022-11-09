@@ -15,6 +15,11 @@ public class EnemyCombat : MonoBehaviour
     private Coroutine rangedAttack = null;
     private Coroutine meleeAttack = null;
     private int attackChoice = 0;
+    [SerializeField]
+    private float attackSpeedModifier = 0f;
+
+    [SerializeField]
+    private GameObject bullet = null;
 
     private void Start()
     {
@@ -52,7 +57,7 @@ public class EnemyCombat : MonoBehaviour
 
         if(other.gameObject.CompareTag("Bullet"))
         {
-            // Change 1 to player damage
+            // Change to player damage
             enemyValuesScript.SetHealth(enemyValuesScript.GetHealth() - 1);
             Destroy(other.gameObject);
         }
@@ -106,19 +111,37 @@ public class EnemyCombat : MonoBehaviour
     }
     private void StartRangedAttackHelper()
     {
-        animator.speed = enemyValuesScript.GetAttackSpeed() / 3.4f;
+        animator.speed = enemyValuesScript.GetAttackSpeed();
         rangedAttack = StartCoroutine(RangedAttack());
     }
     private IEnumerator RangedAttack()
     {
         enemyValuesScript.ZeroSpeed();
-        animator.SetBool("Attack", true);
+        animator.SetBool("Walk", false);
+
+        animator.SetBool("Jump", true);
+        yield return new WaitForSeconds(5f);
+        animator.SetBool("Jump", false);
         while(true)
         {
-            bulletPooler.SpawnFromPool(transform);
+            //bulletPooler.SpawnFromPool(transform);
+            animator.SetBool("Attack", true);
+            yield return new WaitForSeconds(0.4f);
+            GameObject bulletInstance = Instantiate(bullet);
+
+            Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward;
+            spawnPos.y += 1;
+            bulletInstance.transform.position = spawnPos;
+            bulletInstance.transform.eulerAngles = new Vector3(
+            bulletInstance.transform.eulerAngles.x,
+            transform.transform.eulerAngles.y,
+            bulletInstance.transform.eulerAngles.z );
+
+            animator.SetBool("Attack", false);
             yield return new WaitForSeconds(enemyValuesScript.GetAttackSpeed());
         }
     }
+
     public void StopRangedAttack()
     {
         StopRangedAttackHelper();
@@ -126,7 +149,7 @@ public class EnemyCombat : MonoBehaviour
     private void StopRangedAttackHelper()
     {
         enemyValuesScript.ResetSpeed();
-        animator.SetBool("Attack", false);
+        animator.SetBool("Walk", true);
         StopCoroutine(rangedAttack);
     }
 }

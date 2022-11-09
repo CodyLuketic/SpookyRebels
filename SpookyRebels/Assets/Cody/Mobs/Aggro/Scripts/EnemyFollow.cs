@@ -34,10 +34,8 @@ public class EnemyFollow : MonoBehaviour
     {
         if(isMelee)
         {
-            Debug.Log(gameObject + " is melee");
             FollowMelee();
         } else {
-            Debug.Log(gameObject + " is ranged");
             FollowRanged();
         }
     }
@@ -52,12 +50,7 @@ public class EnemyFollow : MonoBehaviour
 
     private void FollowRanged()
     {
-        distance = Vector3.Distance(player.position, transform.position);
-        if(distance < 0)
-        {
-            distance *= -1;
-        }
-        
+        distance = Vector3.Distance(player.position, transform.position); 
         if(enemyNav != null && enemyNav.isOnNavMesh && distance > minDistance)
         {
             if(attackRunning)
@@ -67,7 +60,7 @@ public class EnemyFollow : MonoBehaviour
             }
 
             enemyNav.SetDestination(player.position);
-        } else {
+        } else if(enemyNav != null && enemyNav.isOnNavMesh) {
             if(!attackRunning)
             {
                 enemyCombatScript.StartRangedAttack();
