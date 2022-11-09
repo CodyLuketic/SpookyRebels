@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class CrabCombat : MonoBehaviour
 {
@@ -41,7 +40,6 @@ public class CrabCombat : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Bullet"))
         {
-            crabValuesScript.SetHealth(crabValuesScript.GetHealth() - 1);
             Destroy(other.gameObject);
         }
     }
