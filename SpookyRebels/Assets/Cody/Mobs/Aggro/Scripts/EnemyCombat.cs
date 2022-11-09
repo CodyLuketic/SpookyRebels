@@ -6,7 +6,6 @@ public class EnemyCombat : MonoBehaviour
 {
     private EnemyValues enemyValuesScript = null;
     private EnemyFollow enemyFollowScript = null;
-    private BulletPooler bulletPooler = null;
     private Rigidbody enemyRb = null;
     private NavMeshAgent enemyNav = null;
     private Animator animator = null;
@@ -28,8 +27,6 @@ public class EnemyCombat : MonoBehaviour
         enemyNav = gameObject.GetComponent<NavMeshAgent>();
         enemyRb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
-
-        bulletPooler = GameObject.FindGameObjectWithTag("BulletPooler").GetComponent<BulletPooler>();
 
         isMelee = enemyValuesScript.GetMelee();
     }
@@ -120,11 +117,10 @@ public class EnemyCombat : MonoBehaviour
         animator.SetBool("Walk", false);
 
         animator.SetBool("Jump", true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
         animator.SetBool("Jump", false);
         while(true)
         {
-            //bulletPooler.SpawnFromPool(transform);
             animator.SetBool("Attack", true);
             yield return new WaitForSeconds(0.4f);
             GameObject bulletInstance = Instantiate(bullet);

@@ -23,12 +23,12 @@ public class EnemyBullet : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
         else if(other.gameObject.CompareTag("Bullet"))
         {
-            other.gameObject.SetActive(false);
-            gameObject.SetActive(false);
+            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -36,7 +36,7 @@ public class EnemyBullet : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
 
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     private void Travel()

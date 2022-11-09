@@ -11,7 +11,7 @@ public class PassiveMobMovement : MonoBehaviour
     private GameObject player = null;
 
     [SerializeField]
-    private float spawnRadius = 0;
+    private float walkRadius = 0;
     
     [SerializeField]
     private float detectRadius = 0;
@@ -46,19 +46,17 @@ public class PassiveMobMovement : MonoBehaviour
 
     private void MoveTo()
     {
-        float ranX = Random.Range(-transform.position.x * spawnRadius, transform.position.x * spawnRadius);
-        float ranZ = Random.Range(-transform.position.z * spawnRadius, transform.position.z * spawnRadius);
+        Debug.Log("Moved Randomly");
+        float ranX = Random.Range(transform.position.x - walkRadius, transform.position.x + walkRadius);
+        float ranZ = Random.Range(transform.position.z - walkRadius, transform.position.z + walkRadius);
 
         Vector3 moveTo = new Vector3(ranX, 0, ranZ);
 
-        if(passiveMobNav != null && passiveMobNav.isOnNavMesh)
-        {
-            passiveMobNav.SetDestination(moveTo);
-        }
-        else if(passiveMobNav != null)
-        {
-            Destroy(gameObject);
-        }
+        NavMeshHit hit;
+
+        NavMesh.SamplePosition(moveTo, out hit, 5, 1); 
+
+        passiveMobNav.SetDestination(hit.position);
 
         nextTurnTime = Time.time + nextTurnIncrement;
     }

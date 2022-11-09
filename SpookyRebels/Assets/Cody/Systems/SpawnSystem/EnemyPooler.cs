@@ -121,7 +121,13 @@ public class EnemyPooler : MonoBehaviour
         }
 
         enemyInstance.GetComponent<NavMeshAgent>().enabled = true;
-        enemyInstance.GetComponent<EnemyValues>().IncreaseValues(level);
+        if(enemyInstance.name == "CrabContainer")
+        {
+            enemyInstance.GetComponent<CrabValues>().IncreaseValues(level);
+        } else if(enemyInstance.name == "DodoContainer")
+        {
+            enemyInstance.GetComponent<DodoValues>().IncreaseValues(level);
+        }
         
         poolDictionary[index].Enqueue(enemyInstance);
 

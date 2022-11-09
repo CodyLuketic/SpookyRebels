@@ -2116,9 +2116,9 @@ GameObject:
   - component: {fileID: 6927393017760547175}
   - component: {fileID: 6927393017760547173}
   - component: {fileID: 6927393017760547178}
-  - component: {fileID: 6927393017760547179}
-  - component: {fileID: 6927393017760547176}
-  - component: {fileID: 6927393017760547177}
+  - component: {fileID: -5966817020489621947}
+  - component: {fileID: 2638486498718583284}
+  - component: {fileID: -4627085734364666193}
   m_Layer: 0
   m_Name: CrabContainer
   m_TagString: Enemy
@@ -2193,7 +2193,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6927393017760547179
+--- !u!114 &-5966817020489621947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2202,18 +2202,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6927393017760547183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 607ca2e8eb2127c46a530f030ea1a4a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 210a74793e0e9f0408ddc62b95916a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
   _speed: 5
   _damage: 5
-  animDeathTime: 1
-  isMelee: 1
-  isBoss: 0
-  _bounceBack: 5
   _attackSpeed: 1
---- !u!114 &6927393017760547176
+  animDeathTime: 1
+--- !u!114 &2638486498718583284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2222,11 +2219,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6927393017760547183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d98ab4f8d1c3b440956dc0a84934841, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d8c212dededd4a439cf4410d9266dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 0
---- !u!114 &6927393017760547177
+--- !u!114 &-4627085734364666193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2235,7 +2231,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6927393017760547183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8d9367735a50d40908c3a5f84aceed, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fd85fafc8eaf7446a19fb139c9b9b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6991445199103533439

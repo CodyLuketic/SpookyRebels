@@ -781,9 +781,9 @@ GameObject:
   - component: {fileID: 8759179672150277600}
   - component: {fileID: 3821853954118973611}
   - component: {fileID: 3821853954118973604}
-  - component: {fileID: 3821853954118973605}
-  - component: {fileID: 3821853954118973606}
-  - component: {fileID: 3821853954118973607}
+  - component: {fileID: -9131952935739818685}
+  - component: {fileID: -5890351936085892595}
+  - component: {fileID: 3329844386177862902}
   m_Layer: 0
   m_Name: DodoContainer
   m_TagString: Enemy
@@ -858,7 +858,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3821853954118973605
+--- !u!114 &-9131952935739818685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3821853954118973601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 607ca2e8eb2127c46a530f030ea1a4a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4afa628b1cf33f8429ea386afc32c597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
@@ -875,9 +875,7 @@ MonoBehaviour:
   _damage: 5
   _attackSpeed: 1
   animDeathTime: 1
-  isMelee: 0
-  isBoss: 0
---- !u!114 &3821853954118973606
+--- !u!114 &-5890351936085892595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -886,11 +884,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3821853954118973601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d98ab4f8d1c3b440956dc0a84934841, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e4a81b8bd8d6a74f8cc4b356d942cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minDistance: 10
---- !u!114 &3821853954118973607
+--- !u!114 &3329844386177862902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -899,10 +897,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3821853954118973601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8d9367735a50d40908c3a5f84aceed, type: 3}
+  m_Script: {fileID: 11500000, guid: a496d2c5aba69754e85b4206f5502099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeedModifier: 0.75
   bullet: {fileID: 7432057383437670610, guid: 4397abfc387f2814a9dead6b7e281b90, type: 3}
 --- !u!1 &3964062559931669415
 GameObject:
