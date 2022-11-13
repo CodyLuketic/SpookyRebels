@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -437,22 +437,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Cody/Mobs/Aggro/Prefabs
+    - Assets/Cody/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Cody/Mobs/Aggro/Prefabs
+  - Assets/Cody/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Personal\Code Work\GitHub\SpookyRebels\SpookyRebels
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: be750000
-    m_LastClickedID: 30142
-    m_ExpandedIDs: 00000000ae750000b0750000b2750000b4750000b6750000b8750000ba750000bc750000be750000c0750000c27500001076000000ca9a3b
+    scrollPos: {x: 0, y: 305.40002}
+    m_SelectedIDs: f6750000
+    m_LastClickedID: 30198
+    m_ExpandedIDs: 00000000ae750000b0750000b2750000b4750000b6750000b8750000ba750000bc750000be750000c0750000c2750000f275000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -610,9 +610,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 285b0100
-      m_LastClickedID: 88872
-      m_ExpandedIDs: 3c53f1ff285b0100
+      m_SelectedIDs: 968b0000
+      m_LastClickedID: 35734
+      m_ExpandedIDs: 14d5ffff3afbffffd48c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -887,7 +887,7 @@ MonoBehaviour:
       layout: 4
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
-  m_OverrideSceneCullingMask: 0
+  m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 0
@@ -895,9 +895,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.1164693, y: 1.0687382, z: 1.4139924}
+    m_Target: {x: 138.91351, y: 0.35739765, z: -228.87563}
     speed: 2
-    m_Value: {x: -1.1164693, y: 1.0687382, z: 1.4139924}
+    m_Value: {x: 138.91351, y: 0.35739765, z: -228.87563}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_SceneViewState:
     m_AlwaysRefresh: 0
     showFog: 1
-    showSkybox: 0
+    showSkybox: 1
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -944,13 +944,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.11961156, y: 0.66053843, z: -0.10778719, w: 0.7333796}
+    m_Target: {x: 0.31071272, y: -0.1446846, z: 0.047902603, w: 0.93823344}
     speed: 2
-    m_Value: {x: 0.11960669, y: 0.6605115, z: -0.107782796, w: 0.7333497}
+    m_Value: {x: 0.31070453, y: -0.14468078, z: 0.04790134, w: 0.9382087}
   m_Size:
-    m_Target: 1.745332
+    m_Target: 3.0907707
     speed: 2
-    m_Value: 1.745332
+    m_Value: 3.0907707
   m_Ortho:
     m_Target: 0
     speed: 2
