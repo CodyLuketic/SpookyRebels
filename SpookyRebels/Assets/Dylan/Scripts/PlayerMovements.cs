@@ -33,12 +33,18 @@ public class PlayerMovements : MonoBehaviour
     public bool canMove = true;
 
     //Dash stuff
-    public const float maxDashTime = 2.0f;
+    public float maxDashTime = 2.0f;
     public float dashDistance = 5;
     public float dashStoppingSpeed = 0.1f;
-    public float currentDashTime = maxDashTime;
+    public float currentDashTime = 10;
     public float dashSpeed = 20;
 
+    //Recoil stuff
+    public float maxDashTimeRe = 1.0f;
+    public float dashDistanceRe = 2;
+    public float dashStoppingSpeedRe = 0.1f;
+    public float currentDashTimeRe = 10;
+    public float dashSpeedRe = 10;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -74,7 +80,14 @@ public class PlayerMovements : MonoBehaviour
         // Check that we can Move
         if (canMove)
         {
-            if (currentDashTime < maxDashTime)
+            if(currentDashTimeRe < maxDashTimeRe)
+            {
+                moveDirection = transform.forward * dashDistance * -1;
+                currentDashTimeRe += dashStoppingSpeedRe;
+                // Move the controller
+                characterController.Move(moveDirection * Time.deltaTime * dashSpeedRe);
+            }
+            else if (currentDashTime < maxDashTime)
             {
                 moveDirection = transform.forward * dashDistance;
                 currentDashTime += dashStoppingSpeed;

@@ -62,6 +62,37 @@ Transform:
   m_Father: {fileID: 7123170690156522224}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &990006310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 990006311}
+  m_Layer: 0
+  m_Name: EggBombSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &990006311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990006310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7123170690156522224}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1062348073
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +258,7 @@ Transform:
   - {fileID: 1749488637}
   - {fileID: 1062348074}
   - {fileID: 1400636350}
+  - {fileID: 990006311}
   m_Father: {fileID: 7123170689632051110}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -321,6 +353,10 @@ MonoBehaviour:
   cam: {fileID: 7123170690385004112}
   moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
+  dashDistance: 5
+  dashStoppingSpeed: 0.1
+  currentDashTime: 2
+  dashSpeed: 20
 --- !u!114 &3757707364220109452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 607727490}
   leftCrabPoint: {fileID: 835676099}
+  eggBombPoint: {fileID: 990006311}
   rightCrabPoint: {fileID: 1749488637}
   lucyShotPrefab: {fileID: 4527872260846675481, guid: 04932225a7c24194f874f5092fa3739f,
     type: 3}
@@ -346,6 +383,8 @@ MonoBehaviour:
   eggShotPrefab: {fileID: 6074853557089199778, guid: 50f3bab7b1ad4e943be9891e59a61065,
     type: 3}
   bigEggShotPrefab: {fileID: 9027891696916645226, guid: eecd4aa351aec3041a91a99bb911590e,
+    type: 3}
+  EggBombPrefab: {fileID: 927584651735372893, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
     type: 3}
   recoil: 2
   currentBullets: 0
@@ -11501,6 +11540,10 @@ MonoBehaviour:
     equipt1: 0
     equipt2: -1
   pMovScript: {fileID: 0}
+  canDash: 1
+  canDoubleDash: 0
+  doubleDashable: 0
+  dashTemp: 0
 --- !u!1 &7123170690385004114
 GameObject:
   m_ObjectHideFlags: 0

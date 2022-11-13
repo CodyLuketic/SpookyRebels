@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
     // bullet prefabs
     public Transform firePoint;
     public Transform leftCrabPoint;
+    public Transform eggBombPoint;
     public Transform rightCrabPoint;
     public GameObject lucyShotPrefab;
     public GameObject CrabMiddleShotPrefab;
@@ -16,7 +17,8 @@ public class Shoot : MonoBehaviour
     public GameObject GemWavePrefab;
     public GameObject eggShotPrefab;
     public GameObject bigEggShotPrefab;
-    public int recoil = 2;
+    public GameObject EggBombPrefab;
+    public float recoil = 1;
     public int currentBullets;
     public bool hasBullets = true;
     public Transform eggPoint;
@@ -139,6 +141,7 @@ public class Shoot : MonoBehaviour
                 {
                     Instantiate(eggShotPrefab, eggPoint.position, eggPoint.rotation);
                 }
+                if(recoil != 0) pMovScript.currentDashTimeRe = 0;
                 //rb.velocity = bullDir * recoil * -1;
             }
 
@@ -197,7 +200,11 @@ public class Shoot : MonoBehaviour
         {
             Debug.Log("dash");
             //Egg bomb
-            //if (heldDefending.sTree.Skills[18].skillOwned) 
+            if (heldDefending.sTree.Skills[18].skillOwned)
+            {
+                int ran = Random.Range(0, 3);
+                if (ran < 2) Instantiate(EggBombPrefab, eggBombPoint.position, eggBombPoint.rotation);
+            }
             //do the dash
             pMovScript.currentDashTime = 0;
             if (canDash) canDash = false;
@@ -348,17 +355,18 @@ public class Shoot : MonoBehaviour
 
         if (heldAttacking.species == "Dodo")
         {
-            if (heldAttacking.sTree.Skills[8].skillOwned) recoil += 1;
-            if (heldAttacking.sTree.Skills[14].skillOwned) recoil += 2;
-            if (heldAttacking.sTree.Skills[9].skillOwned) recoil -= 1;
-            if (heldAttacking.sTree.Skills[15].skillOwned) recoil -= 1;
+            if (heldAttacking.sTree.Skills[8].skillOwned) recoil += 0.5f;
+            if (heldAttacking.sTree.Skills[14].skillOwned) recoil += 0.5f;
+            if (heldAttacking.sTree.Skills[9].skillOwned) recoil -= 0.5f;
+            if (heldAttacking.sTree.Skills[15].skillOwned) recoil -= 0.5f;
+            pMovScript.maxDashTimeRe = recoil;
         }
         if(heldDefending.species == "Dodo")
         {
             if (heldDefending.sTree.Skills[24].skillOwned) doubleDashable = canDoubleDash = true;
             else doubleDashable = canDoubleDash = false;
-            if (heldDefending.sTree.Skills[19].skillOwned) pMovScript.dashDistance = 8;
-            else pMovScript.dashDistance = 5;
+            if (heldDefending.sTree.Skills[19].skillOwned) pMovScript.maxDashTime = 3;
+            else pMovScript.maxDashTime = 1.5f;
             if (heldDefending.sTree.Skills[20].skillOwned) heldDefending.defensetimer = 5;
             else if (heldDefending.sTree.Skills[17].skillOwned) heldDefending.defensetimer = 7;
         }

@@ -922,6 +922,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 467169475123903962}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &927584653172358860
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 927584651735372889, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 927584651735372889, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927584651735372889, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 927584651735372889, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 927584651735372889, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 927584651735372889, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927584651735372889, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927584651735372889, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927584651735372889, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927584651735372889, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927584651735372889, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927584651735372893, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
+        type: 3}
+      propertyPath: m_Name
+      value: EggBombPrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425, type: 3}
 --- !u!1001 &1458354932272339274
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -49,10 +49,19 @@ public class GemWave : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            EnemyValues eValScript = other.gameObject.GetComponent<EnemyValues>();
+            //EnemyValues eValScript = other.gameObject.GetComponent<EnemyValues>();
 
-            eValScript.SetHealth(eValScript.GetHealth() - damage);
-
+            //eValScript.SetHealth(eValScript.GetHealth() - damage);
+            if (other.gameObject.name == "CrabContainer(Clone)")
+            {
+                CrabValues eValScript = other.gameObject.GetComponent<CrabValues>();
+                eValScript.SetHealth(eValScript.GetHealth() - damage);
+            }
+            else if (other.gameObject.name == "DodoContainer(Clone)")
+            {
+                DodoValues eValScript = other.gameObject.GetComponent<DodoValues>();
+                eValScript.SetHealth(eValScript.GetHealth() - damage);
+            }
         }
 
 
