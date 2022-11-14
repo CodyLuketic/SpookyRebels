@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.107910156, g: 0.107910156, b: 0.107910156, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -31763,6 +31763,10 @@ MonoBehaviour:
   pools:
   - tag: Crabs
     prefab: {fileID: 6927393017760547183, guid: f703bf700672d6849812943ca797c7b9,
+      type: 3}
+    size: 10
+  - tag: Crabs
+    prefab: {fileID: 3821853954118973601, guid: e3b42ad5bae3dae4b8c7cccfb14576c9,
       type: 3}
     size: 10
   boss: {fileID: 2263733754358686865, guid: 6e05538033a18b944b59a47612e51490, type: 3}

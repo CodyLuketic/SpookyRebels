@@ -23,8 +23,6 @@ public class PassiveMobMovement : MonoBehaviour
 
     [SerializeField]
     private float nextTurnIncrement = 0;
-
-    private bool running = false;
     
     private void Start()
     {
@@ -32,7 +30,7 @@ public class PassiveMobMovement : MonoBehaviour
         passiveMobRb = gameObject.GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(CheckPlayerPos())
         {
