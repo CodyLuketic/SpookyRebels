@@ -29,6 +29,8 @@ public class DodoValues : MonoBehaviour
     [SerializeField]
     private float animDeathTime = 1f;
 
+    private bool dying = false;
+
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -94,20 +96,26 @@ public class DodoValues : MonoBehaviour
         
         if(_health <= 0)
         {
+            dying = true;
             StartCoroutine(Death());
         }
     }
 
     private IEnumerator Death()
     {
-        animator.SetTrigger("Die");
+        animator.SetBool("Walk", false);
+        animator.SetBool("Attack", false);
+        animator.SetBool("Die", true);
         ZeroSpeedHelper();
 
         yield return new WaitForSeconds(animDeathTime);
 
+        animator.SetBool("Die", false);
+        dying = false;
+        ResetSpeedHelper();
         gameObject.GetComponent<NavMeshAgent>().enabled = false;
         gameObject.SetActive(false);
-        ResetSpeedHelper();
+
     }
 
     public void SetDamage(float damage)
@@ -172,5 +180,14 @@ public class DodoValues : MonoBehaviour
     private float GetRotationSpeedHelper()
     {
         return _rotationSpeed;
+    }
+
+    public bool GetDying()
+    {
+        return GetDyingHelper();
+    }
+    private bool GetDyingHelper()
+    {
+        return dying;
     }
 }

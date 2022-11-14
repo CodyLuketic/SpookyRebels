@@ -72,8 +72,11 @@ public class DodoCombat : MonoBehaviour
     }
     private void StopRangedAttackHelper()
     {
+        if(!dodoValuesScript.GetDying())
+        {
+            animator.SetBool("Walk", true);
+        }
         dodoValuesScript.ResetSpeed();
-        animator.SetBool("Walk", true);
         StopCoroutine(rangedAttack);
     }
 }
