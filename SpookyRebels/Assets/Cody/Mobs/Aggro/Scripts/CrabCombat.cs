@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class CrabCombat : MonoBehaviour
 {
-    private CrabValues crabValuesScript = null;
-    private CrabFollow crabFollowScript = null;
+    private EnemyValues valuesScript = null;
     private Animator animator = null;
 
     private Coroutine attackCoroutine = null;
@@ -13,8 +12,7 @@ public class CrabCombat : MonoBehaviour
 
     private void Start()
     {
-        crabValuesScript = gameObject.GetComponent<CrabValues>();
-        crabFollowScript = gameObject.GetComponent<CrabFollow>();
+        valuesScript = gameObject.GetComponent<EnemyValues>();
 
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
     }
@@ -31,7 +29,7 @@ public class CrabCombat : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            crabValuesScript.ResetSpeed();
+            valuesScript.ResetSpeed();
             StopAttack();
         }
     }
@@ -46,10 +44,10 @@ public class CrabCombat : MonoBehaviour
 
     private IEnumerator Attack()
     {
-        float attackSpeed = crabValuesScript.GetAttackSpeed();
+        float attackSpeed = valuesScript.GetAttackSpeed();
                     
         attacking = true;
-        crabValuesScript.ZeroSpeed();
+        valuesScript.ZeroSpeed();
         animator.speed = attackSpeed;
         attackChoice = Random.Range(0, 2);
 

@@ -2116,7 +2116,7 @@ GameObject:
   - component: {fileID: 6927393017760547175}
   - component: {fileID: 6927393017760547173}
   - component: {fileID: 6927393017760547178}
-  - component: {fileID: -5966817020489621947}
+  - component: {fileID: -3682177608448444749}
   - component: {fileID: 2638486498718583284}
   - component: {fileID: -4627085734364666193}
   m_Layer: 0
@@ -2193,7 +2193,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-5966817020489621947
+--- !u!114 &-3682177608448444749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2202,7 +2202,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6927393017760547183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210a74793e0e9f0408ddc62b95916a56, type: 3}
+  m_Script: {fileID: 11500000, guid: 607ca2e8eb2127c46a530f030ea1a4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
@@ -2210,6 +2210,8 @@ MonoBehaviour:
   _damage: 5
   _attackSpeed: 0.2
   animDeathTime: 1
+  isMelee: 0
+  isBoss: 0
 --- !u!114 &2638486498718583284
 MonoBehaviour:
   m_ObjectHideFlags: 0

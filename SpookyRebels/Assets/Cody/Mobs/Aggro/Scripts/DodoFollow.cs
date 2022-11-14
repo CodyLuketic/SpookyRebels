@@ -3,10 +3,9 @@ using UnityEngine.AI;
 
 public class DodoFollow : MonoBehaviour
 {
-    private DodoValues dodoValuesScript = null;
-    private DodoCombat dodoCombatScript = null;
+    private EnemyValues valuesScript = null;
+    private DodoCombat combatScript = null;
     private NavMeshAgent dodoNav = null;
-
     private Transform player;
 
     private float distance = 0f;
@@ -17,11 +16,11 @@ public class DodoFollow : MonoBehaviour
     
     private void Start()
     {
-        dodoValuesScript = gameObject.GetComponent<DodoValues>();
-        dodoCombatScript = gameObject.GetComponent<DodoCombat>();
+        valuesScript = gameObject.GetComponent<EnemyValues>();
+        combatScript = gameObject.GetComponent<DodoCombat>();
         dodoNav = gameObject.GetComponent<NavMeshAgent>();
 
-        rotationSpeed = dodoValuesScript.GetRotationSpeed();
+        rotationSpeed = valuesScript.GetRotationSpeed();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -38,7 +37,7 @@ public class DodoFollow : MonoBehaviour
         {
             if(attackRunning)
             {
-                dodoCombatScript.StopRangedAttack();
+                combatScript.StopRangedAttack();
                 attackRunning = false;
             }
 
@@ -46,7 +45,7 @@ public class DodoFollow : MonoBehaviour
         } else {
             if(!attackRunning)
             {
-                dodoCombatScript.StartRangedAttack();
+                combatScript.StartRangedAttack();
                 attackRunning = true;
             }
 

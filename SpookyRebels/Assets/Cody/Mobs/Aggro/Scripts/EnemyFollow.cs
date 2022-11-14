@@ -24,7 +24,7 @@ public class EnemyFollow : MonoBehaviour
         enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
         enemyNav = gameObject.GetComponent<NavMeshAgent>();
 
-        isMelee = valuesScript.GetMelee();
+        //isMelee = valuesScript.GetMelee();
         rotationSpeed = valuesScript.GetRotationSpeed();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;

@@ -14,8 +14,6 @@ public class EnemyCombat : MonoBehaviour
     private Coroutine rangedAttack = null;
     private Coroutine meleeAttack = null;
     private int attackChoice = 0;
-    [SerializeField]
-    private float attackSpeedModifier = 0f;
 
     [SerializeField]
     private GameObject bullet = null;
@@ -28,7 +26,7 @@ public class EnemyCombat : MonoBehaviour
         enemyRb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
 
-        isMelee = enemyValuesScript.GetMelee();
+        //isMelee = enemyValuesScript.GetMelee();
     }
 
     private void OnTriggerEnter(Collider other)

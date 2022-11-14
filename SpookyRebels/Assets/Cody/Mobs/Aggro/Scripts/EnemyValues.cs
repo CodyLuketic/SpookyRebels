@@ -4,9 +4,6 @@ using UnityEngine.AI;
 
 public class EnemyValues : MonoBehaviour
 {
-    private GameManager gameManager = null;
-    private EnemyFollow enemyFollowScript = null;
-    private EnemyCombat enemyCombatScript = null;
     private Animator animator = null;
 
     [Header("Basic Values")]
@@ -22,23 +19,15 @@ public class EnemyValues : MonoBehaviour
 
     [SerializeField]
     private float _attackSpeed = 0f;
+    
+    [SerializeField]
     private float _rotationSpeed = 0f;
 
     [SerializeField]
     private float animDeathTime = 1f;
 
-    [Header("Enemy Type")]
-    [SerializeField]
-    private bool isMelee = false;
-
-    [SerializeField]
-    private bool isBoss = false;
-
     private void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        enemyFollowScript = gameObject.GetComponent<EnemyFollow>();
-        enemyCombatScript = gameObject.GetComponent<EnemyCombat>();
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
 
         tempSpeed = _speed;
@@ -99,15 +88,6 @@ public class EnemyValues : MonoBehaviour
         
         if(_health <= 0)
         {
-            if(isBoss)
-            {
-                gameManager.Win();
-            }
-            else
-            {
-                
-            }
-
             StartCoroutine(Death());
         }
     }
@@ -168,15 +148,6 @@ public class EnemyValues : MonoBehaviour
     private float GetDamageHelper()
     {
         return _damage;
-    }
-
-    public bool GetMelee()
-    {
-        return GetMeleeHelper();
-    }
-    private bool GetMeleeHelper()
-    {
-        return isMelee;
     }
 
     public float GetAttackSpeed()

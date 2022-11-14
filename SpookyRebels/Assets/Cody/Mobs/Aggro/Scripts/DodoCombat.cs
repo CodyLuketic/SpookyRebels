@@ -4,8 +4,7 @@ using UnityEngine.AI;
 
 public class DodoCombat : MonoBehaviour
 {
-    private DodoValues dodoValuesScript = null;
-    private DodoFollow dodoFollowScript = null;
+    private EnemyValues valuesScript = null;
     private Animator animator = null;
 
     private Coroutine rangedAttack = null;
@@ -15,8 +14,7 @@ public class DodoCombat : MonoBehaviour
 
     private void Start()
     {
-        dodoValuesScript = gameObject.GetComponent<DodoValues>();
-        dodoFollowScript = gameObject.GetComponent<DodoFollow>();
+        valuesScript = gameObject.GetComponent<EnemyValues>();
 
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
     }
@@ -35,12 +33,12 @@ public class DodoCombat : MonoBehaviour
     }
     private void StartRangedAttackHelper()
     {
-        animator.speed = dodoValuesScript.GetAttackSpeed();
+        animator.speed = valuesScript.GetAttackSpeed();
         rangedAttack = StartCoroutine(RangedAttack());
     }
     private IEnumerator RangedAttack()
     {
-        dodoValuesScript.ZeroSpeed();
+        valuesScript.ZeroSpeed();
         animator.SetBool("Walk", false);
 
         animator.SetBool("Jump", true);
@@ -62,7 +60,7 @@ public class DodoCombat : MonoBehaviour
             bulletInstance.transform.eulerAngles.z );
 
             animator.SetBool("Attack", false);
-            yield return new WaitForSeconds(dodoValuesScript.GetAttackSpeed());
+            yield return new WaitForSeconds(valuesScript.GetAttackSpeed());
         }
     }
 
@@ -72,11 +70,8 @@ public class DodoCombat : MonoBehaviour
     }
     private void StopRangedAttackHelper()
     {
-        if(!dodoValuesScript.GetDying())
-        {
-            animator.SetBool("Walk", true);
-        }
-        dodoValuesScript.ResetSpeed();
+        animator.SetBool("Walk", true);
+        valuesScript.ResetSpeed();
         StopCoroutine(rangedAttack);
     }
 }

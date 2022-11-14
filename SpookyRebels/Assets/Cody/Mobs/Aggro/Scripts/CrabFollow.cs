@@ -3,17 +3,12 @@ using UnityEngine.AI;
 
 public class CrabFollow : MonoBehaviour
 {
-    private CrabValues crabValuesScript = null;
-    private CrabCombat crabCombatScript = null;
-    private NavMeshAgent crabNav = null;
-
+    private NavMeshAgent nav = null;
     private Transform player;
     
     private void Start()
     {
-        crabValuesScript = gameObject.GetComponent<CrabValues>();
-        crabCombatScript = gameObject.GetComponent<CrabCombat>();
-        crabNav = gameObject.GetComponent<NavMeshAgent>();
+        nav = gameObject.GetComponent<NavMeshAgent>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -25,7 +20,6 @@ public class CrabFollow : MonoBehaviour
 
     private void FollowMelee()
     {
-        crabNav.SetDestination(player.position);
-
+        nav.SetDestination(player.position);
     }
 }
