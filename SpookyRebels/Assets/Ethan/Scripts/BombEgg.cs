@@ -44,16 +44,9 @@ public class BombEgg : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if (other.gameObject.name == "CrabAggro(Clone)")
-            {
-                CrabValues eValScript = other.gameObject.GetComponent<CrabValues>();
-                eValScript.SetHealth(eValScript.GetHealth() - damage);
-            }
-            else if (other.gameObject.name == "DodoAggro(Clone)")
-            {
-                DodoValues eValScript = other.gameObject.GetComponent<DodoValues>();
-                eValScript.SetHealth(eValScript.GetHealth() - damage);
-            }
+            EnemyValues eValScript = other.gameObject.GetComponent<EnemyValues>();
+
+            eValScript.SetHealth(eValScript.GetHealth() - damage);
 
             //eValScript.SetHealth(eValScript.GetHealth() - damage);
             if (shells == 4)
