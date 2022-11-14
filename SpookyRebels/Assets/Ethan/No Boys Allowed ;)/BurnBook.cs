@@ -23,4 +23,5 @@ public class BurnBook : MonoBehaviour
     // Entry 14: Haley frfr just stood me up. Idk that ***** had to be out with the boys. It's hoes before bros for a reason frfr
     // Entry 15: Me and Haley were fire in Codenames. Hannah wishes she could be this good frfr
     // Entry 16: Hannah, Madison, and me are going to Red Robin today! Hopefully Hannah will behave for once but you know her frfr
+    // Entry 17: Red Robin was fun even though Hannah was working her way through all the men. Hannah be Hannah frfr
 }
