@@ -24,4 +24,5 @@ public class BurnBook : MonoBehaviour
     // Entry 15: Me and Haley were fire in Codenames. Hannah wishes she could be this good frfr
     // Entry 16: Hannah, Madison, and me are going to Red Robin today! Hopefully Hannah will behave for once but you know her frfr
     // Entry 17: Red Robin was fun even though Hannah was working her way through all the men. Hannah be Hannah frfr
+    // Entry 18: OMG, Hannah missed when my gossip about Luke killed half the town. The town wasn't happy frfr
 }

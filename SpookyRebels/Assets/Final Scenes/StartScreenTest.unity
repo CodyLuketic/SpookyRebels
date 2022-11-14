@@ -2019,7 +2019,7 @@ MonoBehaviour:
         - skillName: Bigger Explosions
           skillIcon: {fileID: 0}
           skillOwned: 0
-          skillDescription: Increases the amount of shells of the Bomb Eggs by 2
+          skillDescription: Doubles the amount of shells of the Bomb Eggs
           skillCost: 1 Skill Point
         - skillName: 
           skillIcon: {fileID: 0}
