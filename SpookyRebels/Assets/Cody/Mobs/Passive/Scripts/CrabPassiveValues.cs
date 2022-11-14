@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PassiveMobValues : MonoBehaviour
+public class CrabPassiveValues : MonoBehaviour
 {
     [Header("Basic Values")]
     [SerializeField]
