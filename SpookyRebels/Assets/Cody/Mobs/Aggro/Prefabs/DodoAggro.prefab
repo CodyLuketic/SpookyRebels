@@ -876,9 +876,8 @@ MonoBehaviour:
   _speed: 3
   _damage: 2
   _attackSpeed: 1
+  _rotationSpeed: 1
   animDeathTime: 1
-  isMelee: 0
-  isBoss: 0
 --- !u!114 &-5890351936085892595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,6 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7432057383437670610, guid: 4397abfc387f2814a9dead6b7e281b90, type: 3}
+  jumpTime: 1.5
 --- !u!1 &4017951324765818848
 GameObject:
   m_ObjectHideFlags: 0

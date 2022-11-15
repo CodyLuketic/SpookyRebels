@@ -1554,7 +1554,7 @@ Animator:
   m_GameObject: {fileID: 5290097200466774171}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0273c3ea07031c64582e1e09e2dfac88, type: 2}
+  m_Controller: {fileID: 9100000, guid: cea0f7bf15b2d3c4ca10da49fbb2152e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1827,13 +1827,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6334203824569365812}
-  - component: {fileID: 6334203824569365813}
+  - component: {fileID: 4236256560995461625}
   - component: {fileID: 6334203824569365832}
   - component: {fileID: 6334203824569365815}
   - component: {fileID: 6334203824569365814}
   m_Layer: 0
   m_Name: CrabPassive
-  m_TagString: Untagged
+  m_TagString: Catchable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1854,8 +1854,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6334203824569365813
-SphereCollider:
+--- !u!65 &4236256560995461625
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1865,8 +1865,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.87978995
-  m_Center: {x: 0, y: 0.5033711, z: -0.024285972}
+  m_Size: {x: 2, y: 1.7, z: 2.6877956}
+  m_Center: {x: 0, y: 1, z: 0.543898}
 --- !u!54 &6334203824569365832
 Rigidbody:
   m_ObjectHideFlags: 0

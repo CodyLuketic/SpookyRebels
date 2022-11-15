@@ -95,12 +95,14 @@ public class EnemyValues : MonoBehaviour
     private IEnumerator Death()
     {
         animator.SetTrigger("Die");
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         ZeroSpeedHelper();
 
         yield return new WaitForSeconds(animDeathTime);
 
-        gameObject.GetComponent<NavMeshAgent>().enabled = false;
         gameObject.SetActive(false);
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        gameObject.GetComponent<BoxCollider>().enabled = true;
         ResetSpeedHelper();
     }
 

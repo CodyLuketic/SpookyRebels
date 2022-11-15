@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class DodoCombat : MonoBehaviour
 {
@@ -11,6 +10,9 @@ public class DodoCombat : MonoBehaviour
 
     [SerializeField]
     private GameObject bullet = null;
+
+    [SerializeField]
+    private float jumpTime = 1f;
 
     private void Start()
     {
@@ -40,9 +42,12 @@ public class DodoCombat : MonoBehaviour
     {
         valuesScript.ZeroSpeed();
         animator.SetBool("Walk", false);
-
         animator.SetBool("Jump", true);
-        yield return new WaitForSeconds(1f);
+        
+        yield return new WaitForSeconds(jumpTime);
+        
+        Vector3 targetAngles = transform.GetChild(0).transform.eulerAngles + new Vector3(0, 180f, 0);
+        transform.GetChild(0).transform.eulerAngles = targetAngles;
         animator.SetBool("Jump", false);
         
         while(true)
@@ -70,7 +75,13 @@ public class DodoCombat : MonoBehaviour
     }
     private void StopRangedAttackHelper()
     {
+        animator.SetBool("Jump", false);
+        animator.SetBool("Attack", false);
         animator.SetBool("Walk", true);
+
+        Vector3 targetAngles = transform.GetChild(0).transform.eulerAngles + new Vector3(0, 180f, 0);
+        transform.GetChild(0).transform.eulerAngles = targetAngles;
+
         valuesScript.ResetSpeed();
         StopCoroutine(rangedAttack);
     }

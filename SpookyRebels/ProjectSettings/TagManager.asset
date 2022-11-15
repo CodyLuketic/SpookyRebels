@@ -18,6 +18,7 @@ TagManager:
   - Building
   - EnemyPooler
   - BulletPooler
+  - Catchable
   layers:
   - Default
   - TransparentFX

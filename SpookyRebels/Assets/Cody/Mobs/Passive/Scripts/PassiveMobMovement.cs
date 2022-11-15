@@ -44,7 +44,6 @@ public class PassiveMobMovement : MonoBehaviour
 
     private void MoveTo()
     {
-        Debug.Log("Moved Randomly");
         float ranX = Random.Range(transform.position.x - walkRadius, transform.position.x + walkRadius);
         float ranZ = Random.Range(transform.position.z - walkRadius, transform.position.z + walkRadius);
 
