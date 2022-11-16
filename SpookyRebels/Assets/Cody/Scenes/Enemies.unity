@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12fdaa6062f00740aed457d13efb2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveMob: {fileID: 6334203824569365811, guid: 36b21bcbe250cd44a914f9e132bbcd5b,
+  passiveMob: {fileID: 3821853954118973601, guid: 281a5139fbf19a045a1f4111b584360a,
     type: 3}
 --- !u!1 &49451982
 GameObject:
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12fdaa6062f00740aed457d13efb2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveMob: {fileID: 6334203824569365811, guid: 36b21bcbe250cd44a914f9e132bbcd5b,
+  passiveMob: {fileID: 3821853954118973601, guid: 281a5139fbf19a045a1f4111b584360a,
     type: 3}
 --- !u!1001 &49760969
 PrefabInstance:
@@ -4935,7 +4935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPooler: {fileID: 1351652814}
   timeText: {fileID: 628746624}
-  bossSpawnTime: 300
+  bossSpawnTime: 10
 --- !u!114 &204814592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7404,7 +7404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12fdaa6062f00740aed457d13efb2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveMob: {fileID: 6334203824569365811, guid: 36b21bcbe250cd44a914f9e132bbcd5b,
+  passiveMob: {fileID: 3821853954118973601, guid: 281a5139fbf19a045a1f4111b584360a,
     type: 3}
 --- !u!4 &342747993 stripped
 Transform:
@@ -11774,7 +11774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12fdaa6062f00740aed457d13efb2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveMob: {fileID: 6334203824569365811, guid: 36b21bcbe250cd44a914f9e132bbcd5b,
+  passiveMob: {fileID: 3821853954118973601, guid: 281a5139fbf19a045a1f4111b584360a,
     type: 3}
 --- !u!1001 &481892050
 PrefabInstance:
@@ -25829,7 +25829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12fdaa6062f00740aed457d13efb2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveMob: {fileID: 6334203824569365811, guid: 36b21bcbe250cd44a914f9e132bbcd5b,
+  passiveMob: {fileID: 3821853954118973601, guid: 281a5139fbf19a045a1f4111b584360a,
     type: 3}
 --- !u!4 &1093144058 stripped
 Transform:
@@ -31884,9 +31884,9 @@ MonoBehaviour:
     prefab: {fileID: 3821853954118973601, guid: e3b42ad5bae3dae4b8c7cccfb14576c9,
       type: 3}
     size: 10
-  boss: {fileID: 2263733754358686865, guid: 6e05538033a18b944b59a47612e51490, type: 3}
-  minRadius: 20
-  maxRadius: 25
+  boss: {fileID: 6927393017760547183, guid: 130703f87db1b77469e85140564cc06a, type: 3}
+  minRadius: 30
+  maxRadius: 40
   time: 4
   level: 1
 --- !u!4 &1351652815
@@ -35160,7 +35160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12fdaa6062f00740aed457d13efb2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveMob: {fileID: 6334203824569365811, guid: 36b21bcbe250cd44a914f9e132bbcd5b,
+  passiveMob: {fileID: 3821853954118973601, guid: 281a5139fbf19a045a1f4111b584360a,
     type: 3}
 --- !u!1001 &1519100821
 PrefabInstance:
@@ -36722,7 +36722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12fdaa6062f00740aed457d13efb2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveMob: {fileID: 6334203824569365811, guid: 36b21bcbe250cd44a914f9e132bbcd5b,
+  passiveMob: {fileID: 3821853954118973601, guid: 281a5139fbf19a045a1f4111b584360a,
     type: 3}
 --- !u!4 &1585071829 stripped
 Transform:
@@ -40442,7 +40442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12fdaa6062f00740aed457d13efb2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveMob: {fileID: 6334203824569365811, guid: 36b21bcbe250cd44a914f9e132bbcd5b,
+  passiveMob: {fileID: 3821853954118973601, guid: 281a5139fbf19a045a1f4111b584360a,
     type: 3}
 --- !u!1001 &1796320776
 PrefabInstance:
@@ -41532,7 +41532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12fdaa6062f00740aed457d13efb2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveMob: {fileID: 6334203824569365811, guid: 36b21bcbe250cd44a914f9e132bbcd5b,
+  passiveMob: {fileID: 3821853954118973601, guid: 281a5139fbf19a045a1f4111b584360a,
     type: 3}
 --- !u!1001 &1843464290
 PrefabInstance:
@@ -46579,7 +46579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12fdaa6062f00740aed457d13efb2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveMob: {fileID: 6334203824569365811, guid: 36b21bcbe250cd44a914f9e132bbcd5b,
+  passiveMob: {fileID: 3821853954118973601, guid: 281a5139fbf19a045a1f4111b584360a,
     type: 3}
 --- !u!1001 &2063971647
 PrefabInstance:
@@ -46827,7 +46827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12fdaa6062f00740aed457d13efb2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveMob: {fileID: 6334203824569365811, guid: 36b21bcbe250cd44a914f9e132bbcd5b,
+  passiveMob: {fileID: 3821853954118973601, guid: 281a5139fbf19a045a1f4111b584360a,
     type: 3}
 --- !u!4 &2075166258 stripped
 Transform:

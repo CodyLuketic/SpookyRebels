@@ -4,9 +4,9 @@ using UnityEngine.AI;
 
 public class PassiveMobMovement : MonoBehaviour
 {
-    private NavMeshAgent passiveMobNav = null;
+    private NavMeshAgent nav = null;
 
-    private Rigidbody passiveMobRb = null;
+    private Animator animator = null;
 
     private GameObject player = null;
 
@@ -23,11 +23,14 @@ public class PassiveMobMovement : MonoBehaviour
 
     [SerializeField]
     private float nextTurnIncrement = 0;
+
+    [SerializeField]
+    private float speedThreshold = 0.15f;
     
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        passiveMobRb = gameObject.GetComponent<Rigidbody>();
+        animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -40,6 +43,7 @@ public class PassiveMobMovement : MonoBehaviour
         {
             MoveTo();
         }
+        CheckAnim();
     }
 
     private void MoveTo()
@@ -53,7 +57,7 @@ public class PassiveMobMovement : MonoBehaviour
 
         NavMesh.SamplePosition(moveTo, out hit, 5, 1); 
 
-        passiveMobNav.SetDestination(hit.position);
+        nav.SetDestination(hit.position);
 
         nextTurnTime = Time.time + nextTurnIncrement;
     }
@@ -73,7 +77,7 @@ public class PassiveMobMovement : MonoBehaviour
         transform.position = startTransform.position;
         transform.rotation = startTransform.rotation;
 
-        passiveMobNav.SetDestination(hit.position);
+        nav.SetDestination(hit.position);
     }
 
     private bool CheckPlayerPos()
@@ -86,6 +90,18 @@ public class PassiveMobMovement : MonoBehaviour
         }
     }
 
+    private void CheckAnim()
+    {
+         if(nav.velocity.magnitude < speedThreshold || nav.isStopped)
+         {
+            animator.SetBool("Idling", true);
+         }
+         else if(animator.GetBool("Idling"))
+         {
+            animator.SetBool("Idling", false);
+         }
+    }
+
     public void SetNavAgent()
     {
         SetNavAgentHelper();
@@ -93,6 +109,6 @@ public class PassiveMobMovement : MonoBehaviour
 
     private void SetNavAgentHelper()
     {
-        passiveMobNav = gameObject.GetComponent<NavMeshAgent>();
+        nav = gameObject.GetComponent<NavMeshAgent>();
     }
 }
