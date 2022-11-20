@@ -21,7 +21,7 @@ public class WalkingSounds : MonoBehaviour
     {
         while(true)
         {
-            Vector3 position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y)
+            Vector3 position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.y + 10);
 
             Debug.Log("Played Sound");
             AudioSource.PlayClipAtPoint(audioClipArray[Random.Range(0, audioClipArray.Length)], gameObject.transform.position, volume);
