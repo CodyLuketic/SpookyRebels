@@ -18766,14 +18766,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 499818234, guid: 7967546a39972404f87543692ea5634c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 499818234, guid: 7967546a39972404f87543692ea5634c, type: 3}
-      propertyPath: m_SlopeLimit
-      value: 45
-      objectReference: {fileID: 0}
     - target: {fileID: 535374369, guid: 7967546a39972404f87543692ea5634c, type: 3}
       propertyPath: ammoTxt
       value: 
@@ -18863,6 +18855,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7736878640172480848, guid: 7967546a39972404f87543692ea5634c,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7736878640172480848, guid: 7967546a39972404f87543692ea5634c,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 47c4c049337383b4ebbfed27eb3481db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7967546a39972404f87543692ea5634c, type: 3}
 --- !u!4 &741631883 stripped

@@ -5,16 +5,13 @@ public class PassiveMobValues : MonoBehaviour
 {
     [Header("Basic Values")]
     [SerializeField]
-    private float _health = 0;
+    private float _speed = 1f;
 
     [SerializeField]
-    private float _speed = 0;
+    private float _damage = 1f;
 
     [SerializeField]
-    private float _damage = 0;
-
-    [SerializeField]
-    private float _defense = 0;
+    private float _defense = 1f;
 
     public void ApplyValues()
     {
@@ -52,20 +49,6 @@ public class PassiveMobValues : MonoBehaviour
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
     }
 
-    public void SetHealth(float health)
-    {
-        SetHealthHelper(health);
-    }
-    private void SetHealthHelper(float health)
-    {
-        _health = health;
-        
-        if(_health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     public void SetDamage(float damage)
     {
         SetDamageHelper(damage);
@@ -93,16 +76,7 @@ public class PassiveMobValues : MonoBehaviour
     {
         return _speed;
     }
-
-    public float GetHealth()
-    {
-        return GetHealthHelper();
-    }
-    private float GetHealthHelper()
-    {
-        return _health;
-    }
-
+    
     public float GetDamage()
     {
         return GetDamageHelper();

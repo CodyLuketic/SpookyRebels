@@ -4,10 +4,10 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 0;
+    private float speed = 1f;
 
     [SerializeField]
-    private float waitTime = 0;
+    private float waitTime = 1f;
 
     private void Start()
     {

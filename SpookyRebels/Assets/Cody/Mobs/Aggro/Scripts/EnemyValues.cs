@@ -10,20 +10,20 @@ public class EnemyValues : MonoBehaviour
 
     [Header("Basic Values")]
     [SerializeField]
-    private float _health = 0f;
+    private float _health = 1f;
 
     [SerializeField]
-    private float _speed = 0f;
-    private float tempSpeed = 0;
+    private float _speed = 1f;
+    private float tempSpeed = 1f;
 
     [SerializeField]
-    private float _damage = 0f;
+    private float _damage = 1f;
 
     [SerializeField]
-    private float _attackSpeed = 0f;
+    private float _attackSpeed = 1f;
     
     [SerializeField]
-    private float _rotationSpeed = 0f;
+    private float _rotationSpeed = 1f;
 
     [SerializeField]
     private float animDeathTime = 1f;

@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: -3848011992967656986}
   - component: {fileID: -5890351936085892595}
   - component: {fileID: 3329844386177862902}
-  - component: {fileID: 9150519118490554068}
+  - component: {fileID: 7896808972687904180}
   m_Layer: 0
   m_Name: DodoAggro
   m_TagString: Enemy
@@ -907,7 +907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7432057383437670610, guid: 4397abfc387f2814a9dead6b7e281b90, type: 3}
   jumpTime: 1.5
---- !u!114 &9150519118490554068
+--- !u!114 &7896808972687904180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -916,7 +916,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3821853954118973601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5460386451a1bf4ba894332023a0119, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f69e0d7dbb03a043bc8bcb92534edd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioClipArray:
@@ -936,8 +936,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4e525090d368d9c47bf3455d11d3e2f5, type: 3}
   - {fileID: 8300000, guid: 65f0161986f15c944a43f021feecc704, type: 3}
   - {fileID: 8300000, guid: 17e9c7012e60ac84f887041a6d7d05dc, type: 3}
-  stepDelay: 0.5
-  volume: 5000
+  stepDelay: 0.1
+  volume: 1
 --- !u!1 &4017951324765818848
 GameObject:
   m_ObjectHideFlags: 0

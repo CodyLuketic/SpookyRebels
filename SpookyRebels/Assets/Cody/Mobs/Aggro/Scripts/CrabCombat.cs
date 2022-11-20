@@ -4,15 +4,18 @@ using UnityEngine;
 public class CrabCombat : MonoBehaviour
 {
     private EnemyValues valuesScript = null;
+    private WalkingSounds walkingSoundsScript = null;
+
     private Animator animator = null;
 
     private Coroutine attackCoroutine = null;
     private bool attacking = false;
-    private int attackChoice = 0;
+    private int attackChoice = 1;
 
     private void Start()
     {
         valuesScript = gameObject.GetComponent<EnemyValues>();
+        walkingSoundsScript = gameObject.GetComponent<WalkingSounds>();
 
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
     }
@@ -51,6 +54,8 @@ public class CrabCombat : MonoBehaviour
         animator.speed = attackSpeed;
         attackChoice = Random.Range(0, 2);
 
+        walkingSoundsScript.StopWalkingLoop();
+
         while(true)
         {
             if(attackChoice == 0)
@@ -59,9 +64,10 @@ public class CrabCombat : MonoBehaviour
             } else {
                 animator.SetBool("Attack2", true);
             }
+
             yield return new WaitForSeconds(1 / attackSpeed);
+            
             // Player Damage Call Goes Here
-            Debug.Log("Player Damaged by: " + gameObject);
         }
     }
 
@@ -76,5 +82,7 @@ public class CrabCombat : MonoBehaviour
         } else {
             animator.SetBool("Attack2", false);
         }
+
+        walkingSoundsScript.StartWalkingLoop();
     }
 }

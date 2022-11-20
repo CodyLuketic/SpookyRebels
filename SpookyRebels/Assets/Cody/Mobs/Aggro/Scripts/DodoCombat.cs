@@ -4,10 +4,11 @@ using UnityEngine;
 public class DodoCombat : MonoBehaviour
 {
     private EnemyValues valuesScript = null;
+    private WalkingSounds walkingSoundsScript = null;
+
     private Animator animator = null;
 
     private Coroutine rangedAttack = null;
-
     [SerializeField]
     private GameObject bullet = null;
 
@@ -17,6 +18,7 @@ public class DodoCombat : MonoBehaviour
     private void Start()
     {
         valuesScript = gameObject.GetComponent<EnemyValues>();
+        walkingSoundsScript = gameObject.GetComponent<WalkingSounds>();
 
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
     }
@@ -37,6 +39,7 @@ public class DodoCombat : MonoBehaviour
     {
         animator.speed = valuesScript.GetAttackSpeed();
         rangedAttack = StartCoroutine(RangedAttack());
+        walkingSoundsScript.StartWalkingLoop();
     }
     private IEnumerator RangedAttack()
     {
@@ -53,7 +56,9 @@ public class DodoCombat : MonoBehaviour
         while(true)
         {
             animator.SetBool("Attack", true);
+
             yield return new WaitForSeconds(0.4f);
+            
             GameObject bulletInstance = Instantiate(bullet);
 
             Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward;
@@ -84,5 +89,6 @@ public class DodoCombat : MonoBehaviour
 
         valuesScript.ResetSpeed();
         StopCoroutine(rangedAttack);
+        walkingSoundsScript.StartWalkingLoop();
     }
 }

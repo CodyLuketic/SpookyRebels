@@ -5,24 +5,27 @@ public class DodoFollow : MonoBehaviour
 {
     private EnemyValues valuesScript = null;
     private DodoCombat combatScript = null;
+
     private NavMeshAgent dodoNav = null;
+
     private Transform player;
 
-    private float distance = 0f;
+    private float distance = 1f;
     [SerializeField]
     private float minDistance = 2f;
-    private float rotationSpeed = 0f;
+    private float rotationSpeed = 1f;
     private bool attackRunning = false;
     
     private void Start()
     {
         valuesScript = gameObject.GetComponent<EnemyValues>();
         combatScript = gameObject.GetComponent<DodoCombat>();
+
         dodoNav = gameObject.GetComponent<NavMeshAgent>();
 
-        rotationSpeed = valuesScript.GetRotationSpeed();
-
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        rotationSpeed = valuesScript.GetRotationSpeed();
     }
 
     private void FixedUpdate()

@@ -2246,7 +2246,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6927393017760547183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5460386451a1bf4ba894332023a0119, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f69e0d7dbb03a043bc8bcb92534edd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioClipArray:
@@ -2266,8 +2266,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4e525090d368d9c47bf3455d11d3e2f5, type: 3}
   - {fileID: 8300000, guid: 65f0161986f15c944a43f021feecc704, type: 3}
   - {fileID: 8300000, guid: 17e9c7012e60ac84f887041a6d7d05dc, type: 3}
-  stepDelay: 1
-  volume: 5000
+  stepDelay: 0.1
+  volume: 1
 --- !u!1 &6991445199103533439
 GameObject:
   m_ObjectHideFlags: 0

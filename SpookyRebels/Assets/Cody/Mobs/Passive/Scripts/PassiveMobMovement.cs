@@ -1,29 +1,23 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class PassiveMobMovement : MonoBehaviour
 {
     private NavMeshAgent nav = null;
-
     private Animator animator = null;
 
     private GameObject player = null;
 
     [SerializeField]
-    private float walkRadius = 0;
+    private float walkRadius = 1f;
+    [SerializeField]
+    private float detectRadius = 1f;
+    [SerializeField]
+    private float runDistance = 1f;
     
+    private float nextTurnTime = 1f;
     [SerializeField]
-    private float detectRadius = 0;
-
-    [SerializeField]
-    private float runDistance = 0;
-    
-    private float nextTurnTime = 0;
-
-    [SerializeField]
-    private float nextTurnIncrement = 0;
-
+    private float nextTurnIncrement = 1f;
     [SerializeField]
     private float speedThreshold = 0.15f;
     

@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public class CrabFollow : MonoBehaviour
 {
     private NavMeshAgent nav = null;
+    
     private Transform player;
     
     private void Start()
