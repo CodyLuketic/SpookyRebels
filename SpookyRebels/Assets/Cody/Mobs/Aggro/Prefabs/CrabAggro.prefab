@@ -2119,6 +2119,7 @@ GameObject:
   - component: {fileID: -3682177608448444749}
   - component: {fileID: 2638486498718583284}
   - component: {fileID: -4627085734364666193}
+  - component: {fileID: -7018359061981509485}
   m_Layer: 0
   m_Name: CrabAggro
   m_TagString: Enemy
@@ -2209,8 +2210,8 @@ MonoBehaviour:
   _speed: 5
   _damage: 5
   _attackSpeed: 0.2
+  _rotationSpeed: 0
   animDeathTime: 1
-  isMelee: 0
   isBoss: 0
 --- !u!114 &2638486498718583284
 MonoBehaviour:
@@ -2236,6 +2237,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd85fafc8eaf7446a19fb139c9b9b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7018359061981509485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6927393017760547183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5460386451a1bf4ba894332023a0119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClipArray:
+  - {fileID: 8300000, guid: a3cc1fbf3df008a49a41c3a6b055e90c, type: 3}
+  - {fileID: 8300000, guid: 4f31c4b1d9433d24ba762af7cf57eeb4, type: 3}
+  - {fileID: 8300000, guid: b2e7ca223f0ed4b4da0273fe9029f96c, type: 3}
+  - {fileID: 8300000, guid: 12d103ae2e1f6654f8b87d7cea61f5fd, type: 3}
+  - {fileID: 8300000, guid: b506933037d97354aa55e4163db61cf2, type: 3}
+  - {fileID: 8300000, guid: 472cd3369d5ce6341a51ad0ff52b218c, type: 3}
+  - {fileID: 8300000, guid: c0df910a6ff93fe46952a0a1d1ea4ac4, type: 3}
+  - {fileID: 8300000, guid: 21b2926024802464fb89c7f62e34ef05, type: 3}
+  - {fileID: 8300000, guid: 645c3ac0dbac50045b5d047e4843eba8, type: 3}
+  - {fileID: 8300000, guid: 4dca54186651bfa47b814e010c20ba94, type: 3}
+  - {fileID: 8300000, guid: 7f8591e1357270549bc2b8c1fcf330eb, type: 3}
+  - {fileID: 8300000, guid: c5df823bdeb773e4eab001e69ddfdb6a, type: 3}
+  - {fileID: 8300000, guid: 677cb4916255534449a48e3c1799b567, type: 3}
+  - {fileID: 8300000, guid: 4e525090d368d9c47bf3455d11d3e2f5, type: 3}
+  - {fileID: 8300000, guid: 65f0161986f15c944a43f021feecc704, type: 3}
+  - {fileID: 8300000, guid: 17e9c7012e60ac84f887041a6d7d05dc, type: 3}
+  stepDelay: 1
+  volume: 5000
 --- !u!1 &6991445199103533439
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,8 @@ using UnityEngine.AI;
 
 public class EnemyValues : MonoBehaviour
 {
+    private GameManager gameManager = null;
+    private WalkingSounds walkingSoundsScript = null;
     private Animator animator = null;
 
     [Header("Basic Values")]
@@ -26,8 +28,13 @@ public class EnemyValues : MonoBehaviour
     [SerializeField]
     private float animDeathTime = 1f;
 
+    [SerializeField]
+    private bool isBoss = false;
+
     private void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        walkingSoundsScript = gameObject.GetComponent<WalkingSounds>();
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
 
         tempSpeed = _speed;
@@ -41,6 +48,7 @@ public class EnemyValues : MonoBehaviour
     private void ApplyValuesHelper()
     {
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
+        walkingSoundsScript.StartWalkingLoop();
     }
 
     public void IncreaseValues(int level)
@@ -97,9 +105,14 @@ public class EnemyValues : MonoBehaviour
         animator.SetTrigger("Die");
         gameObject.GetComponent<BoxCollider>().enabled = false;
         ZeroSpeedHelper();
+        walkingSoundsScript.StopWalkingLoop();
 
         yield return new WaitForSeconds(animDeathTime);
 
+        if(isBoss)
+        {
+            gameManager.Win();
+        }
         gameObject.SetActive(false);
         gameObject.GetComponent<NavMeshAgent>().enabled = false;
         gameObject.GetComponent<BoxCollider>().enabled = true;

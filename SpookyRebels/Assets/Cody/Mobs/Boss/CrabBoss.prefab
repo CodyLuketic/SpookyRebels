@@ -2188,6 +2188,7 @@ MonoBehaviour:
   _attackSpeed: 0.4
   _rotationSpeed: 0
   animDeathTime: 1
+  isBoss: 1
 --- !u!114 &2638486498718583284
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,22 +4,18 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject timerObject = null;
-    private Canvas timerCanvas = null;
+
+    [SerializeField]
+    private GameObject materialObject = null;
+
+    [SerializeField]
+    private GameObject popupObject = null;
 
     [SerializeField]
     private GameObject winObject = null;
-    private Canvas winCanvas = null;
 
     [SerializeField]
     private GameObject loseObject = null;
-    private Canvas loseCanvas = null;
-
-    private void Start()
-    {
-        timerCanvas = timerObject.GetComponent<Canvas>();
-        winCanvas = winObject.GetComponent<Canvas>();
-        loseCanvas = loseObject.GetComponent<Canvas>();
-    }
 
     public void Win()
     {
@@ -28,6 +24,8 @@ public class GameManager : MonoBehaviour
     private void WinHelper()
     {
         timerObject.SetActive(false);
+        materialObject.SetActive(false);
+        popupObject.SetActive(false);
         winObject.SetActive(true);
 
         Time.timeScale = 0;
@@ -40,6 +38,8 @@ public class GameManager : MonoBehaviour
     private void LoseHelper()
     {
         timerObject.SetActive(false);
+        materialObject.SetActive(false);
+        popupObject.SetActive(false);
         loseObject.SetActive(true);
 
         Time.timeScale = 0;
