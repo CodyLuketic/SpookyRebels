@@ -10,6 +10,7 @@ public class Profile
     public int Money;
     public int monCount;
 
+    //gems
     public int smallFloraGem;
     public int mediumFloraGem;
     public int largeFloraGem;
@@ -33,8 +34,16 @@ public class Profile
     public int smallSpectralGem;
     public int mediumSpectralGem;
     public int largeSpectralGem;
+
+    // items
+    public int itemEquipted = 0;
+    public int basicTrap;
+
+
     public Magamon[] magamon = new Magamon[50];
 
+    //as more are added you need to increase this number
+    public Magamon[] databaseForMagamon = new Magamon[10];
     //skills
     public SkillTree skillTree;
 

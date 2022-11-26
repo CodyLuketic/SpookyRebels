@@ -18,6 +18,7 @@ public class Shoot : MonoBehaviour
     public GameObject eggShotPrefab;
     public GameObject bigEggShotPrefab;
     public GameObject EggBombPrefab;
+    public GameObject basicTrapPrefab;
     public float recoil = 1;
     public int currentBullets;
     public bool hasBullets = true;
@@ -28,6 +29,7 @@ public class Shoot : MonoBehaviour
     public bool canSwitch = true;
     public bool canDefend = true;
     public bool canAttack = true;
+    public bool canItem = true;
     public int tempbulletDamage = 0;
     public float attackSpeedMod = 0;
     //ui
@@ -95,6 +97,13 @@ public class Shoot : MonoBehaviour
             if (canSwitch)
             {
                 Switch();
+            }
+        }
+        if (Input.GetButton("ItemUse"))
+        {
+            if (canItem)
+            {
+                Item();
             }
         }
     }
@@ -333,6 +342,27 @@ public class Shoot : MonoBehaviour
     }
 
     
+
+    void Item()
+    {
+        canItem = false;
+
+        //select item
+        if (p.itemEquipted == 0)
+        {
+            if(p.basicTrap > 0) Instantiate(basicTrapPrefab, firePoint.position, firePoint.rotation);
+            //basic trap
+        }
+        StartCoroutine(eItemCooldown());
+
+    }
+
+    IEnumerator eItemCooldown()
+    {
+        yield return new WaitForSeconds(1f);
+        canItem = true;
+    }
+
     void startSkills()
     { 
     

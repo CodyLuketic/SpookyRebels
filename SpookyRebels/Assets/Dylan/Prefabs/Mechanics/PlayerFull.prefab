@@ -394,6 +394,8 @@ MonoBehaviour:
     type: 3}
   EggBombPrefab: {fileID: 927584651735372893, guid: 5b3ab6621f74ca74c9e7a9c8f6dee425,
     type: 3}
+  basicTrapPrefab: {fileID: 5943800836704302588, guid: b1ea3240d61ddec4884cd0c405f195ac,
+    type: 3}
   recoil: 2
   currentBullets: 0
   hasBullets: 1
@@ -823,6 +825,7 @@ MonoBehaviour:
   canSwitch: 1
   canDefend: 1
   canAttack: 1
+  canItem: 1
   tempbulletDamage: 0
   attackSpeedMod: 0
   ammoTxt: {fileID: 0}
@@ -851,6 +854,8 @@ MonoBehaviour:
     smallSpectralGem: 0
     mediumSpectralGem: 0
     largeSpectralGem: 0
+    itemEquipted: 0
+    basicTrap: 0
     magamon:
     - name: 
       Icon: {fileID: 0}
@@ -9252,6 +9257,2107 @@ MonoBehaviour:
       speed: 0
       bulletSpeed: 0
       defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      level: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      sTree:
+        Skills:
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      level: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      sTree:
+        Skills:
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      level: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      sTree:
+        Skills:
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      level: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      sTree:
+        Skills:
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      level: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      sTree:
+        Skills:
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      level: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      sTree:
+        Skills:
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      level: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      sTree:
+        Skills:
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      level: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      sTree:
+        Skills:
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      level: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      sTree:
+        Skills:
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    - name: 
+      Icon: {fileID: 0}
+      gunIcon: {fileID: 0}
+      species: 
+      element: 
+      maxLevel: 0
+      level: 0
+      conditionHealth: 0
+      range: 0
+      bulletCount: 0
+      skillAvailable: 0
+      sTree:
+        Skills:
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+        - skillName: 
+          skillIcon: {fileID: 0}
+          skillOwned: 0
+          skillDescription: 
+          skillCost: 
+      attack: 0
+      attackSpeed: 0
+      reloadSpeed: 0
+      health: 0
+      speed: 0
+      bulletSpeed: 0
+      defensetimer: 0
+    databaseForMagamon:
     - name: 
       Icon: {fileID: 0}
       gunIcon: {fileID: 0}

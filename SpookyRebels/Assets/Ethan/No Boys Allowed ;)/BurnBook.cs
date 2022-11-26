@@ -26,4 +26,5 @@ public class BurnBook : MonoBehaviour
     // Entry 17: Red Robin was fun even though Hannah was working her way through all the men. Hannah be Hannah frfr
     // Entry 18: OMG, Hannah missed when my gossip about Luke killed half the town. The town wasn't happy frfr
     // Entry 19: Hannah and Madison stood us up today at class. Britney was not havin it frfr
+    // Entry 20: Me and Haley have been hangin out a ton till super late playing games. She a real one frfr
 }

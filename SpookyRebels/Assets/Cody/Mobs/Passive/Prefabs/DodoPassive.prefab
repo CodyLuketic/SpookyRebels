@@ -784,6 +784,7 @@ GameObject:
   - component: {fileID: 3821853954118973611}
   - component: {fileID: 4545375353723533276}
   - component: {fileID: 2244629484064017758}
+  - component: {fileID: -8726656561184389139}
   m_Layer: 0
   m_Name: DodoPassive
   m_TagString: Catchable
@@ -848,7 +849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9ee49637ffdbb40a5823330af4c693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10
   _speed: 7
   _damage: 3
   _defense: 2
@@ -869,6 +869,27 @@ MonoBehaviour:
   runDistance: 20
   nextTurnIncrement: 2
   speedThreshold: 0.15
+--- !u!114 &-8726656561184389139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821853954118973601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521820beae8e2644f9268dd37382e30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  species: Dodo
+  catchRate: 25
+  levelMod: 0
+  attackMod: 0
+  attackSpeedMod: 0
+  healthMod: 0
+  speedMod: 0
+  bulletSpeedMod: 0
+  skillAvailableMod: 0
 --- !u!1 &4017951324765818848
 GameObject:
   m_ObjectHideFlags: 0
