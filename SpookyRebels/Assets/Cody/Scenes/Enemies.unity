@@ -4603,34 +4603,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1bbbc830f13ac04dabb92748af165b7, type: 3}
---- !u!1 &186512974 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7123170690156522236, guid: 7967546a39972404f87543692ea5634c,
-    type: 3}
-  m_PrefabInstance: {fileID: 740189126}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &186512982
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 186512974}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!4 &187629771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b7b60a839674b674789a44ab376ff145,
@@ -18766,19 +18738,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 499818235, guid: 7967546a39972404f87543692ea5634c, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 740189127}
-    - target: {fileID: 535374369, guid: 7967546a39972404f87543692ea5634c, type: 3}
-      propertyPath: ammoTxt
-      value: 
-      objectReference: {fileID: 1251265036}
-    - target: {fileID: 2024795653404606620, guid: 7967546a39972404f87543692ea5634c,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 8fb074759f2d11843b89ee38f0366262, type: 2}
     - target: {fileID: 3757707364220109452, guid: 7967546a39972404f87543692ea5634c,
         type: 3}
       propertyPath: ammoTxt
@@ -18844,44 +18803,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7123170690385004114, guid: 7967546a39972404f87543692ea5634c,
-        type: 3}
-      propertyPath: m_Name
-      value: MainCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123170690468466117, guid: 7967546a39972404f87543692ea5634c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123170691059256791, guid: 7967546a39972404f87543692ea5634c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7123170691647693179, guid: 7967546a39972404f87543692ea5634c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7736878640172480848, guid: 7967546a39972404f87543692ea5634c,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7736878640172480848, guid: 7967546a39972404f87543692ea5634c,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 47c4c049337383b4ebbfed27eb3481db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7967546a39972404f87543692ea5634c, type: 3}
---- !u!95 &740189127 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 852041732315458257, guid: 7967546a39972404f87543692ea5634c,
-    type: 3}
-  m_PrefabInstance: {fileID: 740189126}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &741631883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d1bbbc830f13ac04dabb92748af165b7,
