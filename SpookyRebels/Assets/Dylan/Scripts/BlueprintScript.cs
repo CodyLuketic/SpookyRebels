@@ -8,12 +8,17 @@ public class BlueprintScript : MonoBehaviour
     private bool valid = true;
 
     [SerializeField]
+    private GameObject mesh;
+    [SerializeField]
     private GameObject me;
     [SerializeField]
     private GameObject prefab;
 
     private GameObject player;
     private BuildManager bm = BuildManager.instance;
+
+    [SerializeField]
+    private bool goodRoot;
 
     // Start is called before the first frame update
     private void Awake()
@@ -24,7 +29,7 @@ public class BlueprintScript : MonoBehaviour
         PlayerMovements playerScript = player.GetComponent<PlayerMovements>();
         mousePos = playerScript.returnMousePos();
 
-        me.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 100);
+        mesh.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 100);
         me.transform.position = mousePos;
 
         bm.ClosePanel();
@@ -33,25 +38,26 @@ public class BlueprintScript : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         valid = false;
-        me.GetComponent<Renderer>().material.color = new Color32(255, 0, 0, 100);
+        mesh.GetComponent<Renderer>().material.color = new Color32(255, 0, 0, 100);
     }
 
     private void OnTriggerExit(Collider other)
     {
         valid = true;
-        me.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 100);
+        mesh.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 100);
     }
 
     private float FindMyHeight()
     {
-        return GetComponent<MeshFilter>().mesh.bounds.extents.y * 2;
+        return GetComponent<MeshFilter>().mesh.bounds.extents.y / 2;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Move to Mouse
-        me.transform.position = new Vector3(mousePos.x, mousePos.y + FindMyHeight(), mousePos.z);
+        if (goodRoot) { me.transform.position = new Vector3(mousePos.x, mousePos.y, mousePos.z); }
+        else { me.transform.position = new Vector3(mousePos.x, mousePos.y + FindMyHeight(), mousePos.z); }
 
         // Get Mouse Position
         PlayerMovements playerScript = player.GetComponent<PlayerMovements>();

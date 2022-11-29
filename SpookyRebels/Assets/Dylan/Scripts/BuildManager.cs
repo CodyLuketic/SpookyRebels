@@ -86,7 +86,6 @@ public class BuildManager : MonoBehaviour
 
     public void OpenPanel()
     {
-        print("stuck on bandaid");
         buildPanel.SetActive(true);
     }
 
