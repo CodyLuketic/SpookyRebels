@@ -113,14 +113,17 @@ public class PlayerMovements : MonoBehaviour
                 // Move the controller
                 characterController.Move(moveDirection * Time.deltaTime);
 
-                // Animate the character
-                if (moveDirection != new Vector3(0, 0, 0))
+                if (animator != null)
                 {
-                    animator.SetBool("Walking", true);
-                }
-                else
-                {
-                    animator.SetBool("Walking", false);
+                    // Animate the character
+                    if (moveDirection != new Vector3(0, 0, 0))
+                    {
+                        animator.SetBool("Walking", true);
+                    }
+                    else
+                    {
+                        animator.SetBool("Walking", false);
+                    }
                 }
             }
 
