@@ -48,7 +48,10 @@ public class EnemyValues : MonoBehaviour
     private void ApplyValuesHelper()
     {
         gameObject.GetComponent<NavMeshAgent>().speed = _speed;
-        walkingSoundsScript.StartWalkingLoop();
+        if(!isBoss)
+        {
+            walkingSoundsScript.StartWalkingLoop();
+        }
     }
 
     public void IncreaseValues(int level)
@@ -105,7 +108,10 @@ public class EnemyValues : MonoBehaviour
         animator.SetTrigger("Die");
         gameObject.GetComponent<BoxCollider>().enabled = false;
         ZeroSpeedHelper();
-        walkingSoundsScript.StopWalkingLoop();
+        if(!isBoss)
+        {
+            walkingSoundsScript.StopWalkingLoop();
+        }
 
         yield return new WaitForSeconds(animDeathTime);
 
