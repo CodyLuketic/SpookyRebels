@@ -17,7 +17,8 @@ public class PlayerMovements : MonoBehaviour
     public Vector3 lookPoint;
     public Vector3 gunPoint; 
 
-    //private Animator animator = null;
+    [SerializeField]
+    private Animator animator = null;
     //public Texture2D crosshair;
     CharacterController characterController;
 
@@ -80,7 +81,7 @@ public class PlayerMovements : MonoBehaviour
         // Check that we can Move
         if (canMove)
         {
-            if(currentDashTimeRe < maxDashTimeRe)
+            if (currentDashTimeRe < maxDashTimeRe)
             {
                 moveDirection = transform.forward * dashDistance * -1;
                 currentDashTimeRe += dashStoppingSpeedRe;
@@ -97,26 +98,34 @@ public class PlayerMovements : MonoBehaviour
             else
             {
                 //moveDirection = Vector3.zero;
-            
 
+                // We are grounded, so recalculate move direction based on axes
+                Vector3 forward = playerFull.transform.TransformDirection(Vector3.forward);
+                Vector3 right = playerFull.transform.TransformDirection(Vector3.right);
 
-            // We are grounded, so recalculate move direction based on axes
-            Vector3 forward = playerFull.transform.TransformDirection(Vector3.forward);
-            Vector3 right = playerFull.transform.TransformDirection(Vector3.right);
+                // Press Left Shift to run
+                bool isRunning = Input.GetKey(KeyCode.LeftShift);
+                float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
+                float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+                //float movementDirectionY = moveDirection.y;
+                moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-            // Press Left Shift to run
-            bool isRunning = Input.GetKey(KeyCode.LeftShift);
-            float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-            float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
-            //float movementDirectionY = moveDirection.y;
-            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+                // Move the controller
+                characterController.Move(moveDirection * Time.deltaTime);
 
-            // Move the controller
-            characterController.Move(moveDirection * Time.deltaTime);
-
+                // Animate the character
+                if (moveDirection != new Vector3(0, 0, 0))
+                {
+                    animator.SetBool("Walking", true);
+                }
+                else
+                {
+                    animator.SetBool("Walking", false);
+                }
             }
-      
+
         }
+        else { animator.SetBool("Walking", false); }
 
         generateMousePos();
         // Player rotation to Cursor
