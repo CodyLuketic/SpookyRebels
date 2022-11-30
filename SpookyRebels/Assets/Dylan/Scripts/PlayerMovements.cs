@@ -10,10 +10,6 @@ public class PlayerMovements : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
 
-    float m_LastPressTime;
-    float m_PressDelay = 0.5f;
-    private bool canvasEnabled = false;
-
     public Vector3 lookPoint;
     public Vector3 gunPoint; 
 
@@ -145,20 +141,6 @@ public class PlayerMovements : MonoBehaviour
             return moveDirection;
         }
         */
-
-        if (Input.GetButton("Popup"))
-        {
-            // Ensure Player Doesn't Get Stuck on Button Press
-            if (m_LastPressTime + m_PressDelay > Time.unscaledTime)
-                return;
-            m_LastPressTime = Time.unscaledTime;
-
-            // Enable or Disable the Canvas
-            GameObject CanvasObject = GameObject.Find("popupCanvas");
-            CanvasObject.GetComponent<Canvas>().enabled = !canvasEnabled;
-            canvasEnabled = !canvasEnabled;
-        }
-
 
         // Extraneous Code
 
