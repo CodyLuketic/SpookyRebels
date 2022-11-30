@@ -23,8 +23,19 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
-    public void SkillScene()
+    public void SkillScene(string monType)
     {
+        switch (monType)
+        {
+            case "Hermine":
+                MainProfile.Instance.mainP.skillMonEquipted = 1;
+                break;
+            case "Dodivy":
+                MainProfile.Instance.mainP.skillMonEquipted = 2;
+                break;
+            default:
+                break;
+        }
         SceneManager.LoadScene(4);
     }
 

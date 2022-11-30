@@ -49,7 +49,7 @@ public class PickupController : MonoBehaviour
             objY = obj.transform.position.y;
 
             heldObjRB = obj.GetComponent<Rigidbody>();
-            heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;
+            heldObjRB.constraints = RigidbodyConstraints.FreezeAll;
 
             heldObjRB.velocity = Vector3.zero;
             heldObjRB.angularVelocity = Vector3.zero;
@@ -57,6 +57,8 @@ public class PickupController : MonoBehaviour
             heldObjRB.transform.position = holdArea.position;
             heldObjRB.transform.parent = holdArea;
             heldObj = obj;
+
+            //heldObj.GetComponent<Pet>().pickedUp = true;
         }
     }
 
@@ -66,6 +68,7 @@ public class PickupController : MonoBehaviour
         heldObj.transform.position = new Vector3(heldObj.transform.position.x, objY, heldObj.transform.position.z);
 
         heldObjRB.constraints = RigidbodyConstraints.FreezePositionY;
+        //heldObj.GetComponent<Pet>().pickedUp = false;
         heldObj.transform.parent = null;
         heldObj = null;
     }
@@ -76,6 +79,7 @@ public class PickupController : MonoBehaviour
         heldObjRB.AddForce(holdArea.transform.forward * throwForce);
 
         heldObjRB.constraints = RigidbodyConstraints.FreezePositionY;
+        //heldObj.GetComponent<Pet>().pickedUp = false;
         heldObj.transform.parent = null;
         heldObj = null;
     }
